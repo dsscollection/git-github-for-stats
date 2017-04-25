@@ -1,12 +1,13 @@
-Git and GitHub for statistical practice and teaching
-================
-Jenny Bryan
-2017-04-24
+---
+title: "Git and GitHub for statistical practice and teaching"
+author: "Jenny Bryan"
+date: "`r format(Sys.Date())`"
+output: github_document
+---
 
 *Alternative title: Excuse me, do you have a moment to talk about Git and GitHub?*
 
-Why and who?
-------------
+## Why and who?
 
 Why would a practicing statistician use version control, such as Git? And what is the point of hosting your work online, e.g., on GitHub? Could the gains possibly justify the inevitable pain?
 
@@ -16,17 +17,16 @@ The target reader is anyone who does statistical research, analysis, or instruct
 
 Benefits of using hosted version control as your *modus operandi*:
 
--   Doing your work becomes tightly integrated with organizing, recording, and disseminating it.
--   The marginal effort required to create a web presence for a project is negligible.
--   GitHub makes a fantastic course management system for courses that use R.
--   By using common mechanics across work modes, you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
+  * Doing your work becomes tightly integrated with organizing, recording, and disseminating it.
+  * The marginal effort required to create a web presence for a project is negligible.
+  * GitHub makes a fantastic course management system for courses that use R.
+  * By using common mechanics across work modes, you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
 
 This article does not provide step-by-step instructions on how to use Git and GitHub. This format would not be effective, but we do provide links to such resources. Instead, I'll convey what the workflow feels like and what the payoffs are. The goal is to help the Git-curious generate the activation energy needed to get started.
 
-Git
----
+## Git
 
-[Git](http://git-scm.com) is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
+[Git](http://git-scm.com) is a __version control system__. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a __repository__ -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
@@ -34,8 +34,7 @@ A lone ranger, working on a single computer, can benefit from adopting version c
 
 In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people, including your future self. And who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread or neglect. Communication and collaboration are the killer apps of version control, which brings me to my next point.
 
-GitHub
-------
+## GitHub
 
 [GitHub](https://github.com) is currently the most popular Git hosting service. Others include [GitLab](https://about.gitlab.com) and [Bitbucket](https://bitbucket.org). These services provide a home for Git-based projects on the internet. It is a bit like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
@@ -43,18 +42,16 @@ The remote host acts as a distribution channel or clearinghouse for a Git-manage
 
 Even for private solo projects, there are two advantages to keeping a synced copy on GitHub:
 
-1.  When you are new with Git (or, frankly, even when you're not), it's common to goof up the Git infrastructure for a project. Note that your files can absolutely be intact and safe, even while the Git tracking is a bit confused. Of course there are official Git remedies, but sometimes the easiest fix is to clone a fresh copy from GitHub, patch things up with the changes that only exist locally, and move on with your life. This workaround obviously requires the existence of a recent copy on GitHub.
-2.  The highly functional web interfaces mentioned above are often the most pleasant and natural way to navigate and search your files, even though all the same information exists locally. It is a pleasure to browse through your own work, across multiple projects or files and across time, as if it's a well-designed website. You must push your work to GitHub to enjoy this.
+  1. When you are new with Git (or, frankly, even when you're not), it's common to goof up the Git infrastructure for a project. Note that your files can absolutely be intact and safe, even while the Git tracking is a bit confused. Of course there are official Git remedies, but sometimes the easiest fix is to clone a fresh copy from GitHub, patch things up with the changes that only exist locally, and move on with your life. This workaround obviously requires the existence of a recent copy on GitHub.
+  2. The highly functional web interfaces mentioned above are often the most pleasant and natural way to navigate and search your files, even though all the same information exists locally. It is a pleasure to browse through your own work, across multiple projects or files and across time, as if it's a well-designed website. You must push your work to GitHub to enjoy this.
 
-Don't get caught up on these things
------------------------------------
+## Don't get caught up on these things
 
 I target [GitHub](https://github.com) -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms. I am advocating for the use of hosted version control as a general concept, with GitHub being the best and most common provider today. I note that many companies and even universities are starting to make GitHub Enterprise or GitLab available internally.
 
 Don't fret too much about public versus private repositories at this point. All the major hosting providers offer private repositories with flexible control over who can read or write to the repo. There are many ways to get private repositories for low or no cost, especially for academics. Just get started and figure out if and how Git/GitHub is going to work for you. If you outgrow this initial arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service, self-host one of these platforms, or connect with / advocate for organization-wide solutions. You can also leave more things public than you think, because one's early days with Git and GitHub generally do not attract a keen audience. It is also easy to delete repos or clear the history.
 
-Is this going to hurt?
-----------------------
+## Is this going to hurt?
 
 Yes.
 
@@ -62,46 +59,43 @@ Git was built neither for the exact usage described here, nor for broad usabilit
 
 General recommendations for agony reduction:
 
--   Consider installing a graphical front-end for Git, a.k.a. a "Git client", on your computer, versus restricting yourself to the command line interface.
--   Establish confidence in the basics (e.g. make a change, commit it, push it) before wading into more advanced usage (e.g. branching).
--   Commit yourself to Git usage on a project that will provide sustained practice over several months. Usage in a course is great, because it provides a relentless stream of small deadlines.
--   Realize that no one is giving out Git style points. It's ok to "power-cycle", i.e. re-initialize the Git repository, to get unstuck.
+  * Consider installing a graphical front-end for Git, a.k.a. a "Git client", on your computer, versus restricting yourself to the command line interface.
+  * Establish confidence in the basics (e.g. make a change, commit it, push it) before wading into more advanced usage (e.g. branching).
+  * Commit yourself to Git usage on a project that will provide sustained practice over several months. Usage in a course is great, because it provides a relentless stream of small deadlines.
+  * Realize that no one is giving out Git style points. It's ok to "power-cycle", i.e. re-initialize the Git repository, to get unstuck.
 
-Initial setup
--------------
+## Initial setup
 
 This is one-time or once-per-computer setup.
 
--   Register for a free account with GitHub.
+  * Register for a free account with GitHub.
 
--   Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this.
+  * Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this.
 
--   Install a local Git client. Optional but highly recommended. A Git client is software that provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as SourceTree or GitKraken. Git is a file-based system, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
+  * Install a local Git client. Optional but highly recommended. A Git client is software that provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as SourceTree or GitKraken. Git is a file-based system, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
+  
+  * Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as *pushing* and *pulling*, respectively. This will require authenticating yourself with GitHub from a local shell or Git client. At this point, most people elect to do a bit of extra setup to ensure that they are not repeatedly challenged for their GitHub credentials going forward.
 
--   Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as *pushing* and *pulling*, respectively. This will require authenticating yourself with GitHub from a local shell or Git client. At this point, most people elect to do a bit of extra setup to ensure that they are not repeatedly challenged for their GitHub credentials going forward.
-
-Repositories and workflow
--------------------------
+## Repositories and workflow
 
 For new or existing projects, you will:
 
--   Dedicate a directory (a.k.a "folder") to it.
--   Make it an RStudio Project. Optional but recommended; obviously only applies to projects involving R and users of RStudio.
--   Make it a Git repository.
-
+  * Dedicate a directory (a.k.a "folder") to it.
+  * Make it an RStudio Project. Optional but recommended; obviously only applies to projects involving R and users of RStudio.
+  * Make it a Git repository.
+  
 This is once-per-project setup and can happen at project inception or at any later point. Chances are your project already lives in a dedicated directory. Making this directory an RStudio Project and Git repository boils down to allowing those applications to leave notes for themselves in hidden files or directories. The project is still a regular directory on your computer, that you can locate, name, and interact with as you wish.
 
 Here is the daily workflow:
 
--   Go about your usual business, e.g. writing R scripts or authoring reports in LaTeX or R Markdown. But instead of only *saving* individual files, periodically you make a **commit**, which takes a multi-file snapshot of the entire project.
-    -   Have you ever versioned a file [by adding your initials or the date](http://www.phdcomics.com/comics/archive.php?comicid=1531)? That is effectively a **commit**, albeit only for a single file: it is a version that is significant to you and that you might want to inspect or revert to later.
--   Push commits to GitHub periodically.
-    -   This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you're ready to make your work visible to others and invite comment or edits.
-
+  * Go about your usual business, e.g. writing R scripts or authoring reports in LaTeX or R Markdown. But instead of only *saving* individual files, periodically you make a **commit**, which takes a multi-file snapshot of the entire project.
+    - Have you ever versioned a file [by adding your initials or the date](http://www.phdcomics.com/comics/archive.php?comicid=1531)? That is effectively a **commit**, albeit only for a single file: it is a version that is significant to you and that you might want to inspect or revert to later.
+  * Push commits to GitHub periodically.
+    - This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you're ready to make your work visible to others and invite comment or edits.
+  
 This is a moderate change to your normal, daily workflow. It feels weird at first, but quickly becomes second nature. FWIW, [STAT 545](http://stat545.com) students are required to submit all coursework via GitHub. This is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.
 
-Commits, diffs, and tags
-------------------------
+## Commits, diffs, and tags
 
 The *commit* is one of the most fundamental concepts in Git, along with *repository*. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Mental models don't have to be accurate in order to be useful, but in this case there's some value in aligning the two.
 
@@ -119,8 +113,7 @@ Every commit needs some sort of nickname, so you can identify it. Git does this 
 
 Many people who don't use Git are unwittingly creating a poor man's version of it. They create long chains of copies of an important file, decorating the name with initials, dates and other descriptors. The Git way is to track the evolution of that file, through a series of commits, each equipped with an explanatory message and a nickname. Especially important versions are given a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
-Markdown is special
--------------------
+## Markdown is special
 
 This may seem unrelated to Git and R, but it's time to talk about Markdown. Markdown is a markup language, like HTML and LaTeX, but designed to be as lightweight as possible. The goal is still to separate form and content, but also to preserve human-readability, even at the cost of fancy features. Markdown is in wide use on sites like Wikipedia, WordPress, StackOverflow, and, yes, GitHub. Do not build this up into some heroic, LaTeX-level learning task, for it is not. If you can write an email, you can write Markdown.
 
@@ -132,16 +125,15 @@ These R-derived Markdown files, if committed and pushed, then enjoy the usual pr
 
 One last point about R Markdown more generally: the rmarkdown package can render `.Rmd` files to many more formats than Markdown. In addition to knitr, rmarkdown uses Pandoc and, optionally, LaTeX, to convert `.Rmd` to a wide array of output formats, including HTML, PDF, and Word (`.docx`). The Markdown must be created regardless. Sometimes it is all you need, such as on GitHub, and, in other contexts, it is just a necessary intermediate and may even be discarded.
 
-Which files to commit
----------------------
+## Which files to commit
 
 The files in a project play different roles and arise in different ways. Let's have a few examples in mind for this discussion:
 
--   R markdown `.Rmd` --&gt; markdown `.md`
--   R markdown `.Rmd` --&gt; markdown `.md` --&gt; `.html` or `.pdf` or `.docx`
--   R script `.R` --&gt; results as `.csv` or `.rds` and figures `.png`
--   LaTeX `.tex` --&gt; WHAT GOES HERE NOW? --&gt; `.pdf`
-
+  * R markdown `.Rmd` --> markdown `.md`
+  * R markdown `.Rmd` --> markdown `.md` --> `.html` or `.pdf` or `.docx`
+  * R script `.R` --> results as `.csv` or `.rds` and figures `.png`
+  * LaTeX `.tex` --> WHAT GOES HERE NOW? --> `.pdf`
+  
 The files at the far left are clearly source files. In the case of an R script, this is literally true, but it's morally true for R markdown and LaTeX files too. These are files that you directly create and edit "by hand".
 
 The files at the far right are clearly derived and are often described as "targets". These files are programmatically generated from source files (and possibly other inputs). These files are the product and they have external value, often for communicating ideas and results.
@@ -166,16 +158,15 @@ What are the main considerations when deciding whether to track a derived file o
 
 In summary, I recommend you default to including a file in your Git repository, unless there's a specific reason not to. But good reasons absolutely do exist.
 
-Collaboration
--------------
+## Collaboration
 
 Collaboration is probably the most compelling reason to manage a project with Git and GitHub. I have a broad definition of collaboration here, that includes hands-on participation by multiple people as well as a more asymmetric model, in which some people are active makers and others only read or review.
 
 Consider two different models of collaboration on a document:
 
--   **Edit, save, attach.** In this workflow, everyone has one (or more!) copies of the document and they circulate via email attachment, accumulating initials and dates in the filename. Which one is "master"? Does this question even make sense anymore? How do different versions of the document relate to each other? If you want to see a version combining the best versions of each section, how would you reconcile the different copies into one? All of this usually gets sorted out by social contract, a fairly manual process, and at least one miserable person.
-
--   **Google Doc.** In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who's been editing the document and how and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.
+  * **Edit, save, attach.** In this workflow, everyone has one (or more!) copies of the document and they circulate via email attachment, accumulating initials and dates in the filename. Which one is "master"? Does this question even make sense anymore? How do different versions of the document relate to each other? If you want to see a version combining the best versions of each section, how would you reconcile the different copies into one?  All of this usually gets sorted out by social contract, a fairly manual process, and at least one miserable person.
+  
+  * **Google Doc.** In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who's been editing the document and how and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.
 
 Managing a project via Git/GitHub is much more like the Google Doc scenario and enjoys many of the same advantages. It is definitely more complicated than collaborating on a Google Doc, but also more powerful. How does collaboration work?
 
@@ -183,7 +174,7 @@ Git is a decentralized version control system, meaning each collaborator has the
 
 *These two points were written as comparisons with Google Docs, but now there are intervening paragraphs. Is it too disconnected?*
 
-*Manage multiple files*. A Git repository is inherently multi-file and therefore well suited to projects comprised of many files, evolving in a coordinated fashion. Examples include a data analysis, a course website, a blog, an R package, or a book. If there is any way to proactively check or enforce their joint functionality, this is something you could verify manually prior to a commit or at certain milestones. In the case of a website, you might choose to rebuild the site prior to a commit. In the case of an R package, `R CMD check` is one of the easiest things to automate on GitHub.
+*Manage multiple files*. A Git repository is inherently multi-file and therefore well suited to projects comprised of many files, evolving in a coordinated fashion. Examples include a data analysis, a course website, a blog, an R package, or a book. If there is any way to proactively check or enforce their joint functionality, this is something you could verify manually prior to a commit or at certain milestones. In the case of a website, you might choose to rebuild the site prior to a commit. In the case of an R package, `R CMD check` is one of the easiest things to automate on GitHub. 
 
 *Diffs and time travel*. Google Docs are fantastic for simple collaborative work, when you don't need detailed access to the history. But the version control offered by Google Drive is very limited compared to Git. You can't compare versions at arbitrary points in time, temporarily checkout previous versions, or maintain two lines of development.
 
@@ -197,35 +188,32 @@ But sometimes it's not clear how to reconcile your changes with the new ones fro
 
 The best way to deal with merge conflicts is to avoid them altogether. This is another reason for all parties to commit, pull, and push often. Small changes, being integrated frequently, are easy for Git to merge, usually without conflict. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work. So keep it small with lots of small commits and regular syncing with GitHub.
 
-GitHub as course management system
-----------------------------------
+## GitHub as course management system
 
 *adapt from here: <http://happygitwithr.com/classroom-overview.html>*
 
 *Want to convey utility for managing the course materials/website, discussion board via issues, student repositories for coursework.*
 
-R specific stuff
-----------------
+## R specific stuff
 
 *Much of this appears elsewhere in some form. Perhaps I should find a home for what's not covered and kill this section?*
 
--   The active R package development community on GitHub. The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
--   Specific workflows for R and Rmd destined to GitHub. `github_document`!!! `keep_md = TRUE`!!!
--   Git- and GitHub-related features of the [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/).
+  * The active R package development community on GitHub. The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
+  * Specific workflows for R and Rmd destined to GitHub. `github_document`!!! `keep_md = TRUE`!!!
+  * Git- and GitHub-related features of the [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/).
 
-Special features of GitHub
---------------------------
+## Special features of GitHub
 
 *at this point, just fodder mined from various locations in Happy Git*
 
 In addition to a well-designed user interface, GitHub offers two especially important features:
 
--   **Issues.** Remember how we're high-jacking software development tools? Well, this is the bug tracker. It's a list of things ... bugs, feature requests, to dos, whatever.
-    -   Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.
-    -   Issues can be assigned to people (e.g., to dos) and tagged ("bug" or "progress-report").
-    -   Issues are tightly integrated with commits and therefore allow you to record *that the changes in this commit solve that problem which was discussed in that issue*.
-    -   As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.
--   **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to \#14." or "Fixes \#56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
+  * **Issues.** Remember how we're high-jacking software development tools? Well, this is the bug tracker. It's a list of things ... bugs, feature requests, to dos, whatever.
+    - Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.
+    - Issues can be assigned to people (e.g., to dos) and tagged ("bug" or "progress-report").
+    - Issues are tightly integrated with commits and therefore allow you to record *that the changes in this commit solve that problem which was discussed in that issue*.
+    - As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.
+ * **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to #14." or "Fixes #56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
 
 **Be a keener!** If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
 
@@ -237,19 +225,18 @@ If someone needs to see your work or if you want them to try out your code, they
 
 There are many things you can do a "working" repository to make it double as a project website.
 
--   [Make a GitHub repo browsable](http://happygitwithr.com/repo-browsability.html)
+  * [Make a GitHub repo browsable](http://happygitwithr.com/repo-browsability.html)
 
 If you want a more proper website, GitHub, rmarkdown, and, especially, the combination provide several options:
 
--   <https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3>
--   <https://help.github.com/categories/github-pages-basics/>
--   <http://rmarkdown.rstudio.com/rmarkdown_websites.html>
--   <https://bookdown.org/yihui/bookdown/>
--   <https://bookdown.org/yihui/blogdown/>
--   <https://hadley.github.io/pkgdown/>
+  * https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3
+  * https://help.github.com/categories/github-pages-basics/
+  * http://rmarkdown.rstudio.com/rmarkdown_websites.html
+  * https://bookdown.org/yihui/bookdown/
+  * https://bookdown.org/yihui/blogdown/
+  * https://hadley.github.io/pkgdown/
 
-Random things lying around
---------------------------
+## Random things lying around
 
 need to add a ton of links, citations
 
@@ -257,7 +244,8 @@ make some bespoke examples or diagrams?
 
 Doing = documenting = sharing
 
-<https://help.github.com/categories/working-with-non-code-files/> <https://help.github.com/articles/rendering-and-diffing-images/>
+<https://help.github.com/categories/working-with-non-code-files/>
+<https://help.github.com/articles/rendering-and-diffing-images/>
 
 make statistical thought and implementation available
 
