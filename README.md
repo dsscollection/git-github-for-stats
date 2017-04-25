@@ -257,7 +257,9 @@ make some bespoke examples or diagrams?
 
 Doing = documenting = sharing
 
-<https://help.github.com/categories/working-with-non-code-files/> <https://help.github.com/articles/rendering-and-diffing-images/>
+<https://help.github.com/categories/working-with-non-code-files/>
+
+<https://help.github.com/articles/rendering-and-diffing-images/>
 
 make statistical thought and implementation available
 
