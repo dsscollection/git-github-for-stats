@@ -51,33 +51,24 @@ Even for private solo projects, there are two advantages to keeping a synced cop
 1.  When you are new with Git (or, frankly, even when you're not), it's common to goof up the Git infrastructure for a project. Note that your files can absolutely be intact and safe, even while the Git tracking is a bit confused. Of course there are official Git remedies, but sometimes the easiest fix is to clone a fresh copy from GitHub, patch things up with the changes that only exist locally, and move on with your life. This workaround obviously requires the existence of a recent copy on GitHub.
 2.  The highly functional web interfaces mentioned above are often the most pleasant and natural way to navigate and search your files, even though all the same information exists locally. It is a pleasure to browse through your own work, across multiple projects or files and across time, as if it's a well-designed website. You must push your work to GitHub to enjoy this.
 
-GitHub **issues** are another powerful feature of the platform. Recall that we are repurposing Git, a tool designed to facilitate software development. The issues for a project are its bug tracker. For projects that are not pure software development, we use this machinery to organize our to do list more generally. The basic unit is an issue and you can interact with them in two ways.
+GitHub **issues** are another powerful feature of the platform. Recall that we are repurposing Git, a tool designed to facilitate software development. The issues for a project are its bug tracker. For projects that are not pure software development, we coopt this machinery to organize our to do list more generally. The basic unit is an issue and you can interact with them in two ways.
 
 First, issues are integrated into the project's web interface on GitHub, with a rich set of options for linking to project files and incremental changes. Second, issues and their associated comment threads appear in your email, just like regular messages (this can, of course, be configured). The result is that all correspondence about a project comes through your normal channels, but is also tracked inside the project itself, with excellent navigability and search capabilities. For software, issues are used to track bugs and feature requests. In a data analysis project, you might open an issue for a specific sub-analysis or complicated figure that needs to be made. In a course, we use them to manage homework submission, marking, and peer review.
 
 Issues can be assigned to specific people and they can be labelled, e.g. "bug", "simulation-study", or "final-exam". Coupled with the ability to cross-link issues and the project files or file changes, you have extraordinary power to document why things have happened in the past and to organize what needs to happen in the future.
 
-Initial Git setup
------------------
+Initial system setup
+--------------------
 
 This is one-time or once-per-computer setup.
 
 -   Register for a free account with GitHub.
 
--   Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this.
+-   Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this. Some basic configuration is also critical, such as setting your username and email.
 
 -   Install a local Git client. Optional but highly recommended. A Git client is software that provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as SourceTree or GitKraken. Git is a file-based system, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
 
 -   Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as *pushing* and *pulling*, respectively. This will require authenticating yourself with GitHub from a local shell or Git client. At this point, most people elect to do a bit of extra setup to ensure that they are not repeatedly challenged for their GitHub credentials going forward.
-
-Things you can tackle later
----------------------------
-
-I target [GitHub](https://github.com) -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms. I am advocating for the use of hosted version control as a general concept, with GitHub being the best and most common provider today. I note that many companies and even universities are starting to make GitHub Enterprise or GitLab available internally.
-
-Don't fret too much about public versus private repositories at this point. All the major hosting providers offer private repositories with flexible control over who can read or write to the repo. There are many ways to get private repositories for low or no cost, especially for academics. Just get started and figure out if and how Git/GitHub is going to work for you. If you outgrow this initial arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service, self-host one of these platforms, or connect with / advocate for organization-wide solutions. You can also leave more things public than you think, because one's early days with Git and GitHub generally do not attract a keen audience. It is also easy to delete repos or clear the history.
-
-*text pulled from elsewhere but might fit here?* **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to \#14." or "Fixes \#56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
 
 Is this going to hurt?
 ----------------------
@@ -244,6 +235,15 @@ If you want a more proper website, GitHub, rmarkdown, and, especially, the combi
 -   <https://bookdown.org/yihui/bookdown/>
 -   <https://bookdown.org/yihui/blogdown/>
 -   <https://hadley.github.io/pkgdown/>
+
+Things you can tackle later
+---------------------------
+
+I target [GitHub](https://github.com) -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms. I am advocating for the use of hosted version control as a general concept, with GitHub being the best and most common provider today. I note that many companies and even universities are starting to make GitHub Enterprise or GitLab available internally.
+
+Don't fret too much about public versus private repositories at this point. All the major hosting providers offer private repositories with flexible control over who can read or write to the repo. There are many ways to get private repositories for low or no cost, especially for academics. Just get started and figure out if and how Git/GitHub is going to work for you. If you outgrow this initial arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service, self-host one of these platforms, or connect with / advocate for organization-wide solutions. You can also leave more things public than you think, because one's early days with Git and GitHub generally do not attract a keen audience. It is also easy to delete repos or clear the history.
+
+*text pulled from elsewhere but might fit here?* **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to \#14." or "Fixes \#56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
 
 Random things lying around
 --------------------------
