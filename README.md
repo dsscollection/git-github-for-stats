@@ -26,9 +26,9 @@ Git has been re-purposed by the data science community. In addition to using it 
 
 A lone ranger, working on a single computer, can benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of files, if that's all you're worried about.
 
-In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people, including your future self. And who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread and avoid. Communication and collaboration are the killer apps of version control. Git enforces a painfully rigorous model of file management, but it is critical for the distribution of files across different people, computers, and time.
+In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people, including your future self. And who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread and avoid. Communication and collaboration are the killer apps of version control. Git enforces a rigorous model of file management, but it is critical for the distribution of files across different people, computers, and time.
 
-Many people who don't use Git unwittingly re-invent a poor man's version of it. They take an important file and distribute it via email. All parties make changes, decorating the file name with initials, dates, and other descriptors. Before you know it, the original file is the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve.
+Many people who don't use Git unwittingly re-invent a poor man's version of it. They take an important file and distribute it via email. Various parties make changes, decorating the file name with initials, dates, and other descriptors. Before you know it, the original file is the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve.
 
 The Git way is to track the evolution of that file, through a series of commits, each equipped with an explanatory message and a nickname. All collaborators sync regularly to a common version, acknowledging that the difficulty of merging goes up faster than the size of the difference (cite good enough). Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
@@ -37,10 +37,10 @@ Who should read this and what to expect
 
 The target reader is anyone who does statistical research, analysis, or instruction. Those whose work is some combination of these three may find the work style described here especially rewarding.
 
-This article does not provide step-by-step instructions on how to use Git and GitHub. This format would not be effective, but we do provide links to such resources. Instead, I'll convey what the workflow feels like and what the payoffs are. The goal is to help the Git-curious generate the activation energy needed to get started.
+This article does not provide step-by-step instructions on how to use Git and GitHub. This format would not be effective, but we do provide links to such resources. Instead, I'll convey what the workflow feels like and what the payoffs are, with special attention to the statsitics and R context. The goal is to help the Git-curious generate the activation energy needed to get started.
 
-GitHub
-------
+What is GitHub?
+---------------
 
 [GitHub](https://github.com) is currently the most popular Git hosting service. Others include [GitLab](https://about.gitlab.com) and [Bitbucket](https://bitbucket.org). These services provide a home for Git-based projects on the internet. It is a bit like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
@@ -50,6 +50,23 @@ Even for private solo projects, there are two advantages to keeping a synced cop
 
 1.  When you are new with Git (or, frankly, even when you're not), it's common to goof up the Git infrastructure for a project. Note that your files can absolutely be intact and safe, even while the Git tracking is a bit confused. Of course there are official Git remedies, but sometimes the easiest fix is to clone a fresh copy from GitHub, patch things up with the changes that only exist locally, and move on with your life. This workaround obviously requires the existence of a recent copy on GitHub.
 2.  The highly functional web interfaces mentioned above are often the most pleasant and natural way to navigate and search your files, even though all the same information exists locally. It is a pleasure to browse through your own work, across multiple projects or files and across time, as if it's a well-designed website. You must push your work to GitHub to enjoy this.
+
+GitHub **issues** are another powerful feature of the platform. Recall that we are repurposing Git, a tool designed to facilitate software development. The issues for a project are its bug tracker. For projects that are not pure software development, we use this machinery to organize our to do list more generally. The basic unit is an issue and you can interact with them in two ways. First, issues are integrated into the project's web interface on GitHub, with a rich set of options for linking to project files and incremental changes. Second, issues and their associated comment threads appear in your email, just like regular messages (this can, of course, be configured). The result is that all correspondence about a project comes through your normal channels, but is also tracked inside the project itself, with excellent navigability and search capabilities.
+
+Issues can be assigned to specific people and they can be labelled, e.g. "bug", "simulation-study", or "final-exam". Coupled with the ability to cross-link issues and the project files or file changes, you have extraordinary power to document why things have happened in the past and to organize what needs to happen in the future.
+
+Initial Git setup
+-----------------
+
+This is one-time or once-per-computer setup.
+
+-   Register for a free account with GitHub.
+
+-   Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this.
+
+-   Install a local Git client. Optional but highly recommended. A Git client is software that provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as SourceTree or GitKraken. Git is a file-based system, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
+
+-   Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as *pushing* and *pulling*, respectively. This will require authenticating yourself with GitHub from a local shell or Git client. At this point, most people elect to do a bit of extra setup to ensure that they are not repeatedly challenged for their GitHub credentials going forward.
 
 Don't get caught up on these things
 -----------------------------------
@@ -71,19 +88,6 @@ General recommendations for agony reduction:
 -   Establish confidence in the basics (e.g. make a change, commit it, push it) before wading into more advanced usage (e.g. branching).
 -   Commit yourself to Git usage on a project that will provide sustained practice over several months. Usage in a course is great, because it provides a relentless stream of small deadlines.
 -   Realize that no one is giving out Git style points. It's ok to "power-cycle", i.e. re-initialize the Git repository, to get unstuck.
-
-Initial setup
--------------
-
-This is one-time or once-per-computer setup.
-
--   Register for a free account with GitHub.
-
--   Install Git. Depending on your OS, Git might already be installed. But many of us will need to do this.
-
--   Install a local Git client. Optional but highly recommended. A Git client is software that provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as SourceTree or GitKraken. Git is a file-based system, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
-
--   Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as *pushing* and *pulling*, respectively. This will require authenticating yourself with GitHub from a local shell or Git client. At this point, most people elect to do a bit of extra setup to ensure that they are not repeatedly challenged for their GitHub credentials going forward.
 
 Repositories and workflow
 -------------------------
@@ -221,13 +225,6 @@ Special features of GitHub
 
 *at this point, just fodder mined from various locations in Happy Git*
 
-In addition to a well-designed user interface, GitHub offers two especially important features:
-
--   **Issues.** Remember how we're high-jacking software development tools? Well, this is the bug tracker. It's a list of things ... bugs, feature requests, to dos, whatever.
-    -   Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.
-    -   Issues can be assigned to people (e.g., to dos) and tagged ("bug" or "progress-report").
-    -   Issues are tightly integrated with commits and therefore allow you to record *that the changes in this commit solve that problem which was discussed in that issue*.
-    -   As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.
 -   **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to \#14." or "Fixes \#56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
 
 **Be a keener!** If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
