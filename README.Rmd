@@ -1,30 +1,24 @@
 ---
-title: "Git and GitHub for statistical practice and teaching"
+title: "Excuse me, do you have a moment to talk about version control?"
 author: "Jenny Bryan"
 date: "`r format(Sys.Date())`"
 output: github_document
 ---
 
-*Alternative title: Excuse me, do you have a moment to talk about Git and GitHub?*
-
-## Why and who?
+## Why Git?
 
 Why would a practicing statistician use version control, such as Git? And what is the point of hosting your work online, e.g., on GitHub? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
-The target reader is anyone who does statistical research, analysis, or instruction. Those whose work is some combination of these three may find the work style described here especially rewarding.
+Benefits of using hosted version control in your statistical practice:
 
-Benefits of using hosted version control as your *modus operandi*:
+  * Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
+  * The marginal effort required to create a web presence for a project is negligible. It's not a separate, burdensome task you are tempted to neglect.
+  * GitHub makes a fantastic course management system for courses that use R. You and your students can exchange actual working code and explore the associated results.
+  * By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
 
-  * Doing your work becomes tightly integrated with organizing, recording, and disseminating it.
-  * The marginal effort required to create a web presence for a project is negligible.
-  * GitHub makes a fantastic course management system for courses that use R.
-  * By using common mechanics across work modes, you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
-
-This article does not provide step-by-step instructions on how to use Git and GitHub. This format would not be effective, but we do provide links to such resources. Instead, I'll convey what the workflow feels like and what the payoffs are. The goal is to help the Git-curious generate the activation energy needed to get started.
-
-## Git
+## What is Git?
 
 [Git](http://git-scm.com) is a __version control system__. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a __repository__ -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
@@ -32,7 +26,17 @@ Git has been re-purposed by the data science community. In addition to using it 
 
 A lone ranger, working on a single computer, can benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of files, if that's all you're worried about.
 
-In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people, including your future self. And who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread or neglect. Communication and collaboration are the killer apps of version control, which brings me to my next point.
+In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people, including your future self. And who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread and avoid. Communication and collaboration are the killer apps of version control. Git enforces a painfully rigorous model of file management, but it is critical for the distribution of files across different people, computers, and time.
+
+Many people who don't use Git unwittingly re-invent a poor man's version of it. They take an important file and distribute it via email. All parties make changes, decorating the file name with initials, dates, and other descriptors. Before you know it, the original file is the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve.
+
+The Git way is to track the evolution of that file, through a series of commits, each equipped with an explanatory message and a nickname. All collaborators sync regularly to a common version, acknowledging that the difficulty of merging goes up faster than the size of the difference (cite good enough). Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+
+## Who should read this and what to expect
+
+The target reader is anyone who does statistical research, analysis, or instruction. Those whose work is some combination of these three may find the work style described here especially rewarding.
+
+This article does not provide step-by-step instructions on how to use Git and GitHub. This format would not be effective, but we do provide links to such resources. Instead, I'll convey what the workflow feels like and what the payoffs are. The goal is to help the Git-curious generate the activation energy needed to get started.
 
 ## GitHub
 
@@ -111,7 +115,7 @@ Every time you make a commit you must also write a short *commit message*. Ideal
 
 Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a *SHA*, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a checksum hash and is technically a SHA-1). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. You can also designate certain snapshots as special with a *tag*, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., "v1.0.3". For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators.
 
-Many people who don't use Git are unwittingly creating a poor man's version of it. They create long chains of copies of an important file, decorating the name with initials, dates and other descriptors. The Git way is to track the evolution of that file, through a series of commits, each equipped with an explanatory message and a nickname. Especially important versions are given a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+
 
 ## Markdown is special
 
@@ -238,6 +242,8 @@ If you want a more proper website, GitHub, rmarkdown, and, especially, the combi
 
 ## Random things lying around
 
+Does creation and presence in GitHub repo make the project more readable and navigable? If so DO IT.
+
 need to add a ton of links, citations
 
 make some bespoke examples or diagrams?
@@ -259,3 +265,14 @@ A public repository is readable by the world. The owner can grant higher levels 
 A private repository is invisible to the world. The owner can grant read, write (push), or admin access to others.
 
 There is also a formal notion of an organization, which can be useful for managing repository permissions for entire teams of people.
+
+why sharing intermediate md is better than html (not readable) or pdf (merge conflicts). markdown is the magical intersection of git-friendly (plain text) and human-friendly (becasue GitHub renders it nicely)
+
+possible github explainer
+https://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/
+
+http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst
+
+my tips around md are the large concept of "make things navigable/readable" of GitHub, particularized to R code
+
+https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem
