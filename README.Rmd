@@ -14,6 +14,7 @@ output:
     toc: yes
 keywords: version control
 abstract: Abstract abstract abstract.
+bibliography: git-github-for-stats.bib
 ---
 
 ```{r include = FALSE}
@@ -323,7 +324,7 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 
 *NEEDS ONE ... BUT SHORT ... SOME FODDER*
 
-Transparency about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
+Transparency \cite{greenwade93} about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
 
 ## Random things lying around
 
