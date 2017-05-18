@@ -13,9 +13,10 @@ Why would a practicing statistician use version control, such as Git? And what i
 
 I say yes, with the zeal of the converted.
 
-Benefits of using hosted version control in your statistical practice:
+There many benefits of using hosted version control in your statistical practice:
 
   * Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
+  * Collaboration becomes much more structured, with powerful tools for asynchronous work and managing versions.
   * The marginal effort required to create a web presence for a project is negligible.
   * GitHub makes a fantastic course management system for courses that use R. You and your students can exchange actual working code and explore the associated results.
   * By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
@@ -23,7 +24,7 @@ Benefits of using hosted version control in your statistical practice:
 
 ## What is Git?
 
-[Git](http://git-scm.com) is a __version control system__. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a __repository__ -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
+[Git](http://git-scm.com) is a __version control system__. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a __repository__ or __repo__ -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
