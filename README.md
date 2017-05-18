@@ -1,7 +1,5 @@
 Excuse me, do you have a moment to talk about version control?
 ================
-Jenny Bryan
-2017-05-16
 
 -   [Why Git?](#why-git)
 -   [What is Git?](#what-is-git)
@@ -24,6 +22,11 @@ Jenny Bryan
 -   [Conclusion](#conclusion)
 -   [Random things lying around](#random-things-lying-around)
 
+``` r
+is_github_document <-
+  knitr::opts_knit$get("rmarkdown.pandoc.to") == "markdown_github"
+```
+
 Why Git?
 --------
 
@@ -31,9 +34,10 @@ Why would a practicing statistician use version control, such as Git? And what i
 
 I say yes, with the zeal of the converted.
 
-Benefits of using hosted version control in your statistical practice:
+There are many benefits of using hosted version control in your statistical practice:
 
 -   Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
+-   Collaboration becomes much more structured, with powerful tools for asynchronous work and managing versions.
 -   The marginal effort required to create a web presence for a project is negligible.
 -   GitHub makes a fantastic course management system for courses that use R. You and your students can exchange actual working code and explore the associated results.
 -   By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
@@ -41,7 +45,7 @@ Benefits of using hosted version control in your statistical practice:
 What is Git?
 ------------
 
-[Git](http://git-scm.com) is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
+[Git](http://git-scm.com) is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** or **repo** -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
@@ -53,11 +57,9 @@ This has an implication for selecting your first Git projects: in order to see s
 
 Many people who don't use Git unwittingly re-invent a poor man's version of it. They take an important file and distribute it via email. Various parties make changes, decorating the file name with initials, dates, and other descriptors. Before you know it, the original file is the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve.
 
-*here's one way I see phylogeny in my mind* ![](https://upload.wikimedia.org/wikipedia/commons/2/2b/Phylogeny_of_Retroviruses.jpg)
+*If you're looking at the PDF draft, you're missing out on some figures around here in the GitHub Markdown version that hint at the figure I plan to embed.*
 
-*make such a phylogeny with a set of crazy filenames like this* ![](https://www.onshape.com/hs-fs/hub/379003/file-2533844795-jpg/Blog_Assets/Version_Control_Graphic-2.jpg?t=1494963046029)
-
-*or riff on the famous PhD Comic* ![](http://phdcomics.com/comics/archive/phd101212s.gif)
+*here's one way I see phylogeny in my mind* ![](https://upload.wikimedia.org/wikipedia/commons/2/2b/Phylogeny_of_Retroviruses.jpg)*make such a phylogeny with a set of crazy filenames like this* ![](https://www.onshape.com/hs-fs/hub/379003/file-2533844795-jpg/Blog_Assets/Version_Control_Graphic-2.jpg?t=1494963046029)*or riff on the famous PhD Comic*![](http://phdcomics.com/comics/archive/phd101212s.gif)
 
 The Git way is to track the evolution of that file, through a series of commits, each equipped with an explanatory message and a nickname. All collaborators sync regularly to a common version, acknowledging that the difficulty of merging goes up faster than the size of the difference (cite good enough). Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
