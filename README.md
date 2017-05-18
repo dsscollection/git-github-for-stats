@@ -22,11 +22,6 @@ Excuse me, do you have a moment to talk about version control?
 -   [Conclusion](#conclusion)
 -   [Random things lying around](#random-things-lying-around)
 
-``` r
-is_github_document <-
-  knitr::opts_knit$get("rmarkdown.pandoc.to") == "markdown_github"
-```
-
 Why Git?
 --------
 
