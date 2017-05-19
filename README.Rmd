@@ -324,7 +324,7 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 
 *NEEDS ONE ... BUT SHORT ... SOME FODDER*
 
-Transparency \cite{greenwade93} about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
+Transparency about [@greenwade93] process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
 
 ## Random things lying around
 
@@ -354,3 +354,8 @@ The active R package development community on GitHub.
 The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
 
 [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/).
+
+```{r eval = is_github_document, echo = FALSE, results = 'asis'}
+## surely there is a better way?
+cat("## References\n")
+```

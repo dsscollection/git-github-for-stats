@@ -21,18 +21,19 @@ Excuse me, do you have a moment to talk about version control?
 -   [More resources](#more-resources)
 -   [Conclusion](#conclusion)
 -   [Random things lying around](#random-things-lying-around)
+-   [References](#references)
 
 Why Git?
 --------
 
-Why would a practicing statistician use version control, such as Git? And what is the point of hosting your work online, e.g., on GitHub? Could the gains possibly justify the inevitable pain?
+Why would a statistician use version control, such as Git? And what is the point of hosting your work online, e.g., on GitHub? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
 There are many benefits of using hosted version control in your statistical practice:
 
 -   Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
--   Collaboration becomes much more structured, with powerful tools for asynchronous work and managing versions.
+-   Collaboration is much more structured, with powerful tools for asynchronous work and managing versions.
 -   The marginal effort required to create a web presence for a project is negligible.
 -   GitHub makes a fantastic course management system for courses that use R. You and your students can exchange actual working code and explore the associated results.
 -   By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
@@ -326,7 +327,7 @@ Conclusion
 
 *NEEDS ONE ... BUT SHORT ... SOME FODDER*
 
-Transparency about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
+Transparency about (Greenwade 1993) process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
 
 Random things lying around
 --------------------------
@@ -356,3 +357,8 @@ The active R package development community on GitHub.
 The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
 
 [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/).
+
+References
+----------
+
+Greenwade, George D. 1993. “The Comprehensive Tex Archive Network (CTAN).” *TUGBoat* 14 (3): 342–51.
