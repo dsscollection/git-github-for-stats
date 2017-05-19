@@ -1,7 +1,41 @@
 \begin{thebibliography}{xx}
 
-\harvarditem{Greenwade}{1993}{greenwade93}
-Greenwade, G.~D.  \harvardyearleft 1993\harvardyearright , `The {C}omprehensive
-  {T}ex {A}rchive {N}etwork ({CTAN})', {\em TUGBoat} {\bf 14}(3),~342--351.
+\harvarditem[Allaire et~al.]{Allaire, Cheng, Xie, McPherson, Chang, Allen,
+  Wickham, Atkins, Hyndman \harvardand\ Arslan}{2017}{rmd-pkg}
+Allaire, J., Cheng, J., Xie, Y., McPherson, J., Chang, W., Allen, J., Wickham,
+  H., Atkins, A., Hyndman, R. \harvardand\ Arslan, R.  \harvardyearleft
+  2017\harvardyearright , {\em rmarkdown: Dynamic Documents for R}.
+\newblock R package version 1.5.9000.
+\newline\harvardurl{http://rmarkdown.rstudio.com}
+
+\harvarditem{Bartlett}{2016}{git-for-humans}
+Bartlett, A.  \harvardyearleft 2016\harvardyearright , `Git for humans', Talk
+  at UX Brighton.
+\newline\harvardurl{https://speakerdeck.com/alicebartlett/git-for-humans}
+
+\harvarditem{Ram}{2013}{Ram2013}
+Ram, K.  \harvardyearleft 2013\harvardyearright , `Git can facilitate greater
+  reproducibility and increased transparency in science', {\em Source Code for
+  Biology and Medicine} {\bf 8}(1),~7.
+\newline\harvardurl{http://dx.doi.org/10.1186/1751-0473-8-7}
+
+\harvarditem[Wilson et~al.]{Wilson, Bryan, Cranston, Kitzes, Nederbragt
+  \harvardand\ Teal}{2016}{good-enough}
+Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L. \harvardand\
+  Teal, T.~K.  \harvardyearleft 2016\harvardyearright , `Good enough practices
+  in scientific computing', {\em CoRR} {\bf abs/1609.00037}.
+\newline\harvardurl{http://arxiv.org/abs/1609.00037}
+
+\harvarditem{Xie}{2015}{knitr-book}
+Xie, Y.  \harvardyearleft 2015\harvardyearright , {\em Dynamic Documents with
+  {R} and knitr}, 2nd edn, Chapman and Hall/CRC, Boca Raton, Florida.
+\newblock ISBN 978-1498716963.
+\newline\harvardurl{http://yihui.name/knitr/}
+
+\harvarditem{Xie}{2017}{knitr-pkg}
+Xie, Y.  \harvardyearleft 2017\harvardyearright , {\em knitr: A General-Purpose
+  Package for Dynamic Report Generation in R}.
+\newblock R package version 1.16.
+\newline\harvardurl{http://yihui.name/knitr/}
 
 \end{thebibliography}

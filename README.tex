@@ -109,12 +109,13 @@ structured way. It is a bit like the ``Track Changes'' feature from
 Microsoft Word, but more rigorous, powerful, and scaled up to multiple
 files.
 
-Git has been re-purposed by the data science community. In addition to
-using it for source code, we use it to manage the motley collection of
-files that make up typical data analytical projects, which often consist
-of data, figures, reports, and, yes, source code. Even those who
-identify more as statistician than data scientist generally have a
-similar mix of files that are the artifacts of a project.
+Git has been re-purposed by the data science community
+\citep{Ram2013, git-for-humans}. In addition to using it for source
+code, we use it to manage the motley collection of files that make up
+typical data analytical projects, which often consist of data, figures,
+reports, and, yes, source code. Even those who identify more as
+statistician than data scientist generally have a similar mix of files
+that are the artifacts of a project.
 
 A lone ranger, working on a single computer, can benefit from adopting
 version control. But not nearly enough to justify the pain of
@@ -152,12 +153,15 @@ The Git way is to track the evolution of that file, through a series of
 commits, each equipped with an explanatory message and a nickname. All
 collaborators sync regularly to a common version, acknowledging that the
 difficulty of merging goes up faster than the size of the difference
-(cite good enough). Especially important versions get a human-readable
+\citep{good-enough}. Especially important versions get a human-readable
 tag, to signal a meaningful milestone. Yes, there is some pain in
 adopting the formalism of Git, but it is worth it.
 
-\emph{another good image to emulate, from the Bartlett Git for Designers
-talk} \includegraphics{bartlett-copies-vs-commits.png}
+\emph{make a figure related to the above (reference those file names?)
+but juxtaposing different workflows, inspiration from the Bartlett Git
+for Designers talk}
+
+\includegraphics[width=1\linewidth]{bartlett-copies-vs-commits}
 
 \subsection{Who should read this and what to
 expect}\label{who-should-read-this-and-what-to-expect}
@@ -192,21 +196,26 @@ of a file, commenting on a recent change, and editing or adding files.
 These hosts also offer granular control over who can see, edit, and
 administer a project.
 
+\emph{possible images include a modified version of this atlassian image
+(no arrows between people, yes arrow from people to github), somehow
+connected to a screenshot of a GitHub repo}
+
+\includegraphics[width=1\linewidth]{atlassian-git-tutorials-syncing}
+
 Even for private solo projects, there are two advantages to keeping a
 synced copy on GitHub:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   When you are new with Git (or, frankly, even when you're not), it's
   common to goof up the Git infrastructure for a project. Note that your
-  files can absolutely be intact and safe, even while the Git tracking
-  is a bit confused. Of course there are official Git remedies, but
-  sometimes the easiest fix is to clone a fresh copy from GitHub, patch
-  things up with the changes that only exist locally, and move on with
-  your life. This workaround obviously requires the existence of a
-  recent copy on GitHub.
+  files can be intact and safe, even while the Git tracking is a bit
+  confused. Of course there are official Git remedies, but sometimes the
+  easiest fix is to clone a fresh copy from GitHub, patch things up with
+  the changes that only exist locally, and move on with your life. This
+  workaround obviously requires the existence of a recent copy on
+  GitHub.
 \item
   The highly functional web interfaces mentioned above are often the
   most pleasant and natural way to navigate and search your files, even
@@ -216,12 +225,12 @@ synced copy on GitHub:
   work to GitHub to enjoy this.
 \end{enumerate}
 
-GitHub \textbf{issues} are another powerful feature of the platform.
+\textbf{GitHub issues} are another powerful feature of the platform.
 Recall that we are repurposing Git, a tool designed to facilitate
 software development. The issues for a project are its bug tracker. For
 projects that are not pure software development, we co-opt this
 machinery to organize our to do list more generally. The basic unit is
-an issue and you can interact with them in two ways.
+an issue and you can interact with one in two ways.
 
 First, issues are integrated into the project's web interface on GitHub,
 with a rich set of options for linking to project files and incremental
@@ -243,29 +252,34 @@ past and to organize what needs to happen in the future.
 
 \subsection{Initial system setup}\label{initial-system-setup}
 
-This is one-time or once-per-computer setup.
+Here is the initial setup process, which you do once or, for some steps,
+once per computer.
 
 \begin{itemize}
 \item
   Register for a free account with GitHub.
 \item
   Install Git. Depending on your OS, Git might already be installed. But
-  many of us will need to install it or might choose to update to the
-  most recent version. Some basic configuration is critical, such as
-  setting your username and email.
+  many of us may need to install it or will choose to update to a more
+  recent version. Some basic configuration is critical, such as setting
+  your username and email.
 \item
-  Install a local Git client. Optional but highly recommended. A Git
-  client is software that provides a graphical user interface for Git,
-  which is otherwise command-line only. If you are an R user, you will
-  find that RStudio provides a great deal of this functionality. There
-  are some notable gaps, however, so you might still choose to install a
-  dedicated and comprehensive Git client such as SourceTree or
-  GitKraken. Git is a file-based system, so you can do some operations
-  from RStudio, others from SourceTree, and others from the shell.
+  Install a local Git client \emph{(optional but highly recommended}). A
+  Git client is software that provides a graphical user interface for
+  Git, which is otherwise command-line only. If you are an R user, you
+  will find that
+  \href{https://www.rstudio.com/products/rstudio-desktop/}{RStudio}
+  provides a great deal of this functionality. There are some notable
+  gaps, however, so you might still choose to install a dedicated and
+  comprehensive Git client such as
+  \href{https://www.sourcetreeapp.com}{SourceTree} or
+  \href{https://www.gitkraken.com}{GitKraken}. Git is a file-based
+  system, so you can do some operations from RStudio, others from
+  SourceTree, and others from the shell.
 \item
   Confirm, with a practice repository, that local Git can send and
   receive the current version of the repository on GitHub, known as
-  \emph{pushing} and \emph{pulling}, respectively. This will require
+  \textbf{pushing} and \textbf{pulling}, respectively. This will require
   authenticating yourself with GitHub from a local shell or Git client.
   At this point, most people elect to do a bit of extra setup to ensure
   that they are not repeatedly challenged for their GitHub credentials
@@ -282,17 +296,18 @@ Yes.
 Git was built neither for the exact usage described here, nor for broad
 usability. You will undoubtedly notice this, so it can be helpful to
 know this in advance. Happily there are many helpful tools that mediate
-your interactions with Git. GitHub itself is a fine example. In addition
-to pointing out tools that soften Git's sharpest edges, I recommend
-specific habits and attitudes that reduce frustration.
+your interactions with Git. GitHub itself is a fine example, as is
+RStudio. In addition to pointing out tools that soften Git's sharpest
+edges, I recommend specific habits and attitudes that reduce
+frustration.
 
 General recommendations for agony reduction:
 
 \begin{itemize}
 \tightlist
 \item
-  I repeat: consider using a graphical front-end for Git, a.k.a. a ``Git
-  client'', versus restricting yourself to the command line interface.
+  I repeat: consider using a graphical front-end for Git, a.k.a. a Git
+  client, versus restricting yourself to the command line interface.
 \item
   Establish confidence in the basics (e.g.~make a change, commit it,
   push it) before wading into more advanced usage (e.g.~branching).
@@ -313,42 +328,42 @@ For new or existing projects, you will:
 \begin{itemize}
 \tightlist
 \item
-  Dedicate a local directory (a.k.a ``folder'') to it.
+  Dedicate a local directory or folder to it.
 \item
-  Make it an RStudio Project. Optional but recommended; obviously only
-  applies to projects involving R and users of RStudio.
+  Make it an RStudio Project. \emph{Optional but recommended; obviously
+  only applies to projects involving R and users of RStudio.}
 \item
   Make it a Git repository.
 \end{itemize}
 
-This is once-per-project setup and can happen at project inception or at
-any later point. Chances are your project already lives in a dedicated
-directory. Making this directory an RStudio Project and Git repository
-boils down to allowing those applications to leave notes for themselves
-in hidden files or directories. The project is still a regular directory
-on your computer, that you can locate, name, move, and generally
-interact with as you wish. You don't have to handle it with special
-gloves!
+This setup happens once per project and can happen at project inception
+or at any later point. Chances are your project already lives in a
+dedicated directory. Making this directory an RStudio Project and Git
+repository boils down to allowing those applications to leave notes for
+themselves in hidden files or directories. The project is still a
+regular directory on your computer, that you can locate, name, move, and
+generally interact with as you wish. You don't have to handle it with
+special gloves!
 
 Here is the daily workflow:
 
 \begin{itemize}
 \tightlist
 \item
-  Go about your usual business, e.g.~writing R scripts or authoring
-  reports in LaTeX or R Markdown. But instead of only \emph{saving}
-  individual files, periodically you make a \textbf{commit}, which takes
-  a snapshot of all the files in the entire project.
+  Go about your usual business, writing R scripts or authoring reports
+  in LaTeX or R Markdown. But instead of only \emph{saving} individual
+  files, periodically you make a \textbf{commit}, which takes a snapshot
+  of all the files in the entire project.
 
   \begin{itemize}
   \tightlist
   \item
-    Have you ever versioned a file
+    If you have ever versioned a file
     \href{http://www.phdcomics.com/comics/archive.php?comicid=1531}{by
-    adding your initials or the date}? That is effectively a
-    \textbf{commit}, albeit only for a single file: it is a version that
-    is significant to you and that you might want to inspect or revert
-    to later.
+    adding your initials or the date}, you have effectively made a
+    commit, albeit only for a single file. It is a version that is
+    significant to you and that you might want to inspect or revert to
+    later.
   \end{itemize}
 \item
   Push commits to GitHub periodically.
@@ -367,12 +382,9 @@ This is a moderate change to your normal, daily workflow. It feels weird
 at first, but quickly becomes second nature. In
 \href{http://stat545.com}{STAT 545} students are required to submit all
 coursework via GitHub, starting in week one. Most have never seen Git
-before and do not identify as ``programmers''. It is a major topic in
-class and office hours for the first two weeks. Then we practically
-never discuss it again.
-
-\emph{I am not saying anything about pulling and collaboration here,
-which seems a bit extreme, even if I can't say much}
+before and do not identify as programmers. It is a major topic in class
+and office hours for the first two weeks. Then we practically never
+discuss it again.
 
 \subsection{Commits, diffs, and tags}\label{commits-diffs-and-tags}
 
@@ -389,22 +401,18 @@ data science workflow:
   diff
 \end{itemize}
 
-Recall that a repository -- or ``repo'' -- is just a directory of files
-that Git is going to manage holistically. A commit functions like a
-snapshot of all the files in the repo, at a specific moment. Under the
-hood, that is not exactly how Git implements things. Mental models don't
-have to be accurate in order to be useful, but in this case there's some
-value in aligning the two.
+Recall that a repository or repo is just a directory of files that Git
+will manage holistically. A commit functions like a snapshot of all the
+files in the repo, at a specific moment. Under the hood, that is not
+exactly how Git implements things. Mental models don't have to be
+accurate in order to be useful, but in this case there's some value in
+aligning the two.
 
 \emph{this is really crying out for an example and/or diagrams,
 something that shows commits unfolding and let's you illustrate a diff,
 sort of like this from the barlett talk}
 
-\begin{figure}
-\centering
-\includegraphics{bartlett-commit-history.png}
-\caption{}
-\end{figure}
+\includegraphics[width=1\linewidth]{bartlett-commit-history}
 
 Consider version A of a file and a modified version, version B. Assume
 that version A was part of a Git commit and version B was part of the
@@ -426,22 +434,22 @@ Git's operations less baffling.
 So, by looking at diffs, it's easy to see how two snapshots differ, but
 what about the why?
 
-Every time you make a commit you must also write a short \emph{commit
-message}. Ideally, this conveys the \emph{motivation} for the change.
-Remember, the diff will show the content. When you revisit a project
-after a break or need to digest recent changes made by a colleague,
-looking at the \emph{history}, by reading commit messages and skimming
-through diffs, is an extremely efficient way to get up to speed.
+Every time you make a commit you must also write a short \textbf{commit
+message}. Ideally, this conveys the motivation for the change. Remember,
+the diff will show the content. When you revisit a project after a break
+or need to digest recent changes made by a colleague, looking at the
+\textbf{history}, by reading commit messages and skimming through diffs,
+is an extremely efficient way to get up to speed.
 
 Every commit needs some sort of nickname, so you can identify it. Git
-does this automatically, assigning each commit what is called a
-\emph{SHA}, a seemingly random string of 40 letters and numbers (it is
-not, in fact, random but is a SHA-1 checksum hash of the commit). Though
-you will be exposed to these, you don't have to handle them directly
-very often and, when you do, usually the first 7 characters suffice. You
-can also designate certain snapshots as special with a \emph{tag}, which
-is a name of your choosing. In a software project, it is typical to tag
-a release with its version, e.g., ``v1.0.3''. For a manuscript or
+does this automatically, assigning each commit what is called a SHA, a
+seemingly random string of 40 letters and numbers (it is not, in fact,
+random but is a SHA-1 checksum hash of the commit). Though you will be
+exposed to these, you don't have to handle them directly very often and,
+when you do, usually the first 7 characters suffice. You can also
+designate certain snapshots as special with a \textbf{tag}, which is a
+name of your choosing. In a software project, it is typical to tag a
+release with its version, e.g., ``v1.0.3''. For a manuscript or
 analytical project, you might tag the version submitted to a journal or
 transmitted to external collaborators.
 
@@ -449,15 +457,18 @@ transmitted to external collaborators.
 GitHub}\label{markdown-is-special-on-github}
 
 This may seem unrelated to Git, GitHub, and R, but we need to talk about
-Markdown. Markdown is a markup language, like HTML and LaTeX, but
-designed to be as lightweight as possible. The goal is still to separate
-form and content, but also to prioritize human-readability, even at the
-cost of fancy features. Markdown is in wide use on sites like Wikipedia,
-WordPress, StackOverflow, and, yes, GitHub. These sites use Markdown
-because it allows a diverse population of site users to author
-decent-looking web content, with hyperlinks and some formatting. Do not
-build this up into some heroic, LaTeX-level learning task, for it is
-not. If you can write an email, you can write Markdown.
+\href{https://daringfireball.net/projects/markdown/syntax}{Markdown}.
+Markdown is a markup language, like HTML and LaTeX, but designed to be
+as lightweight as possible. The goal is still to separate form and
+content, but also to prioritize human-readability, even at the cost of
+fancy features. Markdown is in wide use on sites like
+\href{https://en.support.wordpress.com/markdown/}{WordPress},
+\href{https://stackoverflow.com/editing-help}{StackOverflow}, and, yes,
+\href{https://help.github.com/categories/writing-on-github/}{GitHub}.
+These sites use Markdown because it allows a diverse population of site
+users to author decent-looking web content, with hyperlinks and some
+formatting. Do not build this up into some heroic, LaTeX-level learning
+task, for it is not. If you can write an email, you can write Markdown.
 
 Any file written in Markdown is rendered in an HTML-like way on GitHub.
 In particular, formatting and links ``just work''. This is the last
@@ -473,15 +484,19 @@ in the browser. It is very common for a repo to have a top-level
 \subsection{Markdown is special for R
 users}\label{markdown-is-special-for-r-users}
 
-Markdown is extra special for R users because of R Markdown, which is
-just Markdown that includes chunks of R code. Again, do not regard R
-Markdown as something you must clear your schedule to learn. If you can
-write email and a bit of R code, you can write R Markdown. The rmarkdown
-package converts R Markdown (\texttt{.Rmd} files) to Markdown
+Markdown is extra special for R users because of
+\href{http://rmarkdown.rstudio.com}{R Markdown}, which is just Markdown
+that includes chunks of R code. Again, do not regard R Markdown as
+something you must clear your schedule to learn. If you can write email
+and a bit of R code, you can write R Markdown. The
+\href{https://CRAN.R-project.org/package=rmarkdown}{rmarkdown package}
+\citep{rmd-pkg} converts R Markdown (\texttt{.Rmd} files) to Markdown
 (\texttt{.md} files), running the code and inserting the results,
 including figures, into the document. This is powered by another
-package, knitr, under the hood. This process is made especially easy in
-RStudio, but is by no means limited to users of that application.
+package, \href{https://CRAN.R-project.org/package=knitr}{knitr}
+\citep{knitr-pkg, knitr-book}, under the hood. This process is made
+especially easy in RStudio, but is by no means limited to users of that
+application.
 
 \emph{this too is crying out for a visual Rmd -\textgreater{} md
 -\textgreater{} rendered thing looking good}
@@ -501,12 +516,13 @@ can simultaneously be the code-heavy back end of a project and an
 outward-facing front end.
 
 You do not, in fact, even need to work in R Markdown to exploit this. It
-works with plain R scripts as well. You can use exactly the same
-machinery to prepare a rendered version of an R script, i.e.~to go from
-\texttt{.R} to \texttt{.md}. Again, RStudio makes this especially easy,
-but this is not limited to RStudio. Once the Markdown file is pushed to
-GitHub, it is as if the reader has run your code or is able to look over
-your shoulder at your R session. This provides an lightweight system for
+\href{http://rmarkdown.rstudio.com/articles_report_from_r_script.html}{works
+with plain R scripts} as well. You can use exactly the same machinery to
+prepare a rendered version of an R script, i.e.~to go from \texttt{.R}
+to \texttt{.md}. Again, RStudio makes this especially easy, but this is
+not limited to RStudio. Once the Markdown file is pushed to GitHub, it
+is as if the reader has run your code or is able to look over your
+shoulder at your R session. This provides an lightweight system for
 exposing work-in-progress to collaborators, without slowing down to
 create separate reports. Comment lines that begin with
 \texttt{\#\textquotesingle{}} are elevated to top-level prose, providing
@@ -525,11 +541,12 @@ package more generally. I want to point out that R Markdown can be
 rendered to many more formats than Markdown! I have emphasized the
 production of Markdown here because it is extremely useful in
 GitHub-hosted projects and that seems to be underappreciated. But the
-rmarkdown package can convert \texttt{.Rmd} to a wide array of output
-formats, including HTML, PDF, and Word (\texttt{.docx}). The Markdown
-must be created regardless. Sometimes it is all you need, such as on
-GitHub. In other contexts, it is just a necessary intermediate and may
-even be discarded.
+rmarkdown package can convert \texttt{.Rmd} to a wide array of
+\href{http://rmarkdown.rstudio.com/lesson-9.html}{output formats},
+including HTML, PDF, and Word (\texttt{.docx}). The Markdown must be
+created regardless. Sometimes it is all you need, such as on GitHub. In
+other contexts, it is just a necessary intermediate and may even be
+discarded.
 
 \subsection{Which files to commit}\label{which-files-to-commit}
 
@@ -547,19 +564,19 @@ Let's have a few examples in mind for this discussion:
   R script \texttt{.R} --\textgreater{} results as \texttt{.csv} or
   \texttt{.rds} and figures \texttt{.png}
 \item
-  LaTeX \texttt{.tex} --\textgreater{} WHAT GOES HERE NOW?
-  --\textgreater{} \texttt{.pdf}
+  LaTeX \texttt{.tex} --\textgreater{} \texttt{.aux}, \texttt{.bbl},
+  etc. --\textgreater{} \texttt{.pdf}
 \end{itemize}
 
 The files at the far left are clearly source files. In the case of an R
 script, this is literally true, but it's morally true for R markdown and
-LaTeX files too. These are files that you directly create and edit ``by
-hand''.
+LaTeX files too. These are files that you directly create and edit by
+hand.
 
 The files at the far right are clearly derived and are often described
-as ``targets''. These files are programmatically generated from source
-files (and possibly other inputs). These files are the product and they
-have external value, often for communicating ideas and results.
+as \textbf{targets}. These files are programmatically generated from
+source files (and possibly other inputs). These files are the product
+and they have external value, often for communicating ideas and results.
 
 The files in the middle are intermediates. Like targets, they are
 programmatically generated, but, unlike targets, no one necessarily
@@ -575,7 +592,7 @@ types of files, such as autosaves created by your editor. This reduces
 clutter in your project: Git will not pester you to commit changes to
 these files and they will not appear in the associated GitHub
 repository. A file that Git does not ignore is said to be
-\emph{tracked}.
+\textbf{tracked}.
 
 The only point on which there is consensus is that source files should
 absolutely be tracked. The best treatment of intermediates and targets
@@ -588,6 +605,9 @@ everything at first.
 
 What are the main considerations when deciding whether to track a
 derived file or file type?
+
+\emph{I suspect this is a good place to be less wordy? I am so
+frustrated with people doing stupid things here, though!}
 
 \emph{Is it immediately useful to someone?} If so, that is a reason to
 track it and push it to GitHub. There is a taboo against committing
@@ -634,10 +654,13 @@ results and student-facing webpages this way. When you re-run an
 analysis with updated input data or after updating R packages, the diffs
 presented by Git help you quickly pinpoint the downstream consequences.
 
-\emph{Will it make collaboration harder?} \emph{talk about the scenario
-Nick brought up re: binary files like PDF being a common source of merge
-conflict
-\url{https://github.com/dsscollection/git-github-for-stats/issues/6}}
+\emph{Will it make collaboration harder?} Prose to be written: Talk
+about the scenario Nick brought up re: binary files like PDF being a
+common source of merge conflict
+\url{https://github.com/dsscollection/git-github-for-stats/issues/6}. I
+have a solution! Stop using PDF as your default output format! Make
+Markdown the output format during development. Your Git/GitHub problems
+just went away. You're welcome.
 
 In summary, I recommend you default to including a file in your Git
 repository, unless there's a specific reason not to. But good reasons
@@ -646,8 +669,8 @@ absolutely do exist.
 \subsection{Collaboration}\label{collaboration}
 
 Collaboration is probably the most compelling reason to manage a project
-with Git and GitHub. I have a broad definition of collaboration here,
-that includes hands-on participation by multiple people as well as an
+with Git and GitHub. I have a broad definition of collaboration. It
+includes hands-on participation by multiple people as well as an
 asymmetric model, in which some people are active makers and others only
 read or review.
 
@@ -678,9 +701,9 @@ Managing a project via Git/GitHub is much more like the Google Doc
 scenario, but also offers some of the attractive features of ``edit,
 save, attach''. With Git/GitHub, collaborators can work offline and
 there can be independent lines of development. The real power comes from
-regular and structured reconciliation of all the files in the project
-via Git/GitHub. It is definitely more complicated than collaborating on
-a Google Doc, but also more powerful.
+regular and structured reconciliation of all versions of all the files
+in the project via Git/GitHub. It is definitely more complicated than
+collaborating on a Google Doc, but also more powerful.
 
 How does collaboration work?
 
@@ -746,7 +769,7 @@ GitHub.
 
 The best way to deal with merge conflicts is to avoid them altogether.
 This is another reason for all parties to commit, pull, and push often.
-Small changes, being integrated frequently, in non-binary files, are the
+Small changes, integrated frequently, in non-binary files, are the
 easiest for Git to automatically merge for you. The difficulty of
 merging (by Git or by you) is proportional to the evolutionary distance
 between two lines of work. The presence of frequently-changing binary
@@ -766,17 +789,9 @@ from forks}
 \emph{inspiration for possible figures on collaboration/merging and the
 role of a remote, from the barlett talk}
 
-\begin{figure}
-\centering
-\includegraphics{bartlett-merge-commit.png}
-\caption{}
-\end{figure}
+\includegraphics[width=1\linewidth]{bartlett-merge-commit}
 
-\begin{figure}
-\centering
-\includegraphics{bartlett-pull.png}
-\caption{}
-\end{figure}
+\includegraphics[width=1\linewidth]{bartlett-pull}
 
 \subsection{GitHub as course management
 system}\label{github-as-course-management-system}
@@ -997,25 +1012,19 @@ source software projects on GitHub, including many popular R packages
 
 \emph{NEEDS ONE \ldots{} BUT SHORT \ldots{} SOME FODDER}
 
-Transparency about \citep{greenwade93} process and product is
-increasingly important in science. The SOMETHING for reproducibility is
-well accepted. A more underappreciated benefit is democratization of our
-field, as this affords a much broader audience a clear view of how
-scientists and programmers work.
+Transparency about process and product is increasingly important in
+science. The SOMETHING for reproducibility is well accepted. A more
+underappreciated benefit is democratization of our field, as this
+affords a much broader audience a clear view of how scientists and
+programmers work.
+
+make statistical thought and implementation available
 
 \subsection{Random things lying
 around}\label{random-things-lying-around}
 
-Does creation and presence in GitHub repo make the project more readable
-and navigable? If so DO IT.
-
-need to add a ton of links, citations
-
-make some bespoke examples or diagrams?
-
-Doing = documenting = sharing
-
-make statistical thought and implementation available
+Consider links to GitHub repos that exemplify certain points and are
+very unlikely to disappear any time soon.n
 
 possible github explainer
 \url{https://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/}
@@ -1040,8 +1049,6 @@ The active R package development community on GitHub.
 
 The read-only mirrors of R source and all of CRAN. Coupled with GitHub
 search features, you can answer alot of your own questions this way.
-
-\href{https://www.rstudio.com/products/rstudio-desktop/}{RStudio IDE}.
 
 \bibliographystyle{agsm}
 \bibliography{git-github-for-stats.bib}
