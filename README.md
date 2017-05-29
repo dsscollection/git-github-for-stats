@@ -198,40 +198,27 @@ Let's zoom back out again and consider R Markdown and the rmarkdown package more
 Which files to commit
 ---------------------
 
-The files in a project play different roles and arise in different ways. Let's have a few examples in mind for this discussion:
+The files in a project arise in different ways and play different roles. A critical issue for workflow happiness is to figure out how you want to handle different file types with respect to Git. You can direct Git to ignore specific files or file types, such as autosaves created by your editor. This reduces noise and clutter: Git will not pester you to commit changes to these files and they will not appear in your GitHub repository. A file that Git does not ignore is said to be **tracked**. How should you think about this?
 
--   R markdown `.Rmd` --&gt; markdown `.md`
--   R markdown `.Rmd` --&gt; markdown `.md` --&gt; `.html` or `.pdf` or `.docx`
--   R script `.R` --&gt; results as `.csv` or `.rds` and figures `.png`
--   LaTeX `.tex` --&gt; `.aux`, `.bbl`, etc. --&gt; `.pdf`
+**Source files:** These files are created and edited by hand, such as R scripts and R Markdown or LaTeX files. This could also include the raw data for an analysis.
 
-The files at the far left are clearly source files. In the case of an R script, this is literally true, but it's morally true for R markdown and LaTeX files too. These are files that you directly create and edit by hand.
+**Configuration files:** These files modify the behavior of a tool, for example `.gitignore` identifies files Git should not track and `some-project.Rproj` records RStudio project settings.
 
-The files at the far right are clearly derived and are often described as **targets**. These files are programmatically generated from source files (and possibly other inputs). These files are the product and they have external value, often for communicating ideas and results.
+**Derived products:** These files are programmatically generated from source files and have external value. By executing `.R` or rendering `.Rmd` files, you obtain artefacts such as intermediate data (e.g., `.csv` or `.rds`), figures (e.g., `.png` or `.pdf`), and reports (e.g., `.md`, `.pdf`, `.docx`, or `.html`).
 
-The files in the middle are intermediates. Like targets, they are programmatically generated, but, unlike targets, no one necessarily cares about them. However, note that intermediate Markdown `.md` is an exception, since it is extremely useful on GitHub -- much more so than `.html`, `.pdf`, or `.docx` -- and is more like an additional target.
+**Intermediates:** These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTex workflows).
 
-A critical issue for workflow happiness is figuring out how to manage the production and storage of source, intermediates, and targets with respect to Git. You can direct Git to ignore specific files or certain types of files, such as autosaves created by your editor. This reduces clutter in your project: Git will not pester you to commit changes to these files and they will not appear in the associated GitHub repository. A file that Git does not ignore is said to be **tracked**.
+There is clear consensus that source files should be tracked. It is also common to track project-specific configuration files and to ignore intermediates. However, reasonable people can disagree about how to handle derived products and whether a specific file is an intermediate or derived product. Therefore, the main takeaway is to pick a policy that works for you and adapt as your needs change. There is no right answer. I would err on the side of committing more rather than less at first. What else should you consider when choosing files to track with Git and share on GitHub?
 
-The only point on which there is consensus is that source files should absolutely be tracked. The best treatment of intermediates and targets with respect to Git is much less clear cut.
+**Is it useful to someone?** If so, track and share! There is a taboo against committing derived products, inherited from Git's software development roots, because their typical product is a platform-specific executable. This rationale, however, does not apply to many data science products. Rendered reports, figures, and cleaned data are often extremely valuable to others. Make them readily available.
 
-Therefore, the main message for intermediates and targets is that you can pick a policy that works for you and adapt as your needs change. There is no right answer. I suggest erring on the side of committing everything at first.
+**Will it play especially well with Git/GitHub?** This boils down to whether Git diffs will be informative and whether GitHub has nice handling for the file type. Small-to-medium plain text files with hard line breaks are a perfect fit, but there are a few more pleasant surprises.
 
-What are the main considerations when deciding whether to track a derived file or file type?
+-   Some derived files are too miserable to read casually, such as `.csv` files of processed results or `.html` derived from `.Rmd`, but are still worth tracking with Git. When you re-run an analysis with updated input data or after updating R packages, *the diffs are often quite modest* and help you pinpoint unexpected changes.
+-   GitHub has excellent [support for a variety of non-code files](https://help.github.com/categories/working-with-non-code-files/), such as CSV and TSV. It also [displays and provides visual diffs](https://help.github.com/articles/rendering-and-diffing-images/) for the most common image formats, which is extremely useful for spotting unexpected changes in figures.
+-   Never, ever forget that Markdown is highly privileged on GitHub and is, therefore, a crucial output format for rendered `.R` and `.Rmd`.
 
-*I suspect this is a good place to be less wordy? I am so frustrated with people doing stupid things here, though!*
-
-*Is it immediately useful to someone?* If so, that is a reason to track it and push it to GitHub. There is a taboo against committing derived products, inherited from Git's software development roots. The reasoning is that compiled programs are platform-specific and, therefore, people are better served by getting current source from Git and compiling themselves. I think data analytic targets, like figures and rendered reports, are very different beasts and it's misguided to reflexively exclude them from version control. They are immediately useful, especially to consumers of a project (versus the makers). To the extent that a GitHub repo is meant for dissemination, there is no reason to burden every consumer with unnecessary friction. Most simply will not bother to clone the repo, install all the necessary dependencies, and remake the products. Make them readily available.
-
-*Is it available elsewhere?* If so, then perhaps you don't need to track it and push it to GitHub. Many people who have a policy of not tracking derived products also have a system that makes these available elsewhere, such as on a separate website. There are ways to automate this via GitHub, but that is beyond the scope of this article and not recommended for your early days with Git and GitHub. Beware those who recommend the exclusion of derived products without offering any practical solution for making them available some other way.
-
-*Is it huge or changing often? Is it a format that is of little use on GitHub?* These are all good reasons to not track a file with Git. They can make your repository bloated and slow down pushes and pulls. If a file is binary, such as a Word document or Excel spreadsheet, Git and Git clients will not be able to provide human-readable diffs. Neither will GitHub be able to directly display this file in the browser. Be aware, however, GitHub-friendliness does not just boil down to "is it plain text?". GitHub has excellent support for non-code files, such as image formats (PNG, JPG, GIF, and SVG) and PDFs. It even provides visual diffs, which are extremely useful for understanding changes in figures. Finally, even though HTML is plain text, it is of little direct use on GitHub, because, unlike Markdown, it is not rendered.
-
-*Will diffs be useful to you?* Some derived files are simply too big or miserable to read casually, such as `.csv` files of processed results or `.html` derived from `.Rmd`. But they may still be worth tracking with Git, because the diffs are often modest and quite interesting. I have caught unexpected changes in analytical results and student-facing webpages this way. When you re-run an analysis with updated input data or after updating R packages, the diffs presented by Git help you quickly pinpoint the downstream consequences.
-
-*Will it make collaboration harder?* Prose to be written: Talk about the scenario Nick brought up re: binary files like PDF being a common source of merge conflict <https://github.com/dsscollection/git-github-for-stats/issues/6>. I have a solution! Stop using PDF as your default output format! Make Markdown the output format during development. Your Git/GitHub problems just went away. You're welcome.
-
-In summary, I recommend you default to including a file in your Git repository, unless there's a specific reason not to. But good reasons absolutely do exist.
+**Will it cause problems with Git/GitHub?** This boils down to whether Git diffs are informative, whether GitHub can render the file usefully, and the file's likely effect on Git operations. A file that is large and changing quite often can make your repository bloated and slow down pushes and pulls. If a file is binary, such as a Word document or Excel spreadsheet, you will not get human-readable diffs, nor can GitHub display it in the browser. Html is not rendered on GitHub, but is, instead, displayed in raw form. Binary files are also a prime source of merge conflicts, because they are beyond the reach of Git's sophisticated automatic merging logic. For many of us, adoption of Git/GitHub should prompt a pivot away from `.docx` and `.pdf` as primary output formats and towards `.md`, at least during periods of rapid development.
 
 Collaboration
 -------------
