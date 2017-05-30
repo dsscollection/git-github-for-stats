@@ -13,6 +13,17 @@ Bartlett, A.  \harvardyearleft 2016\harvardyearright , `Git for humans', Talk
   at UX Brighton.
 \newline\harvardurl{https://speakerdeck.com/alicebartlett/git-for-humans}
 
+\harvarditem[Perez-Riverol et~al.]{Perez-Riverol, Gatto, Wang, Sachsenberg,
+  Uszkoreit, Leprevost, Fufezan, Ternent, Eglen, Katz, Pollard, Konovalov,
+  Flight, Blin \harvardand\ Vizcaíno}{2016}{ten-simple-rules-git}
+Perez-Riverol, Y., Gatto, L., Wang, R., Sachsenberg, T., Uszkoreit, J.,
+  Leprevost, F. d.~V., Fufezan, C., Ternent, T., Eglen, S.~J., Katz, D.~S.,
+  Pollard, T.~J., Konovalov, A., Flight, R.~M., Blin, K. \harvardand\
+  Vizcaíno, J.~A.  \harvardyearleft 2016\harvardyearright , `Ten simple rules
+  for taking advantage of git and github', {\em PLOS Computational Biology}
+  {\bf 12}(7),~1--11.
+\newline\harvardurl{https://doi.org/10.1371/journal.pcbi.1004947}
+
 \harvarditem{Ram}{2013}{Ram2013}
 Ram, K.  \harvardyearleft 2013\harvardyearright , `Git can facilitate greater
   reproducibility and increased transparency in science', {\em Source Code for
@@ -32,9 +43,22 @@ Xie, Y.  \harvardyearleft 2015\harvardyearright , {\em Dynamic Documents with
 \newblock ISBN 978-1498716963.
 \newline\harvardurl{http://yihui.name/knitr/}
 
-\harvarditem{Xie}{2017}{knitr-pkg}
-Xie, Y.  \harvardyearleft 2017\harvardyearright , {\em knitr: A General-Purpose
-  Package for Dynamic Report Generation in R}.
+\harvarditem{Xie}{2016}{bookdown-pkg}
+Xie, Y.  \harvardyearleft 2016\harvardyearright , {\em bookdown: Authoring
+  Books and Technical Documents with R Markdown}.
+\newblock R package version 0.3.
+\newline\harvardurl{https://github.com/rstudio/bookdown}
+
+\harvarditem{Xie}{2017{\em a}}{bookdown-book}
+Xie, Y.  \harvardyearleft 2017{\em a}\harvardyearright , {\em bookdown:
+  Authoring Books and Technical Documents with {R} Markdown}, Chapman and
+  Hall/CRC, Boca Raton, Florida.
+\newblock ISBN 978-1138700109.
+\newline\harvardurl{https://github.com/rstudio/bookdown}
+
+\harvarditem{Xie}{2017{\em b}}{knitr-pkg}
+Xie, Y.  \harvardyearleft 2017{\em b}\harvardyearright , {\em knitr: A
+  General-Purpose Package for Dynamic Report Generation in R}.
 \newblock R package version 1.16.
 \newline\harvardurl{http://yihui.name/knitr/}
 

@@ -39,7 +39,7 @@ What is Git?
 
 [Git](http://git-scm.com) is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** or **repo** -- in a sane, highly structured way. It is a bit like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
-Git has been re-purposed by the data science community (Ram 2013; Bartlett 2016). In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
+Git has been re-purposed by the data science community (Ram 2013; Bartlett 2016; Perez-Riverol 2016). We use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
 A lone ranger, working on a single computer, can benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of files, if that's all you're worried about.
 
@@ -177,7 +177,7 @@ Any file written in Markdown is rendered in an HTML-like way on GitHub. In parti
 Markdown is special for R users
 -------------------------------
 
-Markdown is extra special for R users because of [R Markdown](http://rmarkdown.rstudio.com), which is just Markdown that includes chunks of R code. Again, do not regard R Markdown as something you must clear your schedule to learn. If you can write email and a bit of R code, you can write R Markdown. The [rmarkdown package](https://CRAN.R-project.org/package=rmarkdown) (Allaire et al. 2017) converts R Markdown (`.Rmd` files) to Markdown (`.md` files), running the code and inserting the results, including figures, into the document. This is powered by another package, [knitr](https://CRAN.R-project.org/package=knitr) (Xie 2017; Xie 2015), under the hood. This process is made especially easy in RStudio, but is by no means limited to users of that application.
+Markdown is extra special for R users because of [R Markdown](http://rmarkdown.rstudio.com), which is just Markdown that includes chunks of R code. Again, do not regard R Markdown as something you must clear your schedule to learn. If you can write email and a bit of R code, you can write R Markdown. The [rmarkdown package](https://CRAN.R-project.org/package=rmarkdown) (Allaire et al. 2017) converts R Markdown (`.Rmd` files) to Markdown (`.md` files), running the code and inserting the results, including figures, into the document. This is powered by another package, [knitr](https://CRAN.R-project.org/package=knitr) (Xie 2017b; Xie 2015), under the hood. This process is made especially easy in RStudio, but is by no means limited to users of that application.
 
 *this too is crying out for a visual Rmd -&gt; md -&gt; rendered thing looking good*
 
@@ -200,7 +200,7 @@ The files in a project arise in different ways and play different roles. A criti
 
 **Configuration files:** These files modify the behavior of a tool, for example `.gitignore` identifies files Git should not track and `some-project.Rproj` records RStudio project settings.
 
-**Derived products:** These files are programmatically generated from source files and have external value. By executing `.R` or rendering `.Rmd` files, you obtain artefacts such as intermediate data (e.g., `.csv` or `.rds`), figures (e.g., `.png` or `.pdf`), and reports (e.g., `.md`, `.pdf`, `.docx`, or `.html`).
+**Derived products:** These files are programmatically generated from source files and have external value. By executing `.R` or rendering `.Rmd` files, you obtain artifacts such as intermediate data (e.g., `.csv` or `.rds`), figures (e.g., `.png` or `.pdf`), and reports (e.g., `.md`, `.pdf`, `.docx`, or `.html`).
 
 **Intermediates:** These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTex workflows).
 
@@ -262,17 +262,17 @@ The best way to deal with merge conflicts is to avoid them altogether. This is a
 GitHub as web presence
 ----------------------
 
-Simply having a project on GitHub gives it a web presence! Non-users of Git/GitHub can visit the project in the browser and interact with it like a webpage. They can grab a snapshot of all the files as a ZIP archive by simply clicking a button. People with GitHub accounts have even more options. They can clone or fork the repository to get their own copy, which also makes it easy for them to stay current on future changes.
+Simply having a project on GitHub gives it a web presence! Non-users of Git/GitHub can visit the project in the browser and interact with it like a webpage. They can grab a snapshot of all the files as a ZIP archive by simply clicking a button. People with GitHub accounts can use Git-specific methods to make their own copy, i.e. a clone or a fork, which make it easy to keep current with future changes.
 
-As described above, GitHub Pages offer various ways to serve proper websites, even quite sophisticated ones, directly out of a GitHub repo. But before you even worry about that, certain practices can make a GitHub repository much more browsable. For many projects, this is more than sufficient for granting people access to your work.
+GitHub offers several ways to host a proper website directly from a repository, collectively known as [GitHub Pages](https://help.github.com/categories/github-pages-basics/). At one extreme, as long as you've got one Markdown file, [GitHub Pages can create a simple website](https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3) automatically. At the other extreme, sophisticated users can take full advantage of the [Jekyll static site generator](https://jekyllrb.com). The STAT 545 website ([stat545.com](http://stat545.com), [GitHub repo](https://github.com/STAT545-UBC/STAT545-UBC.github.io)) falls on the more primitive side. [R Markdown websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html), [bookdown](https://bookdown.org) (Xie 2016; Xie 2017a), and [blogdown](https://bookdown.org/yihui/blogdown/) provide several R-focused options for rendering the pages *en masse*.
+
+But even before you make an actual website, certain practices can [make your GitHub repository much more browsable](http://happygitwithr.com/repo-browsability.html). For many projects, this is more than sufficient for helping people connect with your work.
 
 **Be savvy about file formats.** Keep files in the plainest, web-friendliest form that is compatible with your main goals. As explained above, Markdown is the ideal format for prose, because it is just plain text with some markup, but will be displayed like HTML on GitHub. Files named `README.md` are extra special, acting as the index or landing page for their host directory. [CSV and TSV](https://help.github.com/articles/rendering-csv-and-tsv-data/) files also get special treatment, including an attractive grid layout and search. GitHub has excellent support for displaying and diffing common image formats.
 
 **Use conventional file extensions.** GitHub is very code-focused and will apply proper syntax high-lighting for almost any language you can think of, if you use one of the standard file extensions. This also has advantages for people searching GitHub and trying to filter by language.
 
 **Use internal links.** `README.md` is a great place to explain how your project fits together. Any Markdown file can include relative links to other files in the repo. Embedded images are also displayed. For figures produced by R code, these links are part of what rmarkdown takes care of for you, but there's no reason you can't do the same yourself for any Markdown file.
-
-\*link to <http://happygitwithr.com/repo-browsability.html*>
 
 More resources
 --------------
@@ -307,6 +307,8 @@ possible github explainer <https://www.wired.com/2015/03/github-conquered-google
 
 <https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3>
 
+A Quick Introduction to Version Control with Git and GitHub <http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668>
+
 The active R package development community on GitHub.
 
 -   If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
@@ -320,10 +322,16 @@ Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen
 
 Bartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. <https://speakerdeck.com/alicebartlett/git-for-humans>.
 
+Perez-Riverol, Laurent AND Wang, Yasset AND Gatto. 2016. “Ten Simple Rules for Taking Advantage of Git and Github.” *PLOS Computational Biology* 12 (7). Public Library of Science: 1–11. doi:[10.1371/journal.pcbi.1004947](https://doi.org/10.1371/journal.pcbi.1004947).
+
 Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” *Source Code for Biology and Medicine* 8 (1): 7. doi:[10.1186/1751-0473-8-7](https://doi.org/10.1186/1751-0473-8-7).
 
 Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and Tracy K. Teal. 2016. “Good Enough Practices in Scientific Computing.” *CoRR* abs/1609.00037. <http://arxiv.org/abs/1609.00037>.
 
 Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <http://yihui.name/knitr/>.
 
-———. 2017. *Knitr: A General-Purpose Package for Dynamic Report Generation in R*. <http://yihui.name/knitr/>.
+———. 2016. *Bookdown: Authoring Books and Technical Documents with R Markdown*. <https://github.com/rstudio/bookdown>.
+
+———. 2017a. *Bookdown: Authoring Books and Technical Documents with R Markdown*. Boca Raton, Florida: Chapman; Hall/CRC. <https://github.com/rstudio/bookdown>.
+
+———. 2017b. *Knitr: A General-Purpose Package for Dynamic Report Generation in R*. <http://yihui.name/knitr/>.

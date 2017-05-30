@@ -110,12 +110,12 @@ Microsoft Word, but more rigorous, powerful, and scaled up to multiple
 files.
 
 Git has been re-purposed by the data science community
-\citep{Ram2013, git-for-humans}. In addition to using it for source
-code, we use it to manage the motley collection of files that make up
-typical data analytical projects, which often consist of data, figures,
-reports, and, yes, source code. Even those who identify more as
-statistician than data scientist generally have a similar mix of files
-that are the artifacts of a project.
+\citep{Ram2013, git-for-humans, ten-simple-rules-git}. We use it to
+manage the motley collection of files that make up typical data
+analytical projects, which often consist of data, figures, reports, and,
+yes, source code. Even those who identify more as statistician than data
+scientist generally have a similar mix of files that are the artifacts
+of a project.
 
 A lone ranger, working on a single computer, can benefit from adopting
 version control. But not nearly enough to justify the pain of
@@ -569,7 +569,7 @@ and \texttt{some-project.Rproj} records RStudio project settings.
 
 \textbf{Derived products:} These files are programmatically generated
 from source files and have external value. By executing \texttt{.R} or
-rendering \texttt{.Rmd} files, you obtain artefacts such as intermediate
+rendering \texttt{.Rmd} files, you obtain artifacts such as intermediate
 data (e.g., \texttt{.csv} or \texttt{.rds}), figures (e.g.,
 \texttt{.png} or \texttt{.pdf}), and reports (e.g., \texttt{.md},
 \texttt{.pdf}, \texttt{.docx}, or \texttt{.html}).
@@ -764,153 +764,36 @@ role of a remote, from the barlett talk}
 
 \includegraphics[width=1\linewidth]{bartlett-pull}
 
-\subsection{GitHub as course management
-system}\label{github-as-course-management-system}
-
-\href{http://stat545.com}{STAT 545} is a data wrangling and analysis
-course at the University of British Columbia. I was the instructor in
-charge for several years, which coincided with my own adoption of
-Git/GitHub. GitHub is used to manage the development of course material,
-to serve the course website, to create a discussion forum, and to host
-all student-submitted work.
-
-Given that students must submit their work and provide peer review of
-others' work via GitHub, the use of hosted version control is an
-explicit, though modest, part of the course. The website
-\href{http://happygitwithr.com}{Happy Git and GitHub for the useR} holds
-our battle-tested instructions for setup and early usage. The students
-achieve basic competence quite quickly and find it gratifying to see
-their formatted, figure-rich R Markdown reports up on the internet.
-Since it's easy to expose their work within the class, we conduct peer
-review, which helps expertise to spread quickly through the group.
-
-\subsubsection{Use a GitHub
-Organization}\label{use-a-github-organization}
-
-\href{https://help.github.com/articles/differences-between-user-and-organization-accounts/}{GitHub
-Organizations} are ``shared accounts where groups of people can
-collaborate across many projects at once''. This is the most appropriate
-structure for stewarding course resources, since I can grant TAs and
-students different levels of access to various repositories. Access can
-be controlled at the individual user level or, more conveniently, for
-entire \href{https://help.github.com/articles/setting-up-teams/}{Teams}.
-The TA Team shares write access with me on a private repository for
-internal matters. I provide each student with their own private
-repository for coursework and grant other members of the Students Team
-read access, in order to facilitate peer review. There is a public
-repository that underpins the course website (see below). We have one
-other public repository that exists solely so the
-\href{https://github.com/STAT545-UBC/Discussion/issues}{Issues} can be
-used as a discussion forum.
-
-GitHub actively encourages the use of its platform in teaching. As an
-instructor you can request a
-\href{https://help.github.com/articles/discounted-organization-accounts/}{free
-Organization account} that provides features normally available only on
-paid plans, such as private repositories. In fact, GitHub provides
-tooling for specific teaching workflows via
-\href{https://classroom.github.com/}{GitHub Classroom}, although I do
-not use it. That is not an intentional knock on their tools. I started
-teaching with GitHub several years before this existed and developed a
-different way of using the platform. I also find the
-\href{https://education.github.com}{GitHub Education} resources to be
-geared more towards computer science than data science.
-
-\subsubsection{GitHub Pages for course
-website}\label{github-pages-for-course-website}
-
-All course content is provided on the \href{http://stat545.com}{STAT 545
-website}. Each page is generated from an R Markdown document that is
-rendered to HTML locally using the rmarkdown package, retaining the
-intermediate Markdown. These pages are a mix of prose and rendered R
-code, reflecting the live coding done in class. All of these files and
-their history can be explored in the
-\href{https://github.com/STAT545-UBC/STAT545-UBC.github.io}{source
-repository}. The TA team has permission to write to this repo, meaning
-they can (and do!) help me maintain the website. I rejoice that I am no
-longer the webmaster. We also get typo corrections and other input from
-the world at large, since this is entirely public.
-
-If I were starting from scratch today, I would continue to use R
-Markdown, RStudio, and GitHub Pages (see below), but would upgrade to a
-more modern, automated approach to rendering the pages. I now recommend
-\href{http://rmarkdown.rstudio.com/rmarkdown_websites.html}{R Markdown
-websites}, \href{https://bookdown.org}{bookdown}, or
-\href{https://bookdown.org/yihui/blogdown/}{blogdown} to manage the
-process of creating a static website from a large and inter-related set
-of \texttt{.Rmd} files.
-
-GitHub offers several ways to host a website directly from a repository,
-collectively known as
-\href{https://help.github.com/categories/github-pages-basics/}{GitHub
-Pages}. The STAT 545 website is a very simple
-\href{https://help.github.com/articles/user-organization-and-project-pages/}{Organization
-Page} that uses a
-\href{https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/}{custom
-domain}, \texttt{stat545.com}, instead of the default
-\texttt{orgname.github.io}.
-
-This system for managing course content is a great example of
-integrating the doing of work and the sharing of it. We analyze data
-live in class, using R, based on the scripts on the website. I re-render
-the associated \texttt{.R} or \texttt{.Rmd}, commit the changed files,
-push, and see it reflected right away on \url{http://stat545.com}. There
-is no separation between having an idea, implementing it, and posting on
-the website.
-
-\subsubsection{Student-specific private
-repos}\label{student-specific-private-repos}
-
-Early in the course I elicit GitHub usernames for registered students,
-via a \href{https://shiny.rstudio.com}{Shiny app}, and invite them to
-join the course Organization. I then create one private repository per
-student, in the STAT 545 Organization. The targeted student has write
-access and the other students have read access. This is somewhat
-controversial, due to the possibility of cheating, but I have seen more
-pros than cons for this setup, in the STAT 545 context. In other
-settings, I have also used one repo per student \emph{per homework
-assignment}, which allows you to keep the repos completely private until
-homework submission, then increase their visibility during marking and
-peer review. Some courses will work better with one model or the other.
-
-Each student does their work in this repo, submitting a major assignment
-approximately once a week. The first assignment is simply to claim the
-repository and create a README, which proves they have all the relevant
-software setup and they can write a little Markdown. Each week we tackle
-some new data analysis or wrangling task, with increasing latitude for
-independence. Homework is implemented in R Markdown documents, rendered
-to Markdown, and pushed to GitHub. Students submit their work by opening
-an issue in their repo, naming the assignment in the title, providing
-the SHA of the associated final commit, and linking to the main
-\texttt{.md} file. We leave feedback as comments in the issue thread or,
-occasionally, propose changes to code via ``pull requests''. Two peers
-are selected at random to review each assignment, a process that we also
-implement via GitHub Issues.
-
-At the end of term, the student (and their instructor!) can visit the
-repo to find an organized, navigable sequence of \textasciitilde{}10
-assignments. Each student leaves with self-written documentation of
-everything they've done, ready to consult in future projects. The last
-assignments require writing an R package or Shiny app, which they
-generally do in public repositories under their own accounts. They
-finish STAT 545 with several months of Git/GitHub experience and the
-start of a data science portfolio.
-
 \subsection{GitHub as web presence}\label{github-as-web-presence}
 
 Simply having a project on GitHub gives it a web presence! Non-users of
 Git/GitHub can visit the project in the browser and interact with it
 like a webpage. They can grab a snapshot of all the files as a ZIP
-archive by simply clicking a button. People with GitHub accounts have
-even more options. They can clone or fork the repository to get their
-own copy, which also makes it easy for them to stay current on future
-changes.
+archive by simply clicking a button. People with GitHub accounts can use
+Git-specific methods to make their own copy, i.e.~a clone or a fork,
+which make it easy to keep current with future changes.
 
-As described above, GitHub Pages offer various ways to serve proper
-websites, even quite sophisticated ones, directly out of a GitHub repo.
-But before you even worry about that, certain practices can make a
-GitHub repository much more browsable. For many projects, this is more
-than sufficient for granting people access to your work.
+GitHub offers several ways to host a proper website directly from a
+repository, collectively known as
+\href{https://help.github.com/categories/github-pages-basics/}{GitHub
+Pages}. At one extreme, as long as you've got one Markdown file,
+\href{https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3}{GitHub
+Pages can create a simple website} automatically. At the other extreme,
+sophisticated users can take full advantage of the
+\href{https://jekyllrb.com}{Jekyll static site generator}. The STAT 545
+website (\href{http://stat545.com}{stat545.com},
+\href{https://github.com/STAT545-UBC/STAT545-UBC.github.io}{GitHub
+repo}) falls on the more primitive side.
+\href{http://rmarkdown.rstudio.com/rmarkdown_websites.html}{R Markdown
+websites}, \href{https://bookdown.org}{bookdown}
+\citep{bookdown-pkg, bookdown-book}, and
+\href{https://bookdown.org/yihui/blogdown/}{blogdown} provide several
+R-focused options for rendering the pages \emph{en masse}.
+
+But even before you make an actual website, certain practices can
+\href{http://happygitwithr.com/repo-browsability.html}{make your GitHub
+repository much more browsable}. For many projects, this is more than
+sufficient for helping people connect with your work.
 
 \textbf{Be savvy about file formats.} Keep files in the plainest,
 web-friendliest form that is compatible with your main goals. As
@@ -935,8 +818,6 @@ relative links to other files in the repo. Embedded images are also
 displayed. For figures produced by R code, these links are part of what
 rmarkdown takes care of for you, but there's no reason you can't do the
 same yourself for any Markdown file.
-
-*link to \url{http://happygitwithr.com/repo-browsability.html*}
 
 \subsection{More resources}\label{more-resources}
 
@@ -1005,6 +886,9 @@ possible github explainer
 \url{https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem}
 
 \url{https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3}
+
+A Quick Introduction to Version Control with Git and GitHub
+\url{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668}
 
 The active R package development community on GitHub.
 
