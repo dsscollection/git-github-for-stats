@@ -68,8 +68,9 @@ Abstract abstract abstract.
 
 \subsection{Why Git?}\label{why-git}
 
-Why would a statistician use version control, such as Git? And what is
-the point of hosting your work online, e.g., on GitHub? Could the gains
+Why would a statistician use version control, such as
+\href{http://git-scm.com}{Git}? And what is the point of hosting your
+work online, e.g., on \href{https://github.com}{GitHub}? Could the gains
 possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
@@ -91,13 +92,21 @@ statistical practice:
   negligible.
 \item
   GitHub makes a fantastic course management system for courses that use
-  R. You and your students can exchange actual working code and explore
+  R. You can exchange actual working code with your students and explore
   the associated results.
 \item
   By using common mechanics across work modes (research, teaching,
   analysis), you achieve basic competence quickly and avoid the
   demoralizing forget-relearn cycle.
 \end{itemize}
+
+Now the bad news: Git was built neither for the exact usage described
+here, nor for broad usability. You will undoubtedly notice this, so it's
+best to know in advance. Happily, there are many helpful tools that
+mediate your interactions with Git. GitHub itself is a fine example, as
+is \href{https://www.rstudio.com/products/rstudio/}{RStudio}. In
+addition to pointing out tools that soften Git's sharpest edges, I
+recommend specific habits and attitudes that reduce frustration.
 
 \subsection{What is Git?}\label{what-is-git}
 
@@ -123,20 +132,19 @@ installation and workflow upheaval. There are much easier ways to get
 versioned back ups of files, if that's all you're worried about.
 
 In my opinion, \textbf{for new users}, the pros of Git only outweigh the
-cons when you factor in the overhead of communicating and collaborating
-with other people, including your future self. And who among us does not
-need to do that? Your life is much easier if this is baked into your
-workflow, as opposed to being a separate process that you dread and
-avoid. Communication and collaboration are the killer apps of version
-control. Git enforces a rigorous model of file management, but it is
-critical for the distribution of files across different people,
+cons when you consider the overhead of working with other people,
+including your future self. And who among us does not need to do that?
+In a Git-based workflow, you document and, optionally, expose your work
+as you go. Communication and collaboration are the killer apps of
+version control. Git's model of file management can feel uncomfortably
+rigid, but it enables the distribution of files across different people,
 computers, and time.
 
-This has an implication for selecting your first Git projects: in order
-to see substantial gain for your pain, you need to pick projects that
-require you to share rapidly evolving files with others. It is tempting
-to pick a quiet little project that you work on privately, but you risk
-missing the main point of formal version control.
+This has an implication for selecting your first Git projects: you will
+enjoy the most gain for your pain if you pick a project that involves
+sharing rapidly evolving files with others. It is tempting to pick a
+quiet, private project, but you risk missing out on the main benefits of
+formal version control.
 
 Many people who don't use Git unwittingly re-invent a poor man's version
 of it. They take an important file and distribute it via email. Various
@@ -152,7 +160,7 @@ figure I plan to embed.}
 The Git way is to track the evolution of that file, through a series of
 commits, each equipped with an explanatory message and a nickname. All
 collaborators sync regularly to a common version, acknowledging that the
-difficulty of merging goes up faster than the size of the difference
+difficulty of merging only goes up as more changes accumulate
 \citep{good-enough}. Especially important versions get a human-readable
 tag, to signal a meaningful milestone. Yes, there is some pain in
 adopting the formalism of Git, but it is worth it.
@@ -171,30 +179,30 @@ instruction. Those whose work is some combination of these three may
 find the work style described here especially rewarding.
 
 This article does not provide step-by-step instructions on how to use
-Git and GitHub. This format would not be effective, but we do provide
-annotated links to such resources in ?the appendix or online
-supplement?. Instead, I'll convey what the workflow feels like and what
-the payoffs are, with special attention to the statistics and R context.
-The goal is to help the Git-curious generate the activation energy
-needed to get started.
+Git and GitHub. This format would not be effective, but annotated links
+to such resources are given in the supplementary materials. Instead,
+I'll convey what the workflow feels like and what the payoffs are, with
+special attention to the statistics and R context. The goal is to help
+the Git-curious generate the activation energy needed to get started.
 
 \subsection{What is GitHub?}\label{what-is-github}
 
-\href{https://github.com}{GitHub} is currently the most popular Git
-hosting service. Others include \href{https://about.gitlab.com}{GitLab}
-and \href{https://bitbucket.org}{Bitbucket}. These services provide a
-home for Git-based projects on the internet. It is a bit like DropBox or
-Google Drive, but more structured, powerful, and programmatic.
+Git offers a powerful structure for file management and
+\href{https://github.com}{GitHub} complements it with a slick user
+interface and distribution mechanism for Git repositories. GitHub is
+currently the most popular Git hosting service, providing a home for
+Git-based projects on the internet. It is a bit like DropBox or Google
+Drive, but more structured, powerful, and programmatic.
 
 The remote host acts as the clearinghouse for a Git-managed project.
-This allows other people to see the project files, sync up with the
-current version, and perhaps even make or propose changes. These hosting
-providers offer well-designed web interfaces that are a dramatic
-improvement over traditional Unix Git servers. Many operations can be
-done entirely in the browser, such as viewing current or past versions
-of a file, commenting on a recent change, and editing or adding files.
-These hosts also offer granular control over who can see, edit, and
-administer a project.
+This allows others to see the project files, sync up with the current
+version, and perhaps even propose or make changes. GitHub has a
+well-designed web interface that is a dramatic improvement over
+traditional Unix Git servers. Many operations can be done entirely in
+the browser, such as viewing current or past versions of a file,
+commenting on a recent change, and editing or adding files. GitHub also
+offers granular control over who can see, edit, and administer a
+project.
 
 \emph{possible images include a modified version of this atlassian image
 (no arrows between people, yes arrow from people to github), somehow
@@ -252,17 +260,21 @@ past and to organize what needs to happen in the future.
 
 \subsection{Initial system setup}\label{initial-system-setup}
 
-Here is the initial setup process, which you do once or, for some steps,
-once per computer.
+Here is an overview of the initial setup process, which happens once or,
+for some steps, once per computer. This is excerpted from
+\href{http://happygitwithr.com}{Happy Git and GitHub for the useR},
+which holds battle-tested instructions honed over several years in
+\href{http://stat545.com}{STAT 545} at the University of British
+Columbia.
 
 \begin{itemize}
 \item
   Register for a free account with GitHub.
 \item
   Install Git. Depending on your OS, Git might already be installed. But
-  many of us may need to install it or will choose to update to a more
-  recent version. Some basic configuration is critical, such as setting
-  your username and email.
+  many may need to install it or will choose to update to a more recent
+  version. Some basic configuration is critical, such as setting your
+  username and email.
 \item
   Install a local Git client \emph{(optional but highly recommended}). A
   Git client is software that provides a graphical user interface for
@@ -279,29 +291,11 @@ once per computer.
 \item
   Confirm, with a practice repository, that local Git can send and
   receive the current version of the repository on GitHub, known as
-  \textbf{pushing} and \textbf{pulling}, respectively. This will require
-  authenticating yourself with GitHub from a local shell or Git client.
-  At this point, most people elect to do a bit of extra setup to ensure
-  that they are not repeatedly challenged for their GitHub credentials
-  going forward.
+  \textbf{pushing} and \textbf{pulling}, respectively.
 \end{itemize}
 
 Once this setup is done, you are ready to start using Git and GitHub
-with your projects.
-
-\subsection{Is this going to hurt?}\label{is-this-going-to-hurt}
-
-Yes.
-
-Git was built neither for the exact usage described here, nor for broad
-usability. You will undoubtedly notice this, so it can be helpful to
-know this in advance. Happily there are many helpful tools that mediate
-your interactions with Git. GitHub itself is a fine example, as is
-RStudio. In addition to pointing out tools that soften Git's sharpest
-edges, I recommend specific habits and attitudes that reduce
-frustration.
-
-General recommendations for agony reduction:
+with your projects. Some general recommendations for agony reduction:
 
 \begin{itemize}
 \tightlist
@@ -402,7 +396,7 @@ data science workflow:
 \end{itemize}
 
 Recall that a repository or repo is just a directory of files that Git
-will manage holistically. A commit functions like a snapshot of all the
+manages holistically. A commit functions like a snapshot of all the
 files in the repo, at a specific moment. Under the hood, that is not
 exactly how Git implements things. Mental models don't have to be
 accurate in order to be useful, but in this case there's some value in
@@ -595,11 +589,10 @@ executable. This rationale, however, does not apply to many data science
 products. Rendered reports, figures, and cleaned data are often
 extremely valuable to others. Make them readily available.
 
-\textbf{Will it play especially well with Git/GitHub?} This boils down
-to whether Git diffs will be informative and whether GitHub has nice
-handling for the file type. Small-to-medium plain text files with hard
-line breaks are a perfect fit, but there are a few more pleasant
-surprises.
+\textbf{Will it play nicely with Git/GitHub?} This boils down to whether
+Git diffs will be informative and whether GitHub has nice handling for
+the file type. Small-to-medium plain text files with hard line breaks
+are ideal, but there are a few more pleasant surprises.
 
 \begin{itemize}
 \tightlist
@@ -626,24 +619,23 @@ surprises.
 \textbf{Will it cause problems with Git/GitHub?} This boils down to
 whether Git diffs are informative, whether GitHub can render the file
 usefully, and the file's likely effect on Git operations. A file that is
-large and changing quite often can make your repository bloated and slow
-down pushes and pulls. If a file is binary, such as a Word document or
-Excel spreadsheet, you will not get human-readable diffs, nor can GitHub
+large and changing often can make your repository bloated and slow down
+pushes and pulls. If a file is binary, such as a Word document or Excel
+spreadsheet, you will not get human-readable diffs, nor can GitHub
 display it in the browser. Html is not rendered on GitHub, but is,
 instead, displayed in raw form. Binary files are also a prime source of
-merge conflicts, because they are beyond the reach of Git's
-sophisticated automatic merging logic. For many of us, adoption of
+merge conflicts (see below), because they are beyond the reach of Git's
+sophisticated automatic merging logic. This all implies that adoption of
 Git/GitHub should prompt a pivot away from \texttt{.docx} and
 \texttt{.pdf} as primary output formats and towards \texttt{.md}, at
 least during periods of rapid development.
 
 \subsection{Collaboration}\label{collaboration}
 
-Collaboration is probably the most compelling reason to manage a project
-with Git and GitHub. I have a broad definition of collaboration. It
-includes hands-on participation by multiple people as well as an
-asymmetric model, in which some people are active makers and others only
-read or review.
+Collaboration is the most compelling reason to manage a project with Git
+and GitHub. My definition of collaboration includes hands-on
+participation by multiple people as well as an asymmetric model, in
+which some people are active makers and others only read or review.
 
 Consider two different models of collaboration on a document:
 
@@ -751,11 +743,6 @@ regularly with GitHub, and only track binary files with good reason.
 conflicts
 \url{https://github.com/dsscollection/git-github-for-stats/issues/6} I
 may need to reword the above}
-
-\emph{something I would like to write about, but have no space for here:
-different models of collaboration, i.e.~everyone working on one repo \&
-one branch vs.~making pull requests from branches in the main repo or
-from forks}
 
 \emph{inspiration for possible figures on collaboration/merging and the
 role of a remote, from the barlett talk}
@@ -904,6 +891,12 @@ The active R package development community on GitHub.
 
 The read-only mirrors of R source and all of CRAN. Coupled with GitHub
 search features, you can answer alot of your own questions this way.
+
+instructions re: supplementary materials
+\url{http://amstat.tfjournals.com/supplementary-materials/}
+
+TAS author instructions
+\url{http://www.tandfonline.com/action/authorSubmission?journalCode=utas20\&page=instructions}
 
 \bibliographystyle{agsm}
 \bibliography{git-github-for-stats.bib}
