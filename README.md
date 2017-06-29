@@ -47,11 +47,14 @@ In my opinion, **for new users**, the pros of Git only outweigh the cons when yo
 
 This has an implication for selecting your first Git projects: you will enjoy the most gain for your pain if you pick a project that involves sharing rapidly evolving files with others. It is tempting to pick a quiet, private project, but you risk missing out on the main benefits of formal version control.
 
-Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure X depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Fig Xa). In collaborative settings based on email distribution, the original file swiftly becomes the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve (Fig Xb).
+Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Figure A). In collaborative settings based on email distribution, the original file swiftly becomes the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve Figure B).
 
-<img src="diy-vs-git-solo-vs-collab.png" width="100%" />
+<img src="diy-vs-git-solo-vs-collab.png" alt="\label{fig:diy-vs-git}A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git." width="100%" />
+<p class="caption">
+A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git.
+</p>
 
-The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message and a nickname. Figure Xc depicts this sort of linear *in situ* development. Figure Xd shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message. Figure C depicts this linear, *in situ* development process. Figure D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
 Who should read this and what to expect
 ---------------------------------------
@@ -63,11 +66,14 @@ This article does not provide step-by-step instructions on how to use Git and Gi
 What is GitHub?
 ---------------
 
-We've explored Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. It is like DropBox or Google Drive, but more structured, powerful, and programmatic.
+We've explored Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
 The remote host acts as the clearinghouse for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
 
-<img src="your-repo-their-repo-central-remote-repo.png" width="100%" />
+<img src="your-repo-their-repo-central-remote-repo.png" alt="\label{fig:yours-theirs-github}With Git, all contributors have a copy of the repo, with all files and the full history. It is typical to stay in sync through the use of a central remote repo, such as GitHub. Hosted remotes like GitHub also provide access to the repo through a web browser." width="100%" />
+<p class="caption">
+With Git, all contributors have a copy of the repo, with all files and the full history. It is typical to stay in sync through the use of a central remote repo, such as GitHub. Hosted remotes like GitHub also provide access to the repo through a web browser.
+</p>
 
 Even for private solo projects, there are two advantages to keeping a synced copy on GitHub:
 
@@ -130,19 +136,22 @@ We now connect the fundamental concepts of Git to the data science workflow:
 -   commit
 -   diff
 
-Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Mental models don't have to be accurate in order to be useful, but in this case there's some value in aligning the two.
+Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Although mental models don't have to be accurate in order to be useful, in this case it helps to align the two.
 
-<img src="commit-diff-sha-tag.png" width="100%" />
+<img src="commit-diff-sha-tag.png" alt="\label{fig:commit-diff-sha-tag}Partial commit history for our iris example." width="100%" />
+<p class="caption">
+Partial commit history for our iris example.
+</p>
 
-Figure X is another look at our fictional analysis of the iris data, focusing on the evolution of its script `iris.R`. Consider version A of this file and a modified version, version B. Assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff" and Git users contemplate diffs a lot. Diff inspection is how you re-explain to yourself how version A differs from version B. Diff inspection is not limited to adjacent commits. You can inspect the diffs between any two commits.
+Figure is another look at our fictional analysis of the iris data, focusing on the evolution of its script, `iris.R`. Consider version A of this file and a modified version, version B. Assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff" and Git users contemplate diffs a lot. Diff inspection is how you re-explain to yourself how version A differs from version B. Diff inspection is not limited to adjacent commits. You can inspect the diffs between any two commits.
 
 In fact, Git's notion of any specific version of `iris.R` is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file. We'll set these internal details aside now, but understanding the importance of these deltas will make Git's operations less baffling in the long run.
 
 So, by looking at diffs, it's easy to see how two snapshots differ, but what about the why?
 
-Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. Remember, the diff will show the content. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure X shows the messages associated with the last three commits.
+Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. Remember, the diff will show the content. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure shows the messages associated with the last three commits.
 
-Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a SHA-1 checksum hash of the commit). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. The commit messages in Figure X are prefixed by such abbreviated SHAs. You can also designate certain snapshots as special with a **tag**, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., "v1.0.3". For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators. Figure X shows a tag, "draft-01", associated with the last commit.
+Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a SHA-1 checksum hash of the commit). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. The commit messages in Figure are prefixed by such truncated SHAs. You can also designate certain snapshots as special with a **tag**, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., "v1.0.3". For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators. Figure shows a tag, "draft-01", associated with the last commit.
 
 Markdown is special on GitHub
 -----------------------------
