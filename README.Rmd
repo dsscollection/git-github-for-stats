@@ -201,7 +201,7 @@ We now connect the fundamental concepts of Git to the data science workflow:
 
 Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Although mental models don't have to be accurate in order to be useful, in this case it helps to align the two.
 
-```{r commit-diff-sha-tag, fig.cap="\\label{fig:commit-diff-sha-tag}Partial commit history for our iris example."}
+```{r commit-diff-sha-tag, fig.cap="\\label{fig:commit-diff-sha-tag}Partial commit history for our iris example, highlighting diffs, commit messages, SHAs, and tags."}
 knitr::include_graphics("commit-diff-sha-tag.png")
 ```
 
