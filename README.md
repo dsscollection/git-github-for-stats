@@ -49,7 +49,7 @@ This has an implication for selecting your first Git projects: you will enjoy th
 
 Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure X depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Fig Xa). In collaborative settings based on email distribution, the original file swiftly becomes the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve (Fig Xb).
 
-![](diy-vs-git-solo-vs-collab.png)
+<img src="diy-vs-git-solo-vs-collab.png" width="100%" />
 
 The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message and a nickname. Figure Xc depicts this sort of linear *in situ* development. Figure Xd shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
@@ -67,7 +67,7 @@ We've explored Git's powerful structure for file management, so where does GitHu
 
 The remote host acts as the clearinghouse for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
 
-![](your-repo-their-repo-central-remote-repo.png)
+<img src="your-repo-their-repo-central-remote-repo.png" width="100%" />
 
 Even for private solo projects, there are two advantages to keeping a synced copy on GitHub:
 
@@ -132,7 +132,7 @@ We now connect the fundamental concepts of Git to the data science workflow:
 
 Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Mental models don't have to be accurate in order to be useful, but in this case there's some value in aligning the two.
 
-![](commit-diff-sha-tag.png)
+<img src="commit-diff-sha-tag.png" width="100%" />
 
 Figure X is another look at our fictional analysis of the iris data, focusing on the evolution of its script `iris.R`. Consider version A of this file and a modified version, version B. Assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff" and Git users contemplate diffs a lot. Diff inspection is how you re-explain to yourself how version A differs from version B. Diff inspection is not limited to adjacent commits. You can inspect the diffs between any two commits.
 
