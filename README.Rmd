@@ -315,7 +315,7 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 *inspiration for possible figure on collaboration/mergin, from the barlett talk*
 
 ```{r echo = FALSE, out.width="100%"}
-knitr::include_graphics("bartlett-merge-commit.png")
+knitr::include_graphics("img/bartlett-merge-commit.png")
 ```
 
 ## Conclusion
