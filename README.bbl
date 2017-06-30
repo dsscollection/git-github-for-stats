@@ -22,10 +22,10 @@ Bartlett, A.  \harvardyearleft 2016\harvardyearright , `Git for humans', Talk
 \newline\harvardurl{https://github.com}
 
 \harvarditem[Perez-Riverol et~al.]{Perez-Riverol, Gatto, Wang, Sachsenberg,
-  Uszkoreit, Leprevost, Fufezan, Ternent, Eglen, Katz, Pollard, Konovalov,
-  Flight, Blin \harvardand\ Vizcaíno}{2016}{ten-simple-rules-git}
+  Uszkoreit, da~Veiga~Leprevost, Fufezan, Ternent, Eglen, Katz, Pollard,
+  Konovalov, Flight, Blin \harvardand\ Vizcaíno}{2016}{ten-simple-rules-git}
 Perez-Riverol, Y., Gatto, L., Wang, R., Sachsenberg, T., Uszkoreit, J.,
-  Leprevost, F. d.~V., Fufezan, C., Ternent, T., Eglen, S.~J., Katz, D.~S.,
+  da~Veiga~Leprevost, F., Fufezan, C., Ternent, T., Eglen, S.~J., Katz, D.~S.,
   Pollard, T.~J., Konovalov, A., Flight, R.~M., Blin, K. \harvardand\
   Vizcaíno, J.~A.  \harvardyearleft 2016\harvardyearright , `Ten simple rules
   for taking advantage of git and github', {\em PLOS Computational Biology}
