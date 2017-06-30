@@ -239,7 +239,7 @@ Before we move on, I want to zoom out and revisit R Markdown and the rmarkdown p
 
 ## Which files to commit
 
-The files in a project arise in different ways and play different roles. A critical issue for workflow happiness is to figure out how you want to handle different file types with respect to Git. You can direct Git to ignore specific files or file types, such as autosaves created by your editor. This reduces noise and clutter: Git will not pester you to commit changes to these files and they will not appear in your GitHub repository. A file that Git does not ignore is said to be __tracked__. Here's a useful framework for thinking about what to track:
+The files in a project arise in different ways and play different roles. A critical issue for workflow happiness is to decide how to handle different file types with respect to Git. You can direct Git to ignore specific files or file types, such as autosaves created by your editor. This reduces noise and clutter: Git will not pester you to commit changes to these files and they will not appear in your GitHub repository. A file that Git does not ignore is said to be __tracked__. Here's a useful framework for deciding what to track:
 
 __Source files:__ These files are created and edited by hand, such as R scripts and R Markdown or LaTeX files. This could also include the raw data for an analysis.
 
@@ -247,7 +247,7 @@ __Configuration files:__ These files modify the behavior of a tool, for example 
 
 __Derived products:__ These files are programmatically generated from source files and have external value. By executing `.R` or rendering `.Rmd` files, you obtain artifacts such as intermediate data (e.g., `.csv` or `.rds`), figures (e.g., `.png` or `.pdf`), and reports (e.g., `.md`, `.pdf`, `.docx`, or `.html`).
 
-**Intermediates:** These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTex workflows).
+__Intermediates:__ These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTex workflows).
 
 There is clear consensus that source files should be tracked. It is also common to track project-specific configuration files and to ignore intermediates. However, reasonable people can disagree about how to handle derived products and whether a specific file is an intermediate or derived product. Therefore, the main takeaway is to pick a policy that works for you and adapt as your needs change. There is no right answer. I would err on the side of committing more rather than less at first. What else should you consider when choosing files to track with Git and share on GitHub?
 
@@ -258,7 +258,7 @@ There is clear consensus that source files should be tracked. It is also common 
   * Some derived files are too miserable to read casually, such as `.csv` files of processed results or `.html` derived from `.Rmd`, yet they are still worth tracking with Git. When you re-run an analysis with updated input data or after updating R packages, *the diffs are often quite modest* and help you pinpoint unexpected changes.
   * GitHub has excellent [support for a variety of non-code files](https://help.github.com/categories/working-with-non-code-files/), such as CSV and TSV. It also [displays and provides visual diffs](https://help.github.com/articles/rendering-and-diffing-images/) for the most common image formats, which is extremely useful for spotting unexpected changes in figures.
 
-**Will it actively cause problems with Git/GitHub?** This boils down to the file's likely effect on Git operations. A file that is large and changing often can make your repository bloated and slow down pushes and pulls. If a file is binary, such as a Word document or Excel spreadsheet, you will not get human-readable diffs anyway, nor can GitHub display the content in the browser. Binary files are also a reliable source of merge conflicts (see below), because they are beyond the reach of Git's sophisticated automatic merging logic. A large binary file that changes often is, therefore, the worst of all worlds. This implies that adoption of Git/GitHub rewards a pivot away from `.docx`, `.xlsx`, and `.pdf` as primary file formats and towards `.Rmd`, `.md`, and `.csv`, at least during periods of rapid development.
+**Will it actively cause problems with Git/GitHub?** This boils down to the file's likely effect on Git operations. A file that is large and changing often can make your repository bloated and slow down pushes and pulls. If a file is binary, such as a Word document or Excel spreadsheet, you will not get human-readable diffs anyway, nor can GitHub display the content in the browser. Binary files are also a reliable source of merge conflicts (see below), because they are beyond the reach of Git's sophisticated automatic merging logic. A large binary file that changes often is, therefore, the worst of all worlds. This implies that adoption of Git/GitHub suggests a pivot away from `.docx`, `.xlsx`, and `.pdf` as primary file formats and towards `.Rmd`, `.md`, and `.csv`, at least during periods of rapid development.
 
 ## Collaboration
 
@@ -270,11 +270,15 @@ Consider two different ways to collaborate on a document:
   
   * **Google Doc.** In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who's been editing the document and how and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.
 
-Managing a project via Git/GitHub is much more like the Google Doc scenario, but also offers some of the attractive features of "edit, save, attach". With Git/GitHub, collaborators can work offline and there can be independent lines of development, i.e. branches. The killer feature is that Git/GitHub enable regular and structured reconciliation of all versions of all the files in the project. It is definitely more complicated than collaborating on a Google Doc, but also more powerful.
+Managing a project via Git/GitHub is much more like the Google Doc scenario, but also offers some of the attractive features of "edit, save, attach". With Git/GitHub, collaborators can work offline and there can be independent lines of development, i.e. branches. The killer feature is that Git/GitHub enables regular and structured reconciliation of all versions of all the files in the project. It is definitely more complicated than collaborating on a Google Doc, but also more powerful.
 
 How does collaboration work?
 
-Git is a decentralized version control system, meaning each collaborator has their own complete copy of the repo and its history. Everyone can work offline and/or simultaneously. GitHub plays the role of another collaborator, but a very special one. By convention, everyone agrees that GitHub is the clearinghouse, i.e. it holds the master copy of the project. The joke is that GitHub puts the "central" in decentralized version control. You pull regularly from GitHub, to receive and integrate changes made by your collaborators. You also push regularly to GitHub, to return the favor, and to maintain its status as the comprehensive, authoritative version of the project.
+Git is a decentralized version control system, meaning each collaborator has their own complete copy of the repo and its history. Everyone can work offline and/or simultaneously. GitHub plays the role of another collaborator, but a very special one. By convention, everyone agrees that GitHub is the clearinghouse, i.e. it holds the master copy of the project. The joke is that GitHub puts the "central" in decentralized version control. You pull regularly from GitHub, to receive and integrate changes made by your collaborators. You also push regularly to GitHub, to return the favor, and to maintain its status as the comprehensive, authoritative version of the project. Figure \ref{fig:push-pull} depicts this process.
+
+```{r push-pull, fig.cap = "\\label{fig:push-pull}One contributor has made two new commits and updates the master copy on GitHub with a push. Another contributor stays up-to-date with a pull from GitHub."}
+knitr::include_graphics("push-pull.png")
+```
 
 What if two people have made changes to the repository? Imagine that your collaborator makes a change to a file, commits it locally, and pushes to GitHub. Meanwhile you also make a different change to the same file and also commit locally. When you try to push your commit to GitHub, you will fail because there are commits on GitHub that you do not have. You must pull from GitHub. The good news is that quite often, this will "just work", i.e. the GitHub version and your version will merge cleanly. Git is quite clever at reconciliation and changes to different files or even distinct parts of the same file will merge. This derives from the "diff" based model of Git described earlier. After a successful merge, you can push your changes and the cycle goes on.
 
@@ -283,16 +287,6 @@ But sometimes it's not clear how to reconcile your changes with the new ones fro
 What is a merge conflict? It happens when Git can't be certain how to jointly apply the diffs from two different commits to their common parent. At each location of conflict, you must pick one version or the other -- or create a hybrid -- and mark it as resolved. Many Git clients have special tooling for this specific task, which can be very convenient. Once you've resolved all conflicts, you will be able to finalize the merge and push a version integrating your recent changes to GitHub.
 
 The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work. The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
-
-*inspiration for possible figures on collaboration/merging and the role of a remote, from the barlett talk*
-
-```{r echo = FALSE, out.width="100%"}
-knitr::include_graphics("bartlett-merge-commit.png")
-```
-
-```{r echo = FALSE, out.width="100%"}
-knitr::include_graphics("bartlett-pull.png")
-```
 
 ## GitHub as web presence
 
@@ -318,6 +312,12 @@ Don't fret too much about public versus private repositories at this point. All 
 
 Branches and pull requests are an extremely powerful feature of Git/GitHub and should be your first foray beyond the basics of commit, push, and pull. A branch is an independent line of development within a repo, with the notion it will eventually be merged back into the main branch, a.k.a. "master". In a course website, you might work in a branch to update a series of lessons, while leaving the current version intact in the meantime. A pull request is a specific and formal GitHub process for merging one branch into another. You can make a pull request between two branches in the same repo or between two copies of a repo. This is the mechanism for making and accepting contributions to open source software projects on GitHub, including many popular R packages *link to a search?*.
 
+*inspiration for possible figure on collaboration/mergin, from the barlett talk*
+
+```{r echo = FALSE, out.width="100%"}
+knitr::include_graphics("bartlett-merge-commit.png")
+```
+
 ## Conclusion
 
 *NEEDS ONE ... BUT SHORT ... SOME FODDER*
@@ -325,56 +325,6 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 Transparency about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
 
 make statistical thought and implementation available
-
-## Random things lying around
-
-Consider links to GitHub repos that exemplify certain points and are very unlikely to disappear any time soon.n
-
-possible github explainer
-https://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/
-
-http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst
-
-https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem
-
-https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3
-
-A Quick Introduction to Version Control with Git and GitHub
-http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668
-
-The active R package development community on GitHub.
-
-  * If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
-
-The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
-
-instructions re: supplementary materials
-http://amstat.tfjournals.com/supplementary-materials/
-
-TAS author instructions
-http://www.tandfonline.com/action/authorSubmission?journalCode=utas20&page=instructions
-
-http://mynameismichelle.com/git-frost/
-
-*These two points were originally written as comparisons with Google Docs, but now there are intervening paragraphs. I think I will cut them.*
-
-*Manage multiple files*. A Git repository is inherently multi-file and therefore well suited to projects comprised of many files, evolving in a coordinated fashion. Examples include a data analysis, a course website, a blog, an R package, or a book. If there is any way to proactively check or enforce their joint functionality, this is something you could verify manually prior to a commit or at certain milestones. In the case of a website, you might choose to rebuild the site prior to a commit. In the case of an R package, `R CMD check` is one of the easiest things to automate on GitHub. 
-
-*Diffs and time travel*. Google Docs are fantastic for simple collaborative work, when you don't need detailed access to the history. But the version control offered by Google Drive is very limited compared to Git. You can't compare versions at arbitrary points in time, temporarily checkout previous versions, or maintain two lines of development.
-
-*May need a segue ... depends on the fate of the two paragraphs above.*
-
-```{r eval = FALSE, echo = FALSE, results = 'asis'}
-cat("*here's one way I see phylogeny in my mind*\n")
-cat("![](https://upload.wikimedia.org/wikipedia/commons/2/2b/Phylogeny_of_Retroviruses.jpg)")
-
-cat("\n\n*make such a phylogeny with a set of crazy filenames like this*\n") 
-cat("![](https://www.onshape.com/hs-fs/hub/379003/file-2533844795-jpg/Blog_Assets/Version_Control_Graphic-2.jpg?t=1494963046029)")
-
-cat("\n\n*or riff on the famous PhD Comic*") 
-cat("![](http://phdcomics.com/comics/archive/phd101212s.gif)")
-```
-
 
 ```{r eval = is_github_document, echo = FALSE, results = 'asis'}
 ## surely there is a better way?

@@ -550,14 +550,13 @@ formats and overlook this special synergy between Markdown and GitHub.
 \subsection{Which files to commit}\label{which-files-to-commit}
 
 The files in a project arise in different ways and play different roles.
-A critical issue for workflow happiness is to figure out how you want to
-handle different file types with respect to Git. You can direct Git to
-ignore specific files or file types, such as autosaves created by your
-editor. This reduces noise and clutter: Git will not pester you to
-commit changes to these files and they will not appear in your GitHub
+A critical issue for workflow happiness is to decide how to handle
+different file types with respect to Git. You can direct Git to ignore
+specific files or file types, such as autosaves created by your editor.
+This reduces noise and clutter: Git will not pester you to commit
+changes to these files and they will not appear in your GitHub
 repository. A file that Git does not ignore is said to be
-\textbf{tracked}. Here's a useful framework for thinking about what to
-track:
+\textbf{tracked}. Here's a useful framework for deciding what to track:
 
 \textbf{Source files:} These files are created and edited by hand, such
 as R scripts and R Markdown or LaTeX files. This could also include the
@@ -627,7 +626,7 @@ GitHub display the content in the browser. Binary files are also a
 reliable source of merge conflicts (see below), because they are beyond
 the reach of Git's sophisticated automatic merging logic. A large binary
 file that changes often is, therefore, the worst of all worlds. This
-implies that adoption of Git/GitHub rewards a pivot away from
+implies that adoption of Git/GitHub suggests a pivot away from
 \texttt{.docx}, \texttt{.xlsx}, and \texttt{.pdf} as primary file
 formats and towards \texttt{.Rmd}, \texttt{.md}, and \texttt{.csv}, at
 least during periods of rapid development.
@@ -666,7 +665,7 @@ Managing a project via Git/GitHub is much more like the Google Doc
 scenario, but also offers some of the attractive features of ``edit,
 save, attach''. With Git/GitHub, collaborators can work offline and
 there can be independent lines of development, i.e.~branches. The killer
-feature is that Git/GitHub enable regular and structured reconciliation
+feature is that Git/GitHub enables regular and structured reconciliation
 of all versions of all the files in the project. It is definitely more
 complicated than collaborating on a Google Doc, but also more powerful.
 
@@ -681,7 +680,12 @@ project. The joke is that GitHub puts the ``central'' in decentralized
 version control. You pull regularly from GitHub, to receive and
 integrate changes made by your collaborators. You also push regularly to
 GitHub, to return the favor, and to maintain its status as the
-comprehensive, authoritative version of the project.
+comprehensive, authoritative version of the project. Figure
+\ref{fig:push-pull} depicts this process.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{push-pull} \caption{\label{fig:push-pull}One contributor has made two new commits and updates the master copy on GitHub with a push. Another contributor stays up-to-date with a pull from GitHub.}\label{fig:push-pull}
+\end{figure}
 
 What if two people have made changes to the repository? Imagine that
 your collaborator makes a change to a file, commits it locally, and
@@ -719,13 +723,6 @@ by you) is proportional to the evolutionary distance between two lines
 of work. The presence of frequently-changing binary files also increases
 the burden. So make lots of small commits, sync regularly with GitHub,
 and only track binary files with good reason.
-
-\emph{inspiration for possible figures on collaboration/merging and the
-role of a remote, from the barlett talk}
-
-\includegraphics[width=1\linewidth]{bartlett-merge-commit}
-
-\includegraphics[width=1\linewidth]{bartlett-pull}
 
 \subsection{GitHub as web presence}\label{github-as-web-presence}
 
@@ -822,6 +819,11 @@ This is the mechanism for making and accepting contributions to open
 source software projects on GitHub, including many popular R packages
 \emph{link to a search?}.
 
+\emph{inspiration for possible figure on collaboration/mergin, from the
+barlett talk}
+
+\includegraphics[width=1\linewidth]{bartlett-merge-commit}
+
 \subsection{Conclusion}\label{conclusion}
 
 \emph{NEEDS ONE \ldots{} BUT SHORT \ldots{} SOME FODDER}
@@ -833,72 +835,6 @@ affords a much broader audience a clear view of how scientists and
 programmers work.
 
 make statistical thought and implementation available
-
-\subsection{Random things lying
-around}\label{random-things-lying-around}
-
-Consider links to GitHub repos that exemplify certain points and are
-very unlikely to disappear any time soon.n
-
-possible github explainer
-\url{https://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/}
-
-\url{http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst}
-
-\url{https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem}
-
-\url{https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3}
-
-A Quick Introduction to Version Control with Git and GitHub
-\url{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668}
-
-The active R package development community on GitHub.
-
-\begin{itemize}
-\tightlist
-\item
-  If you care deeply about someone else's project, such as an R package
-  you use heavily, you can track its development on GitHub. You can
-  watch the repository to get notified of major activity. You can fork
-  it to keep your own copy. You can modify your fork to add features or
-  fix bugs and send them back to the owner as a proposed change.
-\end{itemize}
-
-The read-only mirrors of R source and all of CRAN. Coupled with GitHub
-search features, you can answer alot of your own questions this way.
-
-instructions re: supplementary materials
-\url{http://amstat.tfjournals.com/supplementary-materials/}
-
-TAS author instructions
-\url{http://www.tandfonline.com/action/authorSubmission?journalCode=utas20\&page=instructions}
-
-\url{http://mynameismichelle.com/git-frost/}
-
-\emph{These two points were originally written as comparisons with
-Google Docs, but now there are intervening paragraphs. I think I will
-cut them.}
-
-\emph{Manage multiple files}. A Git repository is inherently multi-file
-and therefore well suited to projects comprised of many files, evolving
-in a coordinated fashion. Examples include a data analysis, a course
-website, a blog, an R package, or a book. If there is any way to
-proactively check or enforce their joint functionality, this is
-something you could verify manually prior to a commit or at certain
-milestones. In the case of a website, you might choose to rebuild the
-site prior to a commit. In the case of an R package,
-\texttt{R\ CMD\ check} is one of the easiest things to automate on
-GitHub.
-
-\emph{Diffs and time travel}. Google Docs are fantastic for simple
-collaborative work, when you don't need detailed access to the history.
-But the version control offered by Google Drive is very limited compared
-to Git. You can't compare versions at arbitrary points in time,
-temporarily checkout previous versions, or maintain two lines of
-development.
-
-\emph{May need a segue \ldots{} depends on the fate of the two
-paragraphs above.}
 
 \bibliographystyle{agsm}
 \bibliography{git-github-for-stats.bib}

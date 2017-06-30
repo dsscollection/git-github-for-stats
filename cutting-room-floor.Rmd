@@ -1,0 +1,71 @@
+---
+title: "Excuse me, do you have a moment to talk about version control?"
+authors:
+- name: Jennifer Bryan
+  affiliation: |
+    RStudio and the Department of Statistics, University of British Columbia
+  thanks: |
+    The author gratefully acknowledges the constructive feedback from reviewers
+    Nicholas Horton, Colin Rundel, and Hadley Wickham.
+blinded: 0
+output:
+  github_document:
+    toc: yes
+  rticles::asa_article: null
+keywords: version control
+abstract: Abstract abstract abstract.
+bibliography: git-github-for-stats.bib
+---
+
+```{r knitr_options, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, out.width = "100%")
+```
+
+## Random notes that used to live at the end of the main document
+
+Consider links to GitHub repos that exemplify certain points and are very unlikely to disappear any time soon.n
+
+possible github explainer
+https://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/
+
+http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst
+
+https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem
+
+https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3
+
+A Quick Introduction to Version Control with Git and GitHub
+http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668
+
+The active R package development community on GitHub.
+
+  * If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
+
+The read-only mirrors of R source and all of CRAN. Coupled with GitHub search features, you can answer alot of your own questions this way.
+
+instructions re: supplementary materials
+http://amstat.tfjournals.com/supplementary-materials/
+
+TAS author instructions
+http://www.tandfonline.com/action/authorSubmission?journalCode=utas20&page=instructions
+
+http://mynameismichelle.com/git-frost/
+
+*These two points were originally written as comparisons with Google Docs, but now there are intervening paragraphs. I think I will cut them.*
+
+*Manage multiple files*. A Git repository is inherently multi-file and therefore well suited to projects comprised of many files, evolving in a coordinated fashion. Examples include a data analysis, a course website, a blog, an R package, or a book. If there is any way to proactively check or enforce their joint functionality, this is something you could verify manually prior to a commit or at certain milestones. In the case of a website, you might choose to rebuild the site prior to a commit. In the case of an R package, `R CMD check` is one of the easiest things to automate on GitHub. 
+
+*Diffs and time travel*. Google Docs are fantastic for simple collaborative work, when you don't need detailed access to the history. But the version control offered by Google Drive is very limited compared to Git. You can't compare versions at arbitrary points in time, temporarily checkout previous versions, or maintain two lines of development.
+
+*May need a segue ... depends on the fate of the two paragraphs above.*
+
+```{r eval = FALSE, echo = FALSE, results = 'asis'}
+cat("*here's one way I see phylogeny in my mind*\n")
+cat("![](https://upload.wikimedia.org/wikipedia/commons/2/2b/Phylogeny_of_Retroviruses.jpg)")
+
+cat("\n\n*make such a phylogeny with a set of crazy filenames like this*\n") 
+cat("![](https://www.onshape.com/hs-fs/hub/379003/file-2533844795-jpg/Blog_Assets/Version_Control_Graphic-2.jpg?t=1494963046029)")
+
+cat("\n\n*or riff on the famous PhD Comic*") 
+cat("![](http://phdcomics.com/comics/archive/phd101212s.gif)")
+```
