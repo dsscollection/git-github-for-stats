@@ -1,0 +1,1 @@
+convert Git-Logo-Black.png -fuzz 0% -fill '#544D47' -opaque '#000000' Git-Logo-544D47.png
