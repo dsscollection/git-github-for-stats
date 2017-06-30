@@ -485,9 +485,11 @@ users}\label{markdown-is-special-for-r-users}
 
 Markdown is especially holy for R users because of
 \href{http://rmarkdown.rstudio.com}{R Markdown}, which is just Markdown
-that includes chunks of R code. Again, do not regard R Markdown as
-something you must clear your schedule to learn. If you can write email
-and a bit of R code, you can write R Markdown. The
+that includes chunks of R code. Figure \ref{fig:report-from-r-or-rmd}A
+shows a simple \texttt{.Rmd} document for our iris example. Again, do
+not regard R Markdown as something you must clear your schedule to
+learn. If you can write email and a bit of R code, you can write R
+Markdown. The
 \href{https://CRAN.R-project.org/package=rmarkdown}{rmarkdown package}
 \citep{rmd-pkg} converts R Markdown (\texttt{.Rmd} files) to Markdown
 (\texttt{.md} files), running the code and inserting the results,
@@ -495,20 +497,24 @@ including figures, into the document. This is powered by another
 package, \href{https://CRAN.R-project.org/package=knitr}{knitr}
 \citep{knitr-pkg, knitr-book}, under the hood. This process is made
 especially easy in RStudio, but is by no means limited to users of that
-application.
+application. Any R user can call \texttt{rmarkdown::render("foo.Rmd")}.
 
-\emph{this too is crying out for a visual Rmd -\textgreater{} md
--\textgreater{} rendered thing looking good}
+\begin{figure}
+\includegraphics[width=1\linewidth]{report-from-r-or-rmd} \caption{\label{fig:report-from-r-or-rmd}A: R Markdown. B: R script, equivalent to the R Markdown in A. C: The same rendered result is produced by A or B. This is how the Markdown will look on GitHub.}\label{fig:report-from-r-or-rmd}
+\end{figure}
 
 These R-derived Markdown files, if committed and pushed, then enjoy the
 usual privileged treatment on GitHub already described above. Once an
 \texttt{.Rmd} file has been rendered to \texttt{.md}, anyone viewing it
 on GitHub can read the prose, study the R code, \textbf{and view the
-results of running that code}, including figures. It is the best of all
-worlds, because the code is revealed and, by definition, is the code
-that produced the results. And yet a reader can gaze upon the product in
-a web browser, without needing to download the code, install all
-necessary dependencies, and run it.
+results of running that code}, including figures. Figure
+\ref{fig:report-from-r-or-rmd}C shows how the \texttt{.Rmd} document
+from Figure \ref{fig:report-from-r-or-rmd}A looks when rendered to
+\texttt{.md} and pushed to GitHub. It is the best of all worlds, because
+the code is revealed and, by definition, is the code that produced the
+results. And yet a reader can gaze upon the product in a web browser,
+without needing to download the code, install all necessary
+dependencies, and run it.
 
 The overall effect is that a directory that is a GitHub-synced Git repo
 can simultaneously be the code-heavy back end of a project and an
@@ -518,9 +524,12 @@ You do not, in fact, even need to work in R Markdown to exploit this. It
 \href{http://rmarkdown.rstudio.com/articles_report_from_r_script.html}{works
 with plain R scripts} as well. You can use exactly the same machinery to
 prepare a rendered version of an R script, i.e.~to go from \texttt{.R}
-to \texttt{.md}. Again, RStudio makes this especially easy, but this is
-not limited to RStudio. Once the Markdown file is pushed to GitHub, it
-is as if the reader has run your code or is able to look over your
+to \texttt{.md}. Figure \ref{fig:report-from-r-or-rmd}B shows an R
+script that produces exactly the same rendered report, i.e.~Figure
+\ref{fig:report-from-r-or-rmd}C, as the R markdown in Figure
+\ref{fig:report-from-r-or-rmd}B. Again, RStudio makes this especially
+easy, but is not required. Once the Markdown file is pushed to GitHub,
+it is as if the reader has run your code or is able to look over your
 shoulder at your R session. This provides a lightweight system for
 exposing work-in-progress to collaborators, without slowing down to
 create separate reports. Comment lines that begin with
@@ -530,20 +539,13 @@ many prose comments, you might decide to switch from \texttt{.R} to
 \texttt{.Rmd}, have proper top-level prose, and move the code down into
 chunks.
 
-\emph{figure showing the yaml needed for this? so the use of
-\texttt{github\_document} or \texttt{keep\_md\ =\ TRUE}; try to make a
-figure that does double or triple duty, i.e.~illustrates this and points
-made elsewhere}
-
 Before we move on, I want to zoom out and revisit R Markdown and the
 rmarkdown package more generally. Note that R Markdown can be rendered
 to many more formats than Markdown, including HTML, PDF, and Microsoft
 Word, and can incorporate code chunks in many languages other than R.
-Markdown is emphasized here, because it is extraordinarily useful in
-GitHub-hosted projects. Even when targetting another output format, the
-Markdown must be created as a necessary intermediate. Sometimes it is
-all you neeed, such as on GitHub, and in other contexts it may even be
-discarded.
+Markdown is emphasized here because it is extraordinarily useful in
+GitHub-hosted projects. Many people are used to targetting other output
+formats and overlook this special synergy between Markdown and GitHub.
 
 \subsection{Which files to commit}\label{which-files-to-commit}
 
