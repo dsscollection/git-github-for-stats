@@ -67,7 +67,7 @@ What is GitHub?
 
 We've explored Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
-The remote host acts as the clearinghouse for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
+The remote host acts as the distributor for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
 
 <img src="your-repo-their-repo-central-remote-repo.png" alt="\label{fig:yours-theirs-github}With Git, all contributors have a copy of the repo, with all files and the full history. It is typical to stay in sync through the use of a central remote repo, such as GitHub. Hosted remotes like GitHub also provide access to the repo through a web browser." width="100%" />
 <p class="caption">
@@ -89,7 +89,7 @@ Issues can be assigned to specific people and they can be labelled, e.g. "bug", 
 Initial system setup
 --------------------
 
-If I've convinced you to experiment with Git and GitHub, you need to do some initial setup. These first steps happen one or, for some steps, once per computer. This is excerpted from [Happy Git and GitHub for the useR](http://happygitwithr.com), which holds battle-tested instructions honed over several years in [STAT 545](http://stat545.com) at the University of British Columbia.
+If I've convinced you to experiment with Git and GitHub, you need to do some initial setup. These first steps happen once or, for some steps, once per computer. This is excerpted from [Happy Git and GitHub for the useR](http://happygitwithr.com), which holds battle-tested instructions honed over several years in [STAT 545](http://stat545.com) at the University of British Columbia.
 
 -   Register for a free account with GitHub.
 
