@@ -32,6 +32,12 @@ Perez-Riverol, Y., Gatto, L., Wang, R., Sachsenberg, T., Uszkoreit, J.,
   {\bf 12}(7),~1--11.
 \newline\harvardurl{https://doi.org/10.1371/journal.pcbi.1004947}
 
+\harvarditem{{R Core Team}}{2017}{R}
+{R Core Team}  \harvardyearleft 2017\harvardyearright , {\em R: A Language and
+  Environment for Statistical Computing}, R Foundation for Statistical
+  Computing, Vienna, Austria.
+\newline\harvardurl{https://www.R-project.org/}
+
 \harvarditem{Ram}{2013}{Ram2013}
 Ram, K.  \harvardyearleft 2013\harvardyearright , `Git can facilitate greater
   reproducibility and increased transparency in science', {\em Source Code for

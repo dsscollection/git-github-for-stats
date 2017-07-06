@@ -19,7 +19,7 @@ Excuse me, do you have a moment to talk about version control?
 Why Git?
 --------
 
-Why would a statistician use a version control system, such as [Git](http://git-scm.com) (*Git*, n.d.)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
+Why would a statistician use a version control system, such as [Git](http://git-scm.com) (“Git”)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
@@ -28,7 +28,7 @@ There are many benefits of using hosted version control in your statistical prac
 -   Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
 -   Collaboration is much more structured, with powerful tools for asynchronous work and managing versions.
 -   The marginal effort required to create a web presence for a project is negligible.
--   GitHub makes a fantastic course management system for courses that use R. You can exchange actual working code with your students and explore the associated results.
+-   GitHub makes a fantastic course management system for courses that use R (<span class="citeproc-not-found" data-reference-id="R">**???**</span>). You can exchange actual working code with your students and explore the associated results.
 -   By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
 
 Now the bad news: Git was built neither for the exact usage described here, nor for broad usability. You will undoubtedly notice this, so it's best to know in advance. Happily, there are many helpful tools that mediate your interactions with Git. GitHub itself is a fine example, as is [RStudio](https://www.rstudio.com/products/rstudio/). In addition to pointing out tools that soften Git's sharpest edges, I recommend specific habits and attitudes that reduce frustration.
@@ -274,9 +274,9 @@ Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen
 
 Bartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. <https://speakerdeck.com/alicebartlett/git-for-humans>.
 
-*GitHub*. n.d. <https://github.com>.
+“Git.” <https://git-scm.com>.
 
-*Git*. n.d. <https://git-scm.com>.
+*GitHub*. n.d. <https://github.com>.
 
 Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. “Ten Simple Rules for Taking Advantage of Git and Github.” *PLOS Computational Biology* 12 (7). Public Library of Science: 1–11. doi:[10.1371/journal.pcbi.1004947](https://doi.org/10.1371/journal.pcbi.1004947).
 
