@@ -53,7 +53,7 @@ Many people who don't use Git unwittingly re-invent a poor man's version of it. 
 A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git.
 </p>
 
-The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message. Figure C depicts this linear, *in situ* development process. Figure D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message. Figure C depicts this linear, *in situ* development process, with development and time flowing from bottom to top. Figure D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
 Who should read this and what to expect
 ---------------------------------------
@@ -65,7 +65,7 @@ This article does not provide step-by-step instructions on how to use Git and Gi
 What is GitHub?
 ---------------
 
-We've explored Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
+We've introduced Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
 The remote host acts as the distributor for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
 
