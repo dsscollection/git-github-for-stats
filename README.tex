@@ -104,18 +104,19 @@ Now the bad news: Git was built neither for the exact usage described
 here, nor for broad usability. You will undoubtedly notice this, so it's
 best to know in advance. Happily, there are many helpful tools that
 mediate your interactions with Git. GitHub itself is a fine example, as
-is \href{https://www.rstudio.com/products/rstudio/}{RStudio}. In
-addition to pointing out tools that soften Git's sharpest edges, I
-recommend specific habits and attitudes that reduce frustration.
+is \href{https://www.rstudio.com/products/rstudio/}{RStudio}
+\citep{rstudio}. In addition to pointing out tools that soften Git's
+sharpest edges, I recommend specific habits and attitudes that reduce
+frustration.
 
 \subsection{What is Git?}\label{what-is-git}
 
-\href{http://git-scm.com}{Git} is a \textbf{version control system}. Its
-original purpose was to help groups of developers work collaboratively
-on big software projects. Git manages the evolution of a set of files --
-called a \textbf{repository} or \textbf{repo} -- in a sane, highly
-structured way. It is like the ``Track Changes'' feature from Microsoft
-Word, but more rigorous, powerful, and scaled up to multiple files.
+Git is a \textbf{version control system}. Its original purpose was to
+help groups of developers work collaboratively on big software projects.
+Git manages the evolution of a set of files -- called a
+\textbf{repository} or \textbf{repo} -- in a sane, highly structured
+way. It is like the ``Track Changes'' feature from Microsoft Word, but
+more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community
 \citep{Ram2013, git-for-humans, ten-simple-rules-git}. We use it to
@@ -153,9 +154,9 @@ decorating the file name with initials, dates, and other descriptors.
 Even when working alone, this leads to multiple versions of
 \texttt{iris.R} of indeterminate relatedness (Figure
 \ref{fig:diy-vs-git}A). In collaborative settings based on email
-distribution, the original file swiftly becomes the root of a
-complicated phylogeny that no amount of ``Track changes'' and good
-intentions can resolve Figure \ref{fig:diy-vs-git}B).
+distribution, the original file swiftly becomes part of a complicated
+phylogeny that no amount of ``Track changes'' and good intentions can
+resolve Figure \ref{fig:diy-vs-git}B).
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{diy-vs-git-solo-vs-collab} \caption{\label{fig:diy-vs-git}A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git.}\label{fig:diy-vs-git}
@@ -188,13 +189,13 @@ the Git-curious generate the activation energy needed to get started.
 \subsection{What is GitHub?}\label{what-is-github}
 
 We've introduced Git's powerful structure for file management, so where
-does GitHub fit in? \href{https://github.com}{GitHub} complements Git by
-providing a slick user interface and distribution mechanism for Git
-repositories. Git is the software you will use locally to record changes
-to a set of files. GitHub is a hosting service that provides a Git-aware
-home for such projects on the internet. These relationships are shown in
-Figure \ref{fig:yours-theirs-github}. GitHub is like DropBox or Google
-Drive, but more structured, powerful, and programmatic.
+does GitHub fit in? GitHub complements Git by providing a slick user
+interface and distribution mechanism for Git repositories. Git is the
+software you will use locally to record changes to a set of files.
+GitHub is a hosting service that provides a Git-aware home for such
+projects on the internet. These relationships are shown in Figure
+\ref{fig:yours-theirs-github}. GitHub is like DropBox or Google Drive,
+but more structured, powerful, and programmatic.
 
 The remote host acts as the distributor for a Git-managed project. This
 allows others to browse project files, explore their history, sync up
@@ -281,10 +282,9 @@ Columbia.
   Install a local Git client, \emph{optional but highly recommended}. A
   Git client provides a graphical user interface for Git, which is
   otherwise command-line only. If you are an R user, you will find that
-  \href{https://www.rstudio.com/products/rstudio-desktop/}{RStudio}
-  provides a great deal of this functionality. There are some notable
-  gaps, however, so you might still choose to install a dedicated and
-  comprehensive Git client such as
+  RStudio provides a great deal of this functionality. There are some
+  notable gaps, however, so you might still choose to install a
+  dedicated and comprehensive Git client such as
   \href{https://www.sourcetreeapp.com}{SourceTree} or
   \href{https://www.gitkraken.com}{GitKraken}. Git just operates on
   files, so you can do some operations from RStudio, others from
@@ -787,8 +787,7 @@ things out. There are more advanced topics that will come up once your
 use of Git becomes more sophisticated and there are topics that are only
 relevant to certain types of reader.
 
-I targeted \href{https://github.com}{GitHub} -- not
-\href{https://bitbucket.org}{Bitbucket} or
+I targeted GitHub -- not \href{https://bitbucket.org}{Bitbucket} or
 \href{https://about.gitlab.com}{GitLab} -- for the sake of specificity.
 However, all the big-picture principles and even some mechanics will
 carry over to these alternative hosting platforms. I am advocating for

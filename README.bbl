@@ -44,6 +44,11 @@ Ram, K.  \harvardyearleft 2013\harvardyearright , `Git can facilitate greater
   Biology and Medicine} {\bf 8}(1),~7.
 \newline\harvardurl{http://dx.doi.org/10.1186/1751-0473-8-7}
 
+\harvarditem{{\em RStudio Integrated Desktop Environment}}{n.d.}{rstudio}
+{\em RStudio Integrated Desktop Environment}  \harvardyearleft
+  n.d.\harvardyearright .
+\newline\harvardurl{https://www.rstudio.com/products/rstudio}
+
 \harvarditem{Xie}{2015}{knitr-book}
 Xie, Y.  \harvardyearleft 2015\harvardyearright , {\em Dynamic Documents with
   {R} and knitr}, 2nd edn, Chapman and Hall/CRC, Boca Raton, Florida.

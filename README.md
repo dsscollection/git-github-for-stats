@@ -19,7 +19,7 @@ Excuse me, do you have a moment to talk about version control?
 Why Git?
 --------
 
-Why would a statistician use a version control system, such as [Git](http://git-scm.com) (“Git”)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
+Why would a statistician use a version control system, such as [Git](http://git-scm.com) (“Git,” n.d.)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
@@ -31,12 +31,12 @@ There are many benefits of using hosted version control in your statistical prac
 -   GitHub makes a fantastic course management system for courses that use R (<span class="citeproc-not-found" data-reference-id="R">**???**</span>). You can exchange actual working code with your students and explore the associated results.
 -   By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
 
-Now the bad news: Git was built neither for the exact usage described here, nor for broad usability. You will undoubtedly notice this, so it's best to know in advance. Happily, there are many helpful tools that mediate your interactions with Git. GitHub itself is a fine example, as is [RStudio](https://www.rstudio.com/products/rstudio/). In addition to pointing out tools that soften Git's sharpest edges, I recommend specific habits and attitudes that reduce frustration.
+Now the bad news: Git was built neither for the exact usage described here, nor for broad usability. You will undoubtedly notice this, so it's best to know in advance. Happily, there are many helpful tools that mediate your interactions with Git. GitHub itself is a fine example, as is [RStudio](https://www.rstudio.com/products/rstudio/) (*RStudio Integrated Desktop Environment*, n.d.). In addition to pointing out tools that soften Git's sharpest edges, I recommend specific habits and attitudes that reduce frustration.
 
 What is Git?
 ------------
 
-[Git](http://git-scm.com) is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** or **repo** -- in a sane, highly structured way. It is like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
+Git is a **version control system**. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a **repository** or **repo** -- in a sane, highly structured way. It is like the "Track Changes" feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community (Ram 2013; Bartlett 2016; Perez-Riverol et al. 2016). We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
@@ -46,7 +46,7 @@ In my opinion, **for new users**, the pros of Git only outweigh the cons when yo
 
 This has an implication for selecting your first Git projects: you will enjoy the most gain for your pain if you pick a project that involves sharing rapidly evolving files with others. It is tempting to pick a quiet, private project, but you risk missing out on the main benefits of formal version control.
 
-Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Figure A). In collaborative settings based on email distribution, the original file swiftly becomes the root of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve Figure B).
+Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Figure A). In collaborative settings based on email distribution, the original file swiftly becomes part of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve Figure B).
 
 <img src="diy-vs-git-solo-vs-collab.png" alt="\label{fig:diy-vs-git}A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git." width="100%" />
 <p class="caption">
@@ -65,7 +65,7 @@ This article does not provide step-by-step instructions on how to use Git and Gi
 What is GitHub?
 ---------------
 
-We've introduced Git's powerful structure for file management, so where does GitHub fit in? [GitHub](https://github.com) complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
+We've introduced Git's powerful structure for file management, so where does GitHub fit in? GitHub complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure . GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
 The remote host acts as the distributor for a Git-managed project. This allows others to browse project files, explore their history, sync up with the current version, and perhaps even propose or make changes. GitHub's well-designed web interface is a dramatic improvement over traditional Unix Git servers. Many operations can be done entirely in the browser, including editing or adding files. It is easy to create a hyperlink to a specific file or location in a file, at a specific version, which can make meta-conversations about project code or reports much more productive. GitHub also offers granular control over who can see, edit, and administer a project.
 
@@ -95,7 +95,7 @@ If I've convinced you to experiment with Git and GitHub, you need to do some ini
 
 -   Install Git. Depending on your OS, Git might already be installed. But many will need to install it or will choose to update to a more recent version. Some basic configuration is critical, such as setting your username and email.
 
--   Install a local Git client, *optional but highly recommended*. A Git client provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that [RStudio](https://www.rstudio.com/products/rstudio-desktop/) provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as [SourceTree](https://www.sourcetreeapp.com) or [GitKraken](https://www.gitkraken.com). Git just operates on files, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
+-   Install a local Git client, *optional but highly recommended*. A Git client provides a graphical user interface for Git, which is otherwise command-line only. If you are an R user, you will find that RStudio provides a great deal of this functionality. There are some notable gaps, however, so you might still choose to install a dedicated and comprehensive Git client such as [SourceTree](https://www.sourcetreeapp.com) or [GitKraken](https://www.gitkraken.com). Git just operates on files, so you can do some operations from RStudio, others from SourceTree, and others from the shell.
 
 -   Confirm, with a practice repository, that local Git can send and receive the current version of the repository on GitHub, known as **pushing** and **pulling**, respectively.
 
@@ -251,7 +251,7 @@ More resources
 
 I've tried to convey the main points about the use of Git and GitHub in statistical and data analytical settings, but I've had to leave many things out. There are more advanced topics that will come up once your use of Git becomes more sophisticated and there are topics that are only relevant to certain types of reader.
 
-I targeted [GitHub](https://github.com) -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms. I am advocating for the use of hosted version control as a general concept, with GitHub being the best and most common provider today. I note that many companies and even universities are starting to make GitHub Enterprise or GitLab available internally. For example, we host our own instance of GitHub Enterprise at UBC to support our Master of Data Science program
+I targeted GitHub -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms. I am advocating for the use of hosted version control as a general concept, with GitHub being the best and most common provider today. I note that many companies and even universities are starting to make GitHub Enterprise or GitLab available internally. For example, we host our own instance of GitHub Enterprise at UBC to support our Master of Data Science program
 
 Don't fret too much about public versus private repositories at this point. All the major hosting providers offer private repositories with flexible control over who can read or write to the repo. There are many ways to get private repositories for low or no cost, [especially for academics](https://help.github.com/articles/discounted-organization-accounts/). If you outgrow this initial arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service, self-host one of these platforms, or advocate for organization-wide solutions.
 
@@ -274,13 +274,15 @@ Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen
 
 Bartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. <https://speakerdeck.com/alicebartlett/git-for-humans>.
 
-“Git.” <https://git-scm.com>.
+“Git.” n.d. <https://git-scm.com>.
 
 *GitHub*. n.d. <https://github.com>.
 
 Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. “Ten Simple Rules for Taking Advantage of Git and Github.” *PLOS Computational Biology* 12 (7). Public Library of Science: 1–11. doi:[10.1371/journal.pcbi.1004947](https://doi.org/10.1371/journal.pcbi.1004947).
 
 Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” *Source Code for Biology and Medicine* 8 (1): 7. doi:[10.1186/1751-0473-8-7](https://doi.org/10.1186/1751-0473-8-7).
+
+*RStudio Integrated Desktop Environment*. n.d. <https://www.rstudio.com/products/rstudio>.
 
 Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <http://yihui.name/knitr/>.
 
