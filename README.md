@@ -19,7 +19,7 @@ Excuse me, do you have a moment to talk about version control?
 Why Git?
 ========
 
-Why would a statistician use a version control system, such as [Git](http://git-scm.com) (“Git,” n.d.)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
+Why would a statistician use a version control system, such as [Git](https://git-scm.com) (*Git*, n.d.)? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) (*GitHub*, n.d.)? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
@@ -44,7 +44,7 @@ A lone ranger, working on a single computer, can benefit from adopting version c
 
 In my opinion, **for new users**, the pros of Git only outweigh the cons when you consider the overhead of working with other people, including your future self. And who among us does not need to do that? In a Git-based workflow, you document and, optionally, expose your work as you go. Communication and collaboration are the killer apps of version control. Git's model of file management can feel uncomfortably rigid, but it enables the distribution of files across different people, computers, and time.
 
-This has an implication for selecting your first Git projects: you will enjoy the most gain for your pain if you pick a project that involves sharing rapidly evolving files with others. It is tempting to pick a quiet, private project, but you risk missing out on the main benefits of formal version control.
+This has an implication for selecting your first Git projects: you will enjoy the most gain for your pain if you pick a project that involves sharing rapidly evolving files with others. It is tempting to pick a quiet, private project. But if you do, you may never find the benefits of formal version control compelling enough to cement the new habit.
 
 Many people who don't use Git unwittingly re-invent a poor man's version of it. Figure depicts a hypothetical analysis of the iris data, captured in a single R source file. With informal version control, contributors create derivative copies of `iris.R`, decorating the file name with initials, dates, and other descriptors. Even when working alone, this leads to multiple versions of `iris.R` of indeterminate relatedness (Figure A). In collaborative settings based on email distribution, the original file swiftly becomes part of a complicated phylogeny that no amount of "Track changes" and good intentions can resolve Figure B).
 
@@ -260,7 +260,7 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 Call to action
 ==============
 
-Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future (Donoho 2015). I strongly disagree with glib claims that "Data Science is just Statistics", which I've heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed (Donoho 2015). In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics. It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
+Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future (Donoho 2015). I strongly disagree with glib claims that "Data Science is just Statistics", which can be heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed (Donoho 2015). In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics. It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
 
 Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. *Rmarkdown: Dynamic Documents for R*. <http://rmarkdown.rstudio.com>.
 
@@ -268,9 +268,9 @@ Bartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX
 
 Donoho, David. 2015. “50 Years of Data Science.” Stanford University; Version 1.00. <http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf>.
 
-“Git.” n.d. <https://git-scm.com>.
-
 *GitHub*. n.d. <https://github.com>.
+
+*Git*. n.d. <https://git-scm.com>.
 
 Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. “Ten Simple Rules for Taking Advantage of Git and Github.” *PLOS Computational Biology* 12 (7). Public Library of Science: 1–11. doi:[10.1371/journal.pcbi.1004947](https://doi.org/10.1371/journal.pcbi.1004947).
 
