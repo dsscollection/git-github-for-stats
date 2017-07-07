@@ -12,23 +12,32 @@ output:
   github_document:
     toc: yes
   rticles::asa_article: null
-keywords: version control
-abstract: Abstract abstract abstract.
+keywords: |
+    data science, workflow, Git, GitHub, R language, R Markdown, reproducibility
+abstract: |
+    Data analysis, statistical research, and teaching statistics have at least
+    one thing in common: these activities all produce many files! There may be
+    data files, source code, figures, tables, prepared reports, and much more.
+    These files generally evolve over the course of a project and often need to
+    be shared with others, for reading or edits, as a project unfolds. Without
+    explicit and structured management, project organization can easily descend
+    into chaos, taking time away from the primary work and reducing the quality
+    of the final product. This unhappy result can be avoided by repurposing
+    tools and workflows from the software development world, namely, distributed
+    version control. This article describes the use of the version control
+    system Git and and the hosting site GitHub for statistical and data
+    scientific workflows. Special attention is given to projects that use the
+    statistical language R and, optionally, R Markdown documents.
 bibliography: git-github-for-stats.bib
 ---
 
 ```{r knitr_options, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, out.width = "100%")
-```
-
-```{r include = FALSE}
-## I temporarily embed some figures from the internet and LaTeX just. can't.
-## deal. with. it.
 is_github_document <-
   knitr::opts_knit$get("rmarkdown.pandoc.to") == "markdown_github"
 ```
 
-## Why Git?
+# Why Git?
 
 Why would a statistician use a version control system, such as [Git](http://git-scm.com) [@git]? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) [@github]? Could the gains possibly justify the inevitable pain?
 
@@ -51,7 +60,7 @@ with Git. GitHub itself is a fine example, as is
 pointing out tools that soften Git's sharpest edges, I recommend specific habits
 and attitudes that reduce frustration.
 
-## What is Git?
+# What is Git?
 
 Git is a __version control system__. Its original purpose was to help groups of
 developers work collaboratively on big software projects. Git manages the
@@ -81,7 +90,7 @@ knitr::include_graphics("diy-vs-git-solo-vs-collab.png")
 The Git way is to track the evolution of `iris.R`, through a series of commits,
 each equipped with an explanatory message. Figure \ref{fig:diy-vs-git}C depicts this linear, *in situ* development process, with development and time flowing from bottom to top. Figure \ref{fig:diy-vs-git}D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
-## Who should read this and what to expect
+# Who should read this and what to expect
 
 The target reader is anyone who does statistical research, analysis, or 
 instruction. Those whose work is some combination of these three may find the 
@@ -92,7 +101,7 @@ GitHub. This format would not be effective, but annotated links to
 such resources are given in the supplementary materials. Instead, I convey what the workflow feels like and what the payoffs are, with special attention to the statistics and R context. The goal is to help the Git-curious generate the 
 activation energy needed to get started.
 
-## What is GitHub?
+# What is GitHub?
 
 We've introduced Git's powerful structure for file management, so where does GitHub fit in? GitHub complements Git by providing a slick user interface and distribution mechanism for Git repositories. Git is the software you will use locally to record changes to a set of files. GitHub is a hosting service that provides a Git-aware home for such projects on the internet. These relationships are shown in Figure \ref{fig:yours-theirs-github}. GitHub is like DropBox or Google Drive, but more structured, powerful, and programmatic.
 
@@ -143,7 +152,7 @@ issues and the project files or file changes, you have extraordinary power to
 document why things have happened in the past and to organize what needs to 
 happen in the future.
 
-## Initial system setup
+# Initial system setup
 
 If I've convinced you to experiment with Git and GitHub, you need to do some initial setup. These first steps happen once or, for some steps, once per computer. This is excerpted from [Happy Git and GitHub for the useR](http://happygitwithr.com), which holds battle-tested instructions honed over several years in [STAT 545](http://stat545.com) at the University of British Columbia.
 
@@ -171,10 +180,10 @@ projects. Some general recommendations for agony reduction:
   * I repeat: consider using a graphical front-end for Git, a.k.a. a Git client, versus restricting yourself to the command line interface.
   * Establish confidence in the basics (e.g. make a change, commit it, push it) before wading into more advanced usage (e.g. branching).
   * Commit yourself to Git usage on a project that will provide sustained practice over several months. Usage in a course is great, because it provides a relentless stream of small deadlines.
-  * Realize that no one is giving out Git style points. It's ok to "power-cycle", i.e. re-initialize the Git repository, to get unstuck.
+  * Realize that no one is giving out Git style points. It's OK to "power-cycle", i.e. re-initialize the Git repository, to get unstuck.
 
 
-## Repositories and workflow
+# Repositories and workflow
 
 For new or existing projects, you will:
 
@@ -193,7 +202,7 @@ Here is the daily workflow:
   
 This is a moderate change to your normal, daily workflow. It feels weird at first, but quickly becomes second nature. In [STAT 545](http://stat545.com) students are required to submit all coursework via GitHub, starting in week one. Most have never seen Git before and do not identify as programmers. It is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.
 
-## Commits, diffs, and tags
+# Commits, diffs, and tags
 
 We now connect the fundamental concepts of Git to the data science workflow:
 
@@ -217,13 +226,13 @@ Every time you make a commit you must also write a short __commit message__. Ide
 
 Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a SHA-1 checksum hash of the commit). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. The commit messages in Figure \ref{fig:commit-diff-sha-tag}  are prefixed by such truncated SHAs. You can also designate certain snapshots as special with a __tag__, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., "v1.0.3". For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators. Figure \ref{fig:commit-diff-sha-tag} shows a tag, "draft-01", associated with the last commit.
 
-## Markdown is special on GitHub
+# Markdown is special on GitHub
 
 This may seem unrelated to Git, GitHub, and R, but it is now necessary to talk about [Markdown](https://daringfireball.net/projects/markdown/syntax). Markdown is a markup language, like HTML and LaTeX, but designed to be as lightweight as possible. The goal is still to separate form and content, but also to prioritize human-readability, even at the cost of fancy features. Markdown is in wide use on sites like [WordPress](https://en.support.wordpress.com/markdown/), [StackOverflow](https://stackoverflow.com/editing-help), and, yes, [GitHub](https://help.github.com/categories/writing-on-github/). These sites use Markdown because it allows a diverse population of site users to author decent-looking web content, with hyperlinks and some formatting. Do not build this up into some heroic, LaTeX-level learning task, for it is not. If you can write an email, you can write Markdown.
 
 Any file written in Markdown is rendered in an HTML-like way on GitHub. In particular, formatting and links "just work". This is the last piece we need to seal my claim that merely pushing your project to GitHub gives it a web presence for zero extra work. If you make even a modest effort to embed a few explanatory Markdown files in your repo, you will get an automatically-updated project website for free. In particular, if a directory has a `README.md` file, GitHub renders it like a home page or "index.html" when people visit that directory in the browser. It is very common for a repo to have a top-level `README.md`, but each subdirectory can have its own as well.
 
-## Markdown is special for R users
+# Markdown is special for R users
 
 Markdown is especially holy for R users because of [R Markdown](http://rmarkdown.rstudio.com), which is just Markdown that includes chunks of R code.  Figure \ref{fig:report-from-r-or-rmd}A shows a simple `.Rmd` document for our iris example. Again, do not regard R Markdown as something you must clear your schedule to learn. If you can write email and a bit of R code, you can write R Markdown. The [rmarkdown package](https://CRAN.R-project.org/package=rmarkdown) [@rmd-pkg] converts R Markdown (`.Rmd` files) to Markdown (`.md` files), running the code and inserting the results, including figures, into the document. This is powered by another package, [knitr](https://CRAN.R-project.org/package=knitr) [@knitr-pkg; @knitr-book], under the hood. This process is made especially easy in RStudio, but is by no means limited to users of that application. Any R user can call `rmarkdown::render("foo.Rmd")`.
 
@@ -237,9 +246,9 @@ The overall effect is that a directory that is a GitHub-synced Git repo can simu
 
 You do not, in fact, even need to work in R Markdown to exploit this. It [works with plain R scripts](http://rmarkdown.rstudio.com/articles_report_from_r_script.html) as well. You can use exactly the same machinery to prepare a rendered version of an R script, i.e. to go from `.R` to `.md`. Figure \ref{fig:report-from-r-or-rmd}B shows an R script that produces exactly the same rendered report, i.e. Figure \ref{fig:report-from-r-or-rmd}C, as the R markdown in Figure \ref{fig:report-from-r-or-rmd}B. Again, RStudio makes this especially easy, but is not required. Once the Markdown file is pushed to GitHub, it is as if the reader has run your code or is able to look over your shoulder at your R session. This provides a lightweight system for exposing work-in-progress to collaborators, without slowing down to create separate reports. Comment lines that begin with `#'` are elevated to top-level prose, providing a way to make the document more welcoming for a reader. Once there are many prose comments, you might decide to switch from `.R` to `.Rmd`, have proper top-level prose, and move the code down into chunks.
 
-Before we move on, I want to zoom out and revisit R Markdown and the rmarkdown package more generally. Note that R Markdown can be rendered to many more formats than Markdown, including HTML, PDF, and Microsoft Word, and can incorporate code chunks in many languages other than R. Markdown is emphasized here because it is extraordinarily useful in GitHub-hosted projects. Many people are used to targetting other output formats and overlook this special synergy between Markdown and GitHub.
+Before we move on, I want to zoom out and revisit R Markdown and the rmarkdown package more generally. Note that R Markdown can be rendered to many more formats than Markdown, including HTML, PDF, and Microsoft Word, and can incorporate code chunks in many languages other than R. Markdown is emphasized here because it is extraordinarily useful in GitHub-hosted projects. Many people are used to targeting other output formats and overlook this special synergy between Markdown and GitHub.
 
-## Which files to commit
+# Which files to commit
 
 The files in a project arise in different ways and play different roles. A critical issue for workflow happiness is to decide how to handle different file types with respect to Git. You can direct Git to ignore specific files or file types, such as autosaves created by your editor. This reduces noise and clutter: Git will not pester you to commit changes to these files and they will not appear in your GitHub repository. A file that Git does not ignore is said to be __tracked__. Here's a useful framework for deciding what to track:
 
@@ -249,7 +258,7 @@ __Configuration files:__ These files modify the behavior of a tool, for example 
 
 __Derived products:__ These files are programmatically generated from source files and have external value. By executing `.R` or rendering `.Rmd` files, you obtain artifacts such as intermediate data (e.g., `.csv` or `.rds`), figures (e.g., `.png` or `.pdf`), and reports (e.g., `.md`, `.pdf`, `.docx`, or `.html`).
 
-__Intermediates:__ These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTex workflows).
+__Intermediates:__ These files are programmatically generated and serve a temporary purpose, but are not intrinsically valuable (e.g., `.aux` and `.log` in LaTeX workflows).
 
 There is clear consensus that source files should be tracked. It is also common to track project-specific configuration files and to ignore intermediates. However, reasonable people can disagree about how to handle derived products and whether a specific file is an intermediate or derived product. Therefore, the main takeaway is to pick a policy that works for you and adapt as your needs change. There is no right answer. I would err on the side of committing more rather than less at first. What else should you consider when choosing files to track with Git and share on GitHub?
 
@@ -262,7 +271,7 @@ There is clear consensus that source files should be tracked. It is also common 
 
 **Will it actively cause problems with Git/GitHub?** This boils down to the file's likely effect on Git operations. A file that is large and changing often can make your repository bloated and slow down pushes and pulls. If a file is binary, such as a Word document or Excel spreadsheet, you will not get human-readable diffs anyway, nor can GitHub display the content in the browser. Binary files are also a reliable source of merge conflicts (see below), because they are beyond the reach of Git's sophisticated automatic merging logic. A large binary file that changes often is, therefore, the worst of all worlds. This implies that adoption of Git/GitHub suggests a pivot away from `.docx`, `.xlsx`, and `.pdf` as primary file formats and towards `.Rmd`, `.md`, and `.csv`, at least during periods of rapid development.
 
-## Collaboration
+# Collaboration
 
 Collaboration is the most compelling reason to manage a project with Git and GitHub. My definition of collaboration includes hands-on participation by multiple people, including your past and future self, as well as an asymmetric model, in which some people are active makers and others only read or review.
 
@@ -290,7 +299,7 @@ What is a merge conflict? It happens when Git can't be certain how to jointly ap
 
 The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work. The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
 
-## GitHub as web presence
+# GitHub as web presence
 
 Simply having a project on GitHub gives it a web presence! Non-users of Git/GitHub can visit the project in the browser and interact with it like a webpage. They can grab a snapshot of all the files as a ZIP archive by simply clicking a button. People with GitHub accounts can use Git-specific methods to make their own copy, i.e. a clone or a fork, which make it easy to keep current with future changes.
 
@@ -304,9 +313,9 @@ But even before you make an actual website, certain practices can [make your Git
 
 **Use internal links.** `README.md` is a great place to explain how your project fits together. Any Markdown file can include relative links to other files in the repo. Embedded images are also displayed. For figures produced by R code, these links are part of what rmarkdown takes care of for you, but there's no reason you can't do the same yourself for any Markdown file.
   
-## More resources
+# Where to go next?
 
-I've tried to convey the main points about the use of Git and GitHub in statistical and data analytical settings, but I've had to leave many things out. There are more advanced topics that will come up once your use of Git becomes more sophisticated and there are topics that are only relevant to certain types of reader.
+I've tried to convey the main points about the use of Git and GitHub in statistical and data analytical settings, but I've left many things out. There are more advanced topics that will come up as your use of Git becomes more sophisticated and there are topics that are only relevant to certain types of reader.
 
 I targeted GitHub -- not [Bitbucket](https://bitbucket.org) or
 [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all
@@ -320,23 +329,13 @@ program
 
 Don't fret too much about public versus private repositories at this point. All the major hosting providers offer private repositories with flexible control over who can read or write to the repo. There are many ways to get private repositories for low or no cost, [especially for academics](https://help.github.com/articles/discounted-organization-accounts/). If you outgrow this initial arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service, self-host one of these platforms, or advocate for organization-wide solutions.
 
-Branches and pull requests are an extremely powerful feature of Git/GitHub and should be your first foray beyond the basics of commit, push, and pull. A branch is an independent line of development within a repo, where the intent is usually to merge it into the master branch when ready. In a course website, you might work in a branch to update a series of lessons, while leaving the current version intact in the meantime. A pull request is a GitHub-specific way to propose changes to a repo that augments Git's regular branch and merge workflow with facilities for structured review. A pull request can be made between two branches in the same repo, such as `master` and `bugfix`, or between two independent copies of a repo, an original and a so-called "fork". This is the mechanism for making and accepting contributions to open source software projects on GitHub, including many popular R packages *link to a search?*.
+Branches and pull requests are an extremely powerful feature of Git/GitHub and should be your first foray beyond the basics of commit, push, and pull. A branch is an independent line of development within a repo, where the intent is usually to merge it into the master branch when ready. In fact, Figure \ref{fig:diy-vs-git}D depicts exactly such a branch-and-merge workflow, which can be used in both collaborative and solo projects. In a course website, you might work in a branch to update a series of lessons, while leaving the current version intact in the meantime. A pull request is a GitHub-specific way to propose changes to a repo that overlays Git's regular branch and merge workflow with facilities for structured review. A pull request can be made between two branches in the same repo, such as `master` and `bugfix`, or between two independent copies of a repo, an original and a so-called "fork". This is the mechanism for making and accepting contributions to open source software projects on GitHub, including many popular R packages.
 
-*inspiration for possible figure on collaboration/mergin, from the barlett talk*
+# Call to action
 
-```{r echo = FALSE, out.width="100%"}
-knitr::include_graphics("img/bartlett-merge-commit.png")
-```
-
-## Conclusion
-
-*NEEDS ONE ... BUT SHORT ... SOME FODDER*
-
-Transparency about process and product is increasingly important in science. The SOMETHING for reproducibility is well accepted. A more underappreciated benefit is democratization of our field, as this affords a much broader audience a clear view of how scientists and programmers work.
-
-make statistical thought and implementation available
+Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future [@donoho]. I strongly disagree with glib claims that "Data Science is just Statistics", which I've heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed [@donoho]. In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics. It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
 
 ```{r eval = is_github_document, echo = FALSE, results = 'asis'}
 ## surely there is a better way?
-cat("## References\n")
+cat("# References\n")
 ```

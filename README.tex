@@ -56,17 +56,31 @@ reviewers Nicholas Horton, Colin Rundel, and Hadley Wickham.} \\
 
 \bigskip
 \begin{abstract}
-Abstract abstract abstract.
+Data analysis, statistical research, and teaching statistics have at
+least one thing in common: these activities all produce many files!
+There may be data files, source code, figures, tables, prepared reports,
+and much more. These files generally evolve over the course of a project
+and often need to be shared with others, for reading or edits, as a
+project unfolds. Without explicit and structured management, project
+organization can easily descend into chaos, taking time away from the
+primary work and reducing the quality of the final product. This unhappy
+result can be avoided by repurposing tools and workflows from the
+software development world, namely, distributed version control. This
+article describes the use of the version control system Git and and the
+hosting site GitHub for statistical and data scientific workflows.
+Special attention is given to projects that use the statistical language
+R and, optionally, R Markdown documents.
 \end{abstract}
 
 \noindent%
-{\it Keywords:} version control
+{\it Keywords:} data science, workflow, Git, GitHub, R language, R Markdown,
+reproducibility
 \vfill
 
 \newpage
 \spacingset{1.45} % DON'T change the spacing!
 
-\subsection{Why Git?}\label{why-git}
+\section{Why Git?}\label{why-git}
 
 Why would a statistician use a version control system, such as
 \href{http://git-scm.com}{Git} \citep{git}? And what is the point of
@@ -109,7 +123,7 @@ is \href{https://www.rstudio.com/products/rstudio/}{RStudio}
 sharpest edges, I recommend specific habits and attitudes that reduce
 frustration.
 
-\subsection{What is Git?}\label{what-is-git}
+\section{What is Git?}\label{what-is-git}
 
 Git is a \textbf{version control system}. Its original purpose was to
 help groups of developers work collaboratively on big software projects.
@@ -172,7 +186,7 @@ to a common version. Especially important versions get a human-readable
 tag, e.g., ``draft-01'', to signal a meaningful milestone. Yes, there is
 some pain in adopting the formalism of Git, but it is worth it.
 
-\subsection{Who should read this and what to
+\section{Who should read this and what to
 expect}\label{who-should-read-this-and-what-to-expect}
 
 The target reader is anyone who does statistical research, analysis, or
@@ -186,7 +200,7 @@ convey what the workflow feels like and what the payoffs are, with
 special attention to the statistics and R context. The goal is to help
 the Git-curious generate the activation energy needed to get started.
 
-\subsection{What is GitHub?}\label{what-is-github}
+\section{What is GitHub?}\label{what-is-github}
 
 We've introduced Git's powerful structure for file management, so where
 does GitHub fit in? GitHub complements Git by providing a slick user
@@ -260,7 +274,7 @@ ability to cross-link issues and the project files or file changes, you
 have extraordinary power to document why things have happened in the
 past and to organize what needs to happen in the future.
 
-\subsection{Initial system setup}\label{initial-system-setup}
+\section{Initial system setup}\label{initial-system-setup}
 
 If I've convinced you to experiment with Git and GitHub, you need to do
 some initial setup. These first steps happen once or, for some steps,
@@ -311,12 +325,12 @@ with your projects. Some general recommendations for agony reduction:
   practice over several months. Usage in a course is great, because it
   provides a relentless stream of small deadlines.
 \item
-  Realize that no one is giving out Git style points. It's ok to
+  Realize that no one is giving out Git style points. It's OK to
   ``power-cycle'', i.e.~re-initialize the Git repository, to get
   unstuck.
 \end{itemize}
 
-\subsection{Repositories and workflow}\label{repositories-and-workflow}
+\section{Repositories and workflow}\label{repositories-and-workflow}
 
 For new or existing projects, you will:
 
@@ -381,7 +395,7 @@ before and do not identify as programmers. It is a major topic in class
 and office hours for the first two weeks. Then we practically never
 discuss it again.
 
-\subsection{Commits, diffs, and tags}\label{commits-diffs-and-tags}
+\section{Commits, diffs, and tags}\label{commits-diffs-and-tags}
 
 We now connect the fundamental concepts of Git to the data science
 workflow:
@@ -452,7 +466,7 @@ a journal or transmitted to external collaborators. Figure
 \ref{fig:commit-diff-sha-tag} shows a tag, ``draft-01'', associated with
 the last commit.
 
-\subsection{Markdown is special on
+\section{Markdown is special on
 GitHub}\label{markdown-is-special-on-github}
 
 This may seem unrelated to Git, GitHub, and R, but it is now necessary
@@ -481,7 +495,7 @@ it like a home page or ``index.html'' when people visit that directory
 in the browser. It is very common for a repo to have a top-level
 \texttt{README.md}, but each subdirectory can have its own as well.
 
-\subsection{Markdown is special for R
+\section{Markdown is special for R
 users}\label{markdown-is-special-for-r-users}
 
 Markdown is especially holy for R users because of
@@ -545,10 +559,10 @@ rmarkdown package more generally. Note that R Markdown can be rendered
 to many more formats than Markdown, including HTML, PDF, and Microsoft
 Word, and can incorporate code chunks in many languages other than R.
 Markdown is emphasized here because it is extraordinarily useful in
-GitHub-hosted projects. Many people are used to targetting other output
+GitHub-hosted projects. Many people are used to targeting other output
 formats and overlook this special synergy between Markdown and GitHub.
 
-\subsection{Which files to commit}\label{which-files-to-commit}
+\section{Which files to commit}\label{which-files-to-commit}
 
 The files in a project arise in different ways and play different roles.
 A critical issue for workflow happiness is to decide how to handle
@@ -576,7 +590,7 @@ data (e.g., \texttt{.csv} or \texttt{.rds}), figures (e.g.,
 
 \textbf{Intermediates:} These files are programmatically generated and
 serve a temporary purpose, but are not intrinsically valuable (e.g.,
-\texttt{.aux} and \texttt{.log} in LaTex workflows).
+\texttt{.aux} and \texttt{.log} in LaTeX workflows).
 
 There is clear consensus that source files should be tracked. It is also
 common to track project-specific configuration files and to ignore
@@ -632,7 +646,7 @@ implies that adoption of Git/GitHub suggests a pivot away from
 formats and towards \texttt{.Rmd}, \texttt{.md}, and \texttt{.csv}, at
 least during periods of rapid development.
 
-\subsection{Collaboration}\label{collaboration}
+\section{Collaboration}\label{collaboration}
 
 Collaboration is the most compelling reason to manage a project with Git
 and GitHub. My definition of collaboration includes hands-on
@@ -725,7 +739,7 @@ of work. The presence of frequently-changing binary files also increases
 the burden. So make lots of small commits, sync regularly with GitHub,
 and only track binary files with good reason.
 
-\subsection{GitHub as web presence}\label{github-as-web-presence}
+\section{GitHub as web presence}\label{github-as-web-presence}
 
 Simply having a project on GitHub gives it a web presence! Non-users of
 Git/GitHub can visit the project in the browser and interact with it
@@ -779,13 +793,13 @@ displayed. For figures produced by R code, these links are part of what
 rmarkdown takes care of for you, but there's no reason you can't do the
 same yourself for any Markdown file.
 
-\subsection{More resources}\label{more-resources}
+\section{Where to go next?}\label{where-to-go-next}
 
 I've tried to convey the main points about the use of Git and GitHub in
-statistical and data analytical settings, but I've had to leave many
-things out. There are more advanced topics that will come up once your
-use of Git becomes more sophisticated and there are topics that are only
-relevant to certain types of reader.
+statistical and data analytical settings, but I've left many things out.
+There are more advanced topics that will come up as your use of Git
+becomes more sophisticated and there are topics that are only relevant
+to certain types of reader.
 
 I targeted GitHub -- not \href{https://bitbucket.org}{Bitbucket} or
 \href{https://about.gitlab.com}{GitLab} -- for the sake of specificity.
@@ -811,33 +825,36 @@ Branches and pull requests are an extremely powerful feature of
 Git/GitHub and should be your first foray beyond the basics of commit,
 push, and pull. A branch is an independent line of development within a
 repo, where the intent is usually to merge it into the master branch
-when ready. In a course website, you might work in a branch to update a
-series of lessons, while leaving the current version intact in the
+when ready. In fact, Figure \ref{fig:diy-vs-git}D depicts exactly such a
+branch-and-merge workflow, which can be used in both collaborative and
+solo projects. In a course website, you might work in a branch to update
+a series of lessons, while leaving the current version intact in the
 meantime. A pull request is a GitHub-specific way to propose changes to
-a repo that augments Git's regular branch and merge workflow with
+a repo that overlays Git's regular branch and merge workflow with
 facilities for structured review. A pull request can be made between two
 branches in the same repo, such as \texttt{master} and \texttt{bugfix},
 or between two independent copies of a repo, an original and a so-called
 ``fork''. This is the mechanism for making and accepting contributions
 to open source software projects on GitHub, including many popular R
-packages \emph{link to a search?}.
+packages.
 
-\emph{inspiration for possible figure on collaboration/mergin, from the
-barlett talk}
+\section{Call to action}\label{call-to-action}
 
-\includegraphics[width=1\linewidth]{img/bartlett-merge-commit}
-
-\subsection{Conclusion}\label{conclusion}
-
-\emph{NEEDS ONE \ldots{} BUT SHORT \ldots{} SOME FODDER}
-
-Transparency about process and product is increasingly important in
-science. The SOMETHING for reproducibility is well accepted. A more
-underappreciated benefit is democratization of our field, as this
-affords a much broader audience a clear view of how scientists and
-programmers work.
-
-make statistical thought and implementation available
+Statistics is an important part of Data Science, though there is lively
+debate about the exact relationship, both past and future
+\citep{donoho}. I strongly disagree with glib claims that ``Data Science
+is just Statistics'', which I've heard in academia. For reasons both
+genuine and pragmatic, Statistics departments want to participate in the
+growth of Data Science at their respective universities. So far, their
+success has been decidedly mixed \citep{donoho}. In the era of Data
+Science, staying current can't be limited to mathematical and
+methodological developments. The holistic work style described here is
+widely regarded as current best practice, yet we generally neither
+practice nor preach it in academic statistics. It is but one example of
+the many ways in which Data Science is \textbf{not} just statistics. By
+acknowledging the importance of modern workflows and tooling, Statistics
+can solidify its claim to being one of the core disciplines of Data
+Science.
 
 \bibliographystyle{agsm}
 \bibliography{git-github-for-stats.bib}
