@@ -23,7 +23,7 @@ by Jennifer Bryan
 
 This appendix provides annotated links to step-by-step instructions, examples, and other resources, as promised in the main article. It is organized using the same section headers.
 
-Many of these resources live primarily on the web and, therefore, are more perishable than the content main text. As time goes on, it is possible that URLs may change, and it might be necessary to use a site's navigation or search features to re-locate the resource.
+Many of these resources live primarily on the web and, therefore, are more perishable than the content of the article. As time goes on, it is possible that URLs may change, and it might be necessary to use a site's navigation or search features to re-locate the resource.
 
 Why Git?
 ========
@@ -31,7 +31,7 @@ Why Git?
 Software:
 
 -   [Git](https://git-scm.com) is a version control system.
--   [RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment for R.
+-   [RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment for R. It can help you use Git and GitHub. More about that below.
 
 Website:
 
@@ -43,6 +43,10 @@ What is Git?
 Comic relief:
 
 -   ["FINAL.doc"](http://phdcomics.com/comics/archive.php?comicid=1531) from [PhD](http://phdcomics.com), pokes gentle fun at DIY filename-based version control.
+
+I cite it in the article, but really want to underscore the accesibility of Alice Bartlett's talk "Git for Humans". Highly recommended. [Slides on Speakerdeck](https://speakerdeck.com/alicebartlett/git-for-humans).
+
+<https://github.com/jennybc/excuse-me-iris> is the actual Git repository that lead to the screenshots in the figure.
 
 Who should read this and what to expect
 =======================================
@@ -82,7 +86,7 @@ Initial system setup
 -   [Install a Git client](http://happygitwithr.com/git-client.html). Good options -- you might want more than one!
     -   [RStudio](https://www.rstudio.com/products/rstudio/) has basic Git client functionality.
     -   [SourceTree](https://www.sourcetreeapp.com) is free and excellent.
-    -   [GitKraken](https://www.gitkraken.com) is also well-regarded and works across Mac OS, Windows, and Linux.
+    -   [GitKraken](https://www.gitkraken.com) is also well-regarded. It is notable in that it runs on Linux, in addition to Mac OS and Windows.
 -   [Connect to GitHub](http://happygitwithr.com/push-pull-github.html) will affirm that your system is set up properly.
 
 Repositories and workflow
@@ -97,6 +101,8 @@ Continuing to link to [Happy Git and GitHub for the useR](http://happygitwithr.c
 Commits, diffs, and tags
 ========================
 
+<https://github.com/jennybc/excuse-me-iris> is the actual Git repository depicted in this figure.
+
 Comic relief
 
 -   [xkcd 1296](https://xkcd.com/1296/) is about the challenge of writing highly informative commit messages all the time.
@@ -107,6 +113,11 @@ Repo, commit, and diff. [dplyr](http://dplyr.tidyverse.org) is a widely used R p
 -   Look at some of the recent commits: <https://github.com/tidyverse/dplyr/commits/master>.
 -   Click on an individual commit to see exactly what changed, possibly across multiple files, from one snapshot to the next.
 -   CRAN releases are all marked with tags: <https://github.com/tidyverse/dplyr/releases>, which make it easy to see the exact state of the source code for any specific version.
+
+General Git books:
+
+-   [Git in Practice](https://www.manning.com/books/git-in-practice) by Mike McQuaid is my favorite book for day-to-day Git operations.
+-   [Pro Git](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub is an excellent and comprehensive resource. You can read it for free online.
 
 Markdown is special on GitHub
 =============================
