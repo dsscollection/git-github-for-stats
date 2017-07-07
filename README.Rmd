@@ -39,7 +39,7 @@ is_github_document <-
 
 # Why Git?
 
-Why would a statistician use a version control system, such as [Git](http://git-scm.com) [@git]? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com) [@github]? Could the gains possibly justify the inevitable pain?
+Why would a statistician use a version control system, such as [Git](https://git-scm.com) [@git]? And what is the point of hosting your work online, e.g., on [GitHub](https://github.com)[@github]? Could the gains possibly justify the inevitable pain?
 
 I say yes, with the zeal of the converted.
 
