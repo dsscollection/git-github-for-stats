@@ -1,0 +1,172 @@
+Appendix: Tutorials and examples
+================
+
+-   [Why Git?](#why-git)
+-   [What is Git?](#what-is-git)
+-   [Who should read this and what to expect](#who-should-read-this-and-what-to-expect)
+-   [What is GitHub?](#what-is-github)
+-   [Initial system setup](#initial-system-setup)
+-   [Repositories and workflow](#repositories-and-workflow)
+-   [Commits, diffs, and tags](#commits-diffs-and-tags)
+-   [Markdown is special on GitHub](#markdown-is-special-on-github)
+-   [Markdown is special for R users](#markdown-is-special-for-r-users)
+-   [Which files to commit](#which-files-to-commit)
+-   [Collaboration](#collaboration)
+-   [GitHub as web presence](#github-as-web-presence)
+-   [Where to go next?](#where-to-go-next)
+-   [Call to action](#call-to-action)
+
+Supplement for the article:
+
+Excuse me, do you have a moment to talk about version control?
+by Jennifer Bryan
+
+This appendix provides annotated links to step-by-step instructions, examples, and other resources, as promised in the main article. It is organized using the same section headers.
+
+Many of these resources live primarily on the web and, therefore, are more perishable than the content main text. As time goes on, it is possible that URLs may change, and it might be necessary to use a site's navigation or search features to re-locate the resource.
+
+Why Git?
+========
+
+Software:
+
+-   [Git](https://git-scm.com) is a version control system.
+-   [RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment for R.
+
+Website:
+
+-   [GitHub](https://github.com) is a web hosting service for Git repositories.
+
+What is Git?
+============
+
+Comic relief:
+
+-   ["FINAL.doc"](http://phdcomics.com/comics/archive.php?comicid=1531) from [PhD](http://phdcomics.com), pokes gentle fun at DIY filename-based version control.
+
+Who should read this and what to expect
+=======================================
+
+*no links*
+
+What is GitHub?
+===============
+
+Example of utility: Drill down into the code of any R package on CRAN by clicking around this read-only mirror of CRAN stewarded by Gábor Csárdi.
+
+-   <https://github.com/cran> Just click on a package or use the search box to find the packages you use most.
+-   Compare this to the alternative of downloading the `*.tar.gz` from CRAN, unpacking it, and exploring the code locally. And repeating that process whenever the package changes.
+
+Example of utility: See the files behind the book ["R for Data Science"](http://r4ds.had.co.nz) by Garrett Grolemund and Hadley Wickham:
+
+-   <https://github.com/hadley/r4ds>
+-   Click on files to see their current state right now.
+-   Look at the [commit history](https://github.com/hadley/r4ds/commits/master) to see how things have evolved.
+-   Use the search box in upper left corner to search for specific words, like `join` or `factor`.
+-   See a [summary of what the &gt;100 contributors](https://github.com/hadley/r4ds/graphs/contributors) have added to this book: this is how readers submit fixes and small improvements.
+-   Look at the [issues](https://github.com/hadley/r4ds/issues), such as [the one where I discuss error handling](https://github.com/hadley/r4ds/issues/323) in R Markdown documents, which is linked to the [exact commit](https://github.com/hadley/r4ds/commit/64ce2fa3579a96cdfd97adb69554d8c0de73177c) where the authors addressed my suggestion.
+
+Comic relief
+
+-   [xkcd 1597](https://xkcd.com/1597/) is about Git and strategies for coping with its famously unfriendly user interface.
+
+Initial system setup
+====================
+
+[Happy Git and GitHub for the useR](http://happygitwithr.com) holds concrete setup and early usage information, developed through several years of Git/GitHub use in [STAT 545](http://stat545.com) at the University of British Columbia.
+
+-   [Register a free GitHub account](http://happygitwithr.com/github-acct.html)
+-   [Install or update R and RStudio](http://happygitwithr.com/install-r-rstudio.html)
+-   [Install Git](http://happygitwithr.com/install-git.html) **We have specific reasons for our installation methods, so seriously consider using them!**
+-   [Introduce yourself to Git](http://happygitwithr.com/hello-git.html)
+-   [Install a Git client](http://happygitwithr.com/git-client.html). Good options -- you might want more than one!
+    -   [RStudio](https://www.rstudio.com/products/rstudio/) has basic Git client functionality.
+    -   [SourceTree](https://www.sourcetreeapp.com) is free and excellent.
+    -   [GitKraken](https://www.gitkraken.com) is also well-regarded and works across Mac OS, Windows, and Linux.
+-   [Connect to GitHub](http://happygitwithr.com/push-pull-github.html) will affirm that your system is set up properly.
+
+Repositories and workflow
+=========================
+
+Continuing to link to [Happy Git and GitHub for the useR](http://happygitwithr.com).
+
+-   [New project, GitHub first](http://happygitwithr.com/new-github-first.html) is a good introductory workflow for starting new projects.
+-   [Existing project, GitHub first](http://happygitwithr.com/existing-github-first.html) shows one way to take an existing project and make it a Git/GitHub repo and RStudio Project.
+-   [Existing project, GitHub last](http://happygitwithr.com/existing-github-last.html) shows another way to get an existing project onto GitHub.
+
+Commits, diffs, and tags
+========================
+
+Comic relief
+
+-   [xkcd 1296](https://xkcd.com/1296/) is about the challenge of writing highly informative commit messages all the time.
+
+Repo, commit, and diff. [dplyr](http://dplyr.tidyverse.org) is a widely used R package whose development is managed with Git and on GitHub.
+
+-   Visit its GitHub repo: <https://github.com/tidyverse/dplyr>.
+-   Look at some of the recent commits: <https://github.com/tidyverse/dplyr/commits/master>.
+-   Click on an individual commit to see exactly what changed, possibly across multiple files, from one snapshot to the next.
+-   CRAN releases are all marked with tags: <https://github.com/tidyverse/dplyr/releases>, which make it easy to see the exact state of the source code for any specific version.
+
+Markdown is special on GitHub
+=============================
+
+[Markdown](https://daringfireball.net/projects/markdown/syntax) is widely used to author content for the web:
+
+-   WordPress: <https://en.support.wordpress.com/markdown/>
+-   Stackoverflow: <https://stackoverflow.com/editing-help>
+-   GitHub: <https://help.github.com/categories/writing-on-github/>
+
+Markdown is special for R users
+===============================
+
+R Markdown = R + Markdown:
+
+-   <http://rmarkdown.rstudio.com> is a landing page for a huge array of resources about R Markdown.
+-   [Happy Git and GitHub for the useR](http://happygitwithr.com) has tutorials for:
+    -   [Test drive R Markdown](http://happygitwithr.com/rmd-test-drive.html)
+    -   [Render an R script](http://happygitwithr.com/r-test-drive.html)
+
+Which files to commit
+=====================
+
+[Happy Git and GitHub for the useR](http://happygitwithr.com) deals with some of these choices in [Make a GitHub repo browsable](http://happygitwithr.com/repo-browsability.html).
+
+Collaboration
+=============
+
+[How Google Solved the Version Control Problem](https://www.onshape.com/cad-blog/how-google-solved-the-version-control-problem) is an excellent presentation of the fundamental problem with DIY version control and how cloud-based systems, like Google Drive and GitHub, offer a better way.
+
+GitHub has many excellent resources for collaborative workflows, using branches, issues, and pull requests, including how to tackle merge conflicts:
+
+-   [Collaborating with issues and pull requests](https://help.github.com/categories/collaborating-with-issues-and-pull-requests/)
+
+GitHub as web presence
+======================
+
+[Happy Git and GitHub for the useR](http://happygitwithr.com) covers this in [Make a GitHub repo browsable](http://happygitwithr.com/repo-browsability.html).
+
+If you decide to make a proper website (vs just making your GitHub repo more browsable), go here:
+
+-   [GitHub Pages](https://help.github.com/categories/github-pages-basics/) is the basic platform.
+-   [GitHub Pages can create a simple website](https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3) automatically.
+-   [Jekyll static site generator](https://jekyllrb.com) for maximum flexibility.
+-   R- and R Markdown-specific frameworks:
+    -   [R Markdown websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html)
+    -   [bookdown](https://bookdown.org)
+    -   [blogdown](https://bookdown.org/yihui/blogdown/)
+
+Where to go next?
+=================
+
+Alternatives to GitHub:
+
+-   [Bitbucket](https://bitbucket.org)
+-   [GitLab](https://about.gitlab.com)
+
+Call to action
+==============
+
+Donoho's "50 Years of Data Science" examines Statistics' slowness to embrace a broader definition of scholarly statistical activity and training:
+
+-   <http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf>
