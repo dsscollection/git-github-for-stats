@@ -15,6 +15,7 @@ Excuse me, do you have a moment to talk about version control?
 -   [GitHub as web presence](#github-as-web-presence)
 -   [Where to go next?](#where-to-go-next)
 -   [Call to action](#call-to-action)
+-   [Supplementary Materials](#supplementary-materials)
 
 Why Git?
 ========
@@ -261,6 +262,11 @@ Call to action
 ==============
 
 Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future (Donoho 2015). I strongly disagree with glib claims that "Data Science is just Statistics", which can be heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed (Donoho 2015). In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics. It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
+
+Supplementary Materials
+=======================
+
+**Appendix: Tutorials, examples, resources** Provide an annotated set of links for each section of the article, including step-by-step tutorials, real world examples, and other useful learning resources.
 
 Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. *Rmarkdown: Dynamic Documents for R*. <http://rmarkdown.rstudio.com>.
 

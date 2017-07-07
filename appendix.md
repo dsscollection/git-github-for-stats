@@ -1,4 +1,4 @@
-Appendix: Tutorials and examples
+Appendix: Tutorials, examples, resources
 ================
 
 -   [Why Git?](#why-git)
