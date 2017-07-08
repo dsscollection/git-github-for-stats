@@ -9,9 +9,9 @@ authors:
     Nicholas Horton, Colin Rundel, and Hadley Wickham.
 blinded: 0
 output:
+  rticles::asa_article: null
   github_document:
     toc: yes
-  rticles::asa_article: null
 keywords: |
     data science, workflow, Git, GitHub, R language, R Markdown, reproducibility
 abstract: >
