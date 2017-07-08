@@ -16,9 +16,9 @@ keywords: |
     data science, workflow, Git, GitHub, R language, R Markdown, reproducibility
 abstract: >
     Data analysis, statistical research, and teaching statistics have at least
-    one thing in common&#58; these activities all produce many files! There may
-    be data files, source code, figures, tables, prepared reports, and much
-    more. These files generally evolve over the course of a project and often
+    one thing in common&#58; these activities all produce many files! There are
+    data files, source code, figures, tables, prepared reports, and much
+    more. Most of these files evolve over the course of a project and often
     need to be shared with others, for reading or edits, as a project unfolds.
     Without explicit and structured management, project organization can easily
     descend into chaos, taking time away from the primary work and reducing the
@@ -90,7 +90,7 @@ knitr::include_graphics("diy-vs-git-solo-vs-collab.png")
 ```
 
 The Git way is to track the evolution of `iris.R`, through a series of commits,
-each equipped with an explanatory message. Figure \ref{fig:diy-vs-git}C depicts this linear, *in situ* development process, with development and time flowing from bottom to top. Figure \ref{fig:diy-vs-git}D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+each equipped with an explanatory message. Figure \ref{fig:diy-vs-git}C depicts this linear, *in situ* process, with development and time flowing from bottom to top. Figure \ref{fig:diy-vs-git}D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
 # Who should read this and what to expect
 
@@ -299,7 +299,7 @@ But sometimes it's not clear how to reconcile your changes with the new ones fro
 
 What is a merge conflict? It happens when Git can't be certain how to jointly apply the diffs from two different commits to their common parent. At each location of conflict, you must pick one version or the other -- or create a hybrid -- and mark it as resolved. Many Git clients have special tooling for this specific task, which can be very convenient. Once you've resolved all conflicts, you will be able to finalize the merge and push a version integrating your recent changes to GitHub.
 
-The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work. The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
+The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work [@good-enough]. The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
 
 # GitHub as web presence
 
@@ -339,7 +339,7 @@ Statistics is an important part of Data Science, though there is lively debate a
 
 # Supplementary Materials
 
-__Appendix: Tutorials, examples, resources__ Provide an annotated set of links for each section of the article, including step-by-step tutorials, real world examples, and other useful learning resources.
+__Appendix: Tutorials, examples, resources__ Provides an annotated set of links for each section of the article, including step-by-step tutorials, real world examples, and other useful learning resources.
 
 ```{r eval = is_github_document, echo = FALSE, results = 'asis'}
 ## surely there is a better way?

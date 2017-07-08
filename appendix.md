@@ -44,7 +44,7 @@ Comic relief:
 
 -   ["FINAL.doc"](http://phdcomics.com/comics/archive.php?comicid=1531) from [PhD](http://phdcomics.com), pokes gentle fun at DIY filename-based version control.
 
-I cite it in the article, but really want to underscore the accesibility of Alice Bartlett's talk "Git for Humans". Highly recommended. [Slides on Speakerdeck](https://speakerdeck.com/alicebartlett/git-for-humans).
+I cite it in the article, but really want to underscore the accessibility of Alice Bartlett's talk "Git for Humans". Highly recommended. [Slides on Speakerdeck](https://speakerdeck.com/alicebartlett/git-for-humans).
 
 <https://github.com/jennybc/excuse-me-iris> is the actual Git repository that lead to the screenshots in the figure.
 

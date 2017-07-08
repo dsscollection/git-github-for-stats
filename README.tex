@@ -58,8 +58,8 @@ reviewers Nicholas Horton, Colin Rundel, and Hadley Wickham.} \\
 \begin{abstract}
 Data analysis, statistical research, and teaching statistics have at
 least one thing in common: these activities all produce many files!
-There may be data files, source code, figures, tables, prepared reports,
-and much more. These files generally evolve over the course of a project
+There are data files, source code, figures, tables, prepared reports,
+and much more. Most of these files evolve over the course of a project
 and often need to be shared with others, for reading or edits, as a
 project unfolds. Without explicit and structured management, project
 organization can easily descend into chaos, taking time away from the
@@ -180,8 +180,8 @@ resolve Figure \ref{fig:diy-vs-git}B).
 
 The Git way is to track the evolution of \texttt{iris.R}, through a
 series of commits, each equipped with an explanatory message. Figure
-\ref{fig:diy-vs-git}C depicts this linear, \emph{in situ} development
-process, with development and time flowing from bottom to top. Figure
+\ref{fig:diy-vs-git}C depicts this linear, \emph{in situ} process, with
+development and time flowing from bottom to top. Figure
 \ref{fig:diy-vs-git}D shows the same history for a common collaborative
 Git workflow, where contributors work independently but sync regularly
 to a common version. Especially important versions get a human-readable
@@ -737,9 +737,9 @@ another reason for all parties to commit, pull, and push often. Small
 changes, integrated frequently, in non-binary files, are the easiest for
 Git to automatically merge for you. The difficulty of merging (by Git or
 by you) is proportional to the evolutionary distance between two lines
-of work. The presence of frequently-changing binary files also increases
-the burden. So make lots of small commits, sync regularly with GitHub,
-and only track binary files with good reason.
+of work \citep{good-enough}. The presence of frequently-changing binary
+files also increases the burden. So make lots of small commits, sync
+regularly with GitHub, and only track binary files with good reason.
 
 \section{GitHub as web presence}\label{github-as-web-presence}
 
@@ -860,7 +860,7 @@ Science.
 
 \section{Supplementary Materials}\label{supplementary-materials}
 
-\textbf{Appendix: Tutorials, examples, resources} Provide an annotated
+\textbf{Appendix: Tutorials, examples, resources} Provides an annotated
 set of links for each section of the article, including step-by-step
 tutorials, real world examples, and other useful learning resources.
 

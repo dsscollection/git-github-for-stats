@@ -54,7 +54,7 @@ Many people who don't use Git unwittingly re-invent a poor man's version of it. 
 A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git.
 </p>
 
-The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message. Figure C depicts this linear, *in situ* development process, with development and time flowing from bottom to top. Figure D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
+The Git way is to track the evolution of `iris.R`, through a series of commits, each equipped with an explanatory message. Figure C depicts this linear, *in situ* process, with development and time flowing from bottom to top. Figure D shows the same history for a common collaborative Git workflow, where contributors work independently but sync regularly to a common version. Especially important versions get a human-readable tag, e.g., "draft-01", to signal a meaningful milestone. Yes, there is some pain in adopting the formalism of Git, but it is worth it.
 
 Who should read this and what to expect
 =======================================
@@ -230,7 +230,7 @@ But sometimes it's not clear how to reconcile your changes with the new ones fro
 
 What is a merge conflict? It happens when Git can't be certain how to jointly apply the diffs from two different commits to their common parent. At each location of conflict, you must pick one version or the other -- or create a hybrid -- and mark it as resolved. Many Git clients have special tooling for this specific task, which can be very convenient. Once you've resolved all conflicts, you will be able to finalize the merge and push a version integrating your recent changes to GitHub.
 
-The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work. The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
+The best way to deal with merge conflicts is to prevent them. This is another reason for all parties to commit, pull, and push often. Small changes, integrated frequently, in non-binary files, are the easiest for Git to automatically merge for you. The difficulty of merging (by Git or by you) is proportional to the evolutionary distance between two lines of work (Wilson et al. 2016). The presence of frequently-changing binary files also increases the burden. So make lots of small commits, sync regularly with GitHub, and only track binary files with good reason.
 
 GitHub as web presence
 ======================
@@ -266,7 +266,7 @@ Statistics is an important part of Data Science, though there is lively debate a
 Supplementary Materials
 =======================
 
-**Appendix: Tutorials, examples, resources** Provide an annotated set of links for each section of the article, including step-by-step tutorials, real world examples, and other useful learning resources.
+**Appendix: Tutorials, examples, resources** Provides an annotated set of links for each section of the article, including step-by-step tutorials, real world examples, and other useful learning resources.
 
 Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. *Rmarkdown: Dynamic Documents for R*. <http://rmarkdown.rstudio.com>.
 
@@ -283,6 +283,8 @@ Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkore
 Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” *Source Code for Biology and Medicine* 8 (1): 7. doi:[10.1186/1751-0473-8-7](https://doi.org/10.1186/1751-0473-8-7).
 
 *RStudio Integrated Desktop Environment*. n.d. <https://www.rstudio.com/products/rstudio>.
+
+Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and Tracy K. Teal. 2016. “Good Enough Practices in Scientific Computing.” *CoRR* abs/1609.00037. <http://arxiv.org/abs/1609.00037>.
 
 Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <http://yihui.name/knitr/>.
 
