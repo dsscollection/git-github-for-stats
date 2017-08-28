@@ -29,7 +29,7 @@ There are many benefits of using hosted version control in your statistical prac
 -   Doing your work becomes tightly integrated with organizing, recording, and disseminating it. It's not a separate, burdensome task you are tempted to neglect.
 -   Collaboration is much more structured, with powerful tools for asynchronous work and managing versions.
 -   The marginal effort required to create a web presence for a project is negligible.
--   GitHub makes a fantastic course management system for courses that use R (<span class="citeproc-not-found" data-reference-id="R">**???**</span>). You can exchange actual working code with your students and explore the associated results.
+-   GitHub makes a fantastic course management system for courses that use R (<span class="citeproc-not-found" data-reference-id="R">**???**</span>). You can exchange actual working code with your students and explore the associated results (Cetinkaya-Rundel and Rundel 2017).
 -   By using common mechanics across work modes (research, teaching, analysis), you achieve basic competence quickly and avoid the demoralizing forget-relearn cycle.
 
 Now the bad news: Git was built neither for the exact usage described here, nor for broad usability. You will undoubtedly notice this, so it's best to know in advance. Happily, there are many helpful tools that mediate your interactions with Git. GitHub itself is a fine example, as is [RStudio](https://www.rstudio.com/products/rstudio/) (*RStudio Integrated Desktop Environment*, n.d.). In addition to pointing out tools that soften Git's sharpest edges, I recommend specific habits and attitudes that reduce frustration.
@@ -261,7 +261,7 @@ Branches and pull requests are an extremely powerful feature of Git/GitHub and s
 Call to action
 ==============
 
-Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future (Donoho 2015). I strongly disagree with glib claims that "Data Science is just Statistics", which can be heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed (Donoho 2015). In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics. It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
+Statistics is an important part of Data Science, though there is lively debate about the exact relationship, both past and future (Donoho 2015). I strongly disagree with glib claims that "Data Science is just Statistics", which can be heard in academia. For reasons both genuine and pragmatic, Statistics departments want to participate in the growth of Data Science at their respective universities. So far, their success has been decidedly mixed (Donoho 2015). In the era of Data Science, staying current can't be limited to mathematical and methodological developments. The holistic work style described here is widely regarded as current best practice, yet we generally neither practice nor preach it in academic statistics (but see (Cetinkaya-Rundel and Rundel 2017) for an exception to this rule). It is but one example of the many ways in which Data Science is **not** just statistics. By acknowledging the importance of modern workflows and tooling, Statistics can solidify its claim to being one of the core disciplines of Data Science.
 
 Supplementary Materials
 =======================
@@ -271,6 +271,8 @@ Supplementary Materials
 Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. *Rmarkdown: Dynamic Documents for R*. <http://rmarkdown.rstudio.com>.
 
 Bartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. <https://speakerdeck.com/alicebartlett/git-for-humans>.
+
+Cetinkaya-Rundel, Mine, and Colin W Rundel. 2017. “Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum.” *PeerJ Preprints* 5 (August): e3181v1. doi:[10.7287/peerj.preprints.3181v1](https://doi.org/10.7287/peerj.preprints.3181v1).
 
 Donoho, David. 2015. “50 Years of Data Science.” Stanford University; Version 1.00. <http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf>.
 
@@ -293,3 +295,5 @@ Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Flor
 ———. 2017a. *Bookdown: Authoring Books and Technical Documents with R Markdown*. Boca Raton, Florida: Chapman; Hall/CRC. <https://github.com/rstudio/bookdown>.
 
 ———. 2017b. *Knitr: A General-Purpose Package for Dynamic Report Generation in R*. <http://yihui.name/knitr/>.
+
+[1] <jenny@rstudio.com>

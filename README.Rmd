@@ -1,7 +1,7 @@
 ---
 title: "Excuse me, do you have a moment to talk about version control?"
 authors:
-- name: Jennifer Bryan
+- name: Jennifer Bryan ^[jenny@rstudio.com]
   affiliation: |
     RStudio and the Department of Statistics, University of British Columbia
   thanks: >
