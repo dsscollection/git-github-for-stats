@@ -128,6 +128,10 @@ Markdown is special on GitHub
 -   Stackoverflow: <https://stackoverflow.com/editing-help>
 -   GitHub: <https://help.github.com/categories/writing-on-github/>
 
+Fantastic tutorial on Markdown, with step-by-step interactive exercises and immediate feedback:
+
+-   <http://commonmark.org/help/tutorial/>
+
 Markdown is special for R users
 ===============================
 
