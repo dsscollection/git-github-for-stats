@@ -150,7 +150,7 @@ manage homework submission, marking, and peer review.
 
 Issues can be assigned to specific people and they can be labelled, e.g. "bug", 
 "simulation-study", or "final-exam". Coupled with the ability to cross-link 
-issues and the project files or file changes, you have extraordinary power to 
+issues and the project files or file changes, you have the power to 
 document why things have happened in the past and to organize what needs to 
 happen in the future.
 
