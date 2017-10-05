@@ -118,7 +118,7 @@ Even for private solo projects, there are two advantages to keeping a synced
 copy on GitHub:
 
 1. When you are new with Git (or, frankly, even when you're not), it's common to
-goof up the Git infrastructure for a project. Note that your files can be intact
+damage the Git infrastructure for a project. Note that your files can be intact
 and safe, even while the Git tracking is a bit confused. Of course there are 
 official Git remedies, but sometimes the easiest fix is to clone a fresh copy 
 from GitHub, patch things up with the changes that only exist locally, and move 
