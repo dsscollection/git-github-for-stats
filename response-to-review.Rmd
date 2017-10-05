@@ -1,0 +1,28 @@
+---
+title: "Response to review"
+output: html_document
+---
+
+I am currently unable to get back into the Scholar One TAS system, since my link has expired. TAS editor Hadley Wickham was able to forward me a marked up PDF and I have based my edits on the annotations and comments I see there.
+
+I made all the small copy edits that I could make sense of. I was 100% sure what some of the suggestions were, however, so a few loci remain 'as is'. I think it is possible that Preview doesn't display all the mark up as intended? I did my best.
+
+The series of changes that I made can be seen as a sequence of commits in this branch on the repository in which I've written this article:
+
+https://github.com/dsscollection/git-github-for-stats/commits/TAS
+
+Below are a few specific notes about changes (or non-changes).
+
+Added citations for the iris data.
+
+> The flow of the paper is somewhat disrupted by repeated use of bullet points.  Is there a way to fold some of these into complete paragraphs?  (This may not be one of the ones to modify, but do search out instances throughout where you can collapse these lists to have better text flow.)
+
+I converted every set of bullet points to a paragraph that I could. Some I have left because I feel being set off or presented as individual steps is actually conducive to understanding.
+
+> Replace "deltas" with "differences" or "incremental changes" (etc.)
+
+"Deltas" are actually a technical term in Git. There are such things as "delta-chains", which describe all the incremental changes necessary to transform one version of a repo to another. I use this word intentionally. I think it's best to keep it. Finally, "delta" is used in alot in math to describe differences, so I suspect this audience will understand it.
+
+> This last part may be extraneous detail that our readers don't need to know.
+
+This comment is about SHA-1 checksums. Again, one doesn't have to do much Googling about Git to be confronted with this vocabulary and these concepts. I feel like the goal of this article is to demystify Git and it's best to introduce the key terms.
