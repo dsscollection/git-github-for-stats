@@ -71,7 +71,7 @@ highly structured way. It is like the "Track Changes" feature from Microsoft
 Word, but more rigorous, powerful, and scaled up to multiple files.
 
 Git has been re-purposed by the data science community [@Ram2013;
-@git-for-humans; @ten-simple-rules-git]. We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and, yes, source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
+@git-for-humans; @ten-simple-rules-git]. We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
 A lone ranger, working on a single computer, can benefit from adopting version 
 control. But not nearly enough to justify the pain of installation and workflow 
