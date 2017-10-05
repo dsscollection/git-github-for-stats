@@ -4,7 +4,6 @@
 \usepackage{graphicx,psfrag,epsf}
 \usepackage{enumerate}
 \usepackage{natbib}
-\usepackage{listings}
 \usepackage{textcomp}
 \usepackage[hyphens]{url} % not crucial - just used below for the URL
 \usepackage{hyperref}
@@ -22,6 +21,9 @@
 \addtolength{\textwidth}{1in}%
 \addtolength{\textheight}{1.3in}%
 \addtolength{\topmargin}{-.8in}%
+
+%% load any required packages here
+
 
 \begin{document}
 
@@ -137,13 +139,13 @@ more rigorous, powerful, and scaled up to multiple files.
 Git has been re-purposed by the data science community
 \citep{Ram2013, git-for-humans, ten-simple-rules-git}. We use it to
 manage the motley collection of files that make up typical data
-analytical projects, which consist of data, figures, reports, and, yes,
-source code. Even those who identify more as statistician than data
-scientist generally have a similar mix of files that are the artifacts
-of a project.
+analytical projects, which consist of data, figures, reports, and source
+code. Even those who identify more as statistician than data scientist
+generally have a similar mix of files that are the artifacts of a
+project.
 
 A lone ranger, working on a single computer, can benefit from adopting
-version control. But not nearly enough to justify the pain of
+version control, But not nearly enough to justify the pain of
 installation and workflow upheaval. There are much easier ways to get
 versioned back ups of files, if that's all you're worried about.
 
@@ -164,15 +166,15 @@ of formal version control compelling enough to cement the new habit.
 
 Many people who don't use Git unwittingly re-invent a poor man's version
 of it. Figure \ref{fig:diy-vs-git} depicts a hypothetical analysis of
-the iris data, captured in a single R source file. With informal version
-control, contributors create derivative copies of \texttt{iris.R},
-decorating the file name with initials, dates, and other descriptors.
-Even when working alone, this leads to multiple versions of
-\texttt{iris.R} of indeterminate relatedness (Figure
-\ref{fig:diy-vs-git}A). In collaborative settings based on email
-distribution, the original file swiftly becomes part of a complicated
-phylogeny that no amount of ``Track changes'' and good intentions can
-resolve Figure \ref{fig:diy-vs-git}B).
+the iris data \citep[\citet{anderson}]{fisher}, captured in a single R
+source file. With informal version control, contributors create
+derivative copies of \texttt{iris.R}, decorating the file name with
+initials, dates, and other descriptors. Even when working alone, this
+leads to multiple versions of \texttt{iris.R} of indeterminate
+relatedness (Figure \ref{fig:diy-vs-git}A). In collaborative settings
+based on email distribution, the original file swiftly becomes part of a
+complicated phylogeny that no amount of ``Track changes'' and good
+intentions can resolve (Figure \ref{fig:diy-vs-git}B).
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{diy-vs-git-solo-vs-collab} \caption{\label{fig:diy-vs-git}A: Solo work with DIY version control via filename. B: Collaborative work with DIY version control. C: Solo work with Git. D: Collaborative work with Git.}\label{fig:diy-vs-git}
@@ -185,8 +187,8 @@ development and time flowing from bottom to top. Figure
 \ref{fig:diy-vs-git}D shows the same history for a common collaborative
 Git workflow, where contributors work independently but sync regularly
 to a common version. Especially important versions get a human-readable
-tag, e.g., ``draft-01'', to signal a meaningful milestone. Yes, there is
-some pain in adopting the formalism of Git, but it is worth it.
+tag, e.g., ``draft-01'', to signal a meaningful milestone. There is some
+pain in adopting the formalism of Git, but it is worth it.
 
 \section{Who should read this and what to
 expect}\label{who-should-read-this-and-what-to-expect}
@@ -205,7 +207,7 @@ the Git-curious generate the activation energy needed to get started.
 \section{What is GitHub?}\label{what-is-github}
 
 We've introduced Git's powerful structure for file management, so where
-does GitHub fit in? GitHub complements Git by providing a slick user
+does GitHub fit in? GitHub complements Git by providing a polished user
 interface and distribution mechanism for Git repositories. Git is the
 software you will use locally to record changes to a set of files.
 GitHub is a hosting service that provides a Git-aware home for such
@@ -235,7 +237,7 @@ synced copy on GitHub:
 \def\labelenumi{\arabic{enumi}.}
 \item
   When you are new with Git (or, frankly, even when you're not), it's
-  common to goof up the Git infrastructure for a project. Note that your
+  common to damage the Git infrastructure for a project. Note that your
   files can be intact and safe, even while the Git tracking is a bit
   confused. Of course there are official Git remedies, but sometimes the
   easiest fix is to clone a fresh copy from GitHub, patch things up with
@@ -273,14 +275,14 @@ them to manage homework submission, marking, and peer review.
 Issues can be assigned to specific people and they can be labelled, e.g.
 ``bug'', ``simulation-study'', or ``final-exam''. Coupled with the
 ability to cross-link issues and the project files or file changes, you
-have extraordinary power to document why things have happened in the
-past and to organize what needs to happen in the future.
+have the power to document why things have happened in the past and to
+organize what needs to happen in the future.
 
 \section{Initial system setup}\label{initial-system-setup}
 
 If I've convinced you to experiment with Git and GitHub, you need to do
 some initial setup. These first steps happen once or, for some steps,
-once per computer. This is excerpted from
+once per computer. These instructions are excerpted from
 \href{http://happygitwithr.com}{Happy Git and GitHub for the useR},
 which holds battle-tested instructions honed over several years in
 \href{http://stat545.com}{STAT 545} at the University of British
@@ -312,25 +314,17 @@ Columbia.
 \end{itemize}
 
 Once this setup is done, you are ready to start using Git and GitHub
-with your projects. Some general recommendations for agony reduction:
-
-\begin{itemize}
-\tightlist
-\item
-  I repeat: consider using a graphical front-end for Git, a.k.a. a Git
-  client, versus restricting yourself to the command line interface.
-\item
-  Establish confidence in the basics (e.g.~make a change, commit it,
-  push it) before wading into more advanced usage (e.g.~branching).
-\item
-  Commit yourself to Git usage on a project that will provide sustained
-  practice over several months. Usage in a course is great, because it
-  provides a relentless stream of small deadlines.
-\item
-  Realize that no one is giving out Git style points. It's OK to
-  ``power-cycle'', i.e.~re-initialize the Git repository, to get
-  unstuck.
-\end{itemize}
+with your projects. Here are some general recommendations for agony
+reduction. As suggested above, it may be worth using a graphical
+front-end for Git, a.k.a. a Git client, versus restricting yourself to
+the command line interface. It is fruitful to establish confidence in
+basic operations (e.g.~make a change, commit it, push it) before wading
+into more advanced usage (e.g.~branching). It is helpful to begin with a
+project that will provide sustained practice over several months. For
+example, usage in a course is great, because it provides a relentless
+stream of small deadlines. Finally, it is liberating to realize that no
+one is giving out Git style points. It is acceptable to ``power-cycle'',
+i.e.~re-initialize the Git repository, to get unstuck.
 
 \section{Repositories and workflow}\label{repositories-and-workflow}
 
@@ -356,38 +350,20 @@ regular directory on your computer, that you can locate, name, move, and
 generally interact with as you wish. You don't have to handle it with
 special gloves!
 
-Here is the daily workflow:
-
-\begin{itemize}
-\tightlist
-\item
-  Go about your usual business, writing R scripts or authoring reports
-  in LaTeX or R Markdown. But instead of only \emph{saving} individual
-  files, periodically you make a \textbf{commit}, which takes a snapshot
-  of all the files in the entire project.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    If you have ever versioned a file
-    \href{http://www.phdcomics.com/comics/archive.php?comicid=1531}{by
-    adding your initials or the date}, you have effectively made a
-    commit, albeit only for a single file. It is a version that is
-    significant to you and that you might want to inspect or revert to
-    later.
-  \end{itemize}
-\item
-  Push commits to GitHub periodically.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    This is like sharing a document with colleagues on DropBox or
-    sending it out as an email attachment. By pushing to GitHub, you
-    make your work and all your accumulated progress accessible to
-    others.
-  \end{itemize}
-\end{itemize}
+The daily workflow is probably not dramatically different from what you
+do currently. You work in the usual way, writing R scripts or authoring
+reports in LaTeX or R Markdown. But instead of only \emph{saving}
+individual files, periodically you make a \textbf{commit}, which takes a
+snapshot of all the files in the entire project. If you have ever
+versioned a file
+\href{http://www.phdcomics.com/comics/archive.php?comicid=1531}{by
+adding your initials or the date}, you have effectively made a commit,
+albeit only for a single file. It is a version that is significant to
+you and that you might want to inspect or revert to later. Periodically,
+you push commits to GitHub. This is like sharing a document with
+colleagues on DropBox or sending it out as an email attachment. By
+pushing to GitHub, you make your work and all your accumulated progress
+accessible to others.
 
 This is a moderate change to your normal, daily workflow. It feels weird
 at first, but quickly becomes second nature. In
@@ -468,8 +444,8 @@ a journal or transmitted to external collaborators. Figure
 \ref{fig:commit-diff-sha-tag} shows a tag, ``draft-01'', associated with
 the last commit.
 
-\section{Markdown is special on
-GitHub}\label{markdown-is-special-on-github}
+\section{Markdown is special on GitHub and for R
+users}\label{markdown-is-special-on-github-and-for-r-users}
 
 This may seem unrelated to Git, GitHub, and R, but it is now necessary
 to talk about
@@ -477,12 +453,12 @@ to talk about
 Markdown is a markup language, like HTML and LaTeX, but designed to be
 as lightweight as possible. The goal is still to separate form and
 content, but also to prioritize human-readability, even at the cost of
-fancy features. Markdown is in wide use on sites like
+fancy features. Markdown is in wide use on sites such as
 \href{https://en.support.wordpress.com/markdown/}{WordPress},
-\href{https://stackoverflow.com/editing-help}{StackOverflow}, and, yes,
+\href{https://stackoverflow.com/editing-help}{Stack Overflow}, and
 \href{https://help.github.com/categories/writing-on-github/}{GitHub}.
 These sites use Markdown because it allows a diverse population of site
-users to author decent-looking web content, with hyperlinks and some
+users to create decent-looking web content, with hyperlinks and some
 formatting. Do not build this up into some heroic, LaTeX-level learning
 task, for it is not. If you can write an email, you can write Markdown.
 
@@ -497,10 +473,7 @@ it like a home page or ``index.html'' when people visit that directory
 in the browser. It is very common for a repo to have a top-level
 \texttt{README.md}, but each subdirectory can have its own as well.
 
-\section{Markdown is special for R
-users}\label{markdown-is-special-for-r-users}
-
-Markdown is especially holy for R users because of
+Markdown is special for R users because of
 \href{http://rmarkdown.rstudio.com}{R Markdown}, which is just Markdown
 that includes chunks of R code. Figure \ref{fig:report-from-r-or-rmd}A
 shows a simple \texttt{.Rmd} document for our iris example. Again, do
@@ -523,8 +496,8 @@ application. Any R user can call \texttt{rmarkdown::render("foo.Rmd")}.
 These R-derived Markdown files, if committed and pushed, then enjoy the
 usual privileged treatment on GitHub already described above. Once an
 \texttt{.Rmd} file has been rendered to \texttt{.md}, anyone viewing it
-on GitHub can read the prose, study the R code, \textbf{and view the
-results of running that code}, including figures. Figure
+on GitHub can read the prose, study the R code, and view the results of
+running that code, including figures. Figure
 \ref{fig:report-from-r-or-rmd}C shows how the \texttt{.Rmd} document
 from Figure \ref{fig:report-from-r-or-rmd}A looks when rendered to
 \texttt{.md} and pushed to GitHub. It is the best of all worlds, because

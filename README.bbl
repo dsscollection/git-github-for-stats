@@ -8,6 +8,11 @@ Allaire, J., Cheng, J., Xie, Y., McPherson, J., Chang, W., Allen, J., Wickham,
 \newblock R package version 1.5.9000.
 \newline\harvardurl{http://rmarkdown.rstudio.com}
 
+\harvarditem{Anderson}{1936}{anderson}
+Anderson, E.  \harvardyearleft 1936\harvardyearright , `The species problem in
+  iris', {\em Annals of the Missouri Botanical Garden} {\bf 23}(3),~457--509.
+\newline\harvardurl{http://www.jstor.org/stable/2394164}
+
 \harvarditem{Bartlett}{2016}{git-for-humans}
 Bartlett, A.  \harvardyearleft 2016\harvardyearright , `Git for humans', Talk
   at UX Brighton.
@@ -25,6 +30,12 @@ Cetinkaya-Rundel, M. \harvardand\ Rundel, C.~W.  \harvardyearleft
 Donoho, D.  \harvardyearleft 2015\harvardyearright , `50 years of data
   science', Version 1.00.
 \newline\harvardurl{http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf}
+
+\harvarditem{FISHER}{1936}{fisher}
+FISHER, R.~A.  \harvardyearleft 1936\harvardyearright , `The use of multiple
+  measurements in taxonomic problems', {\em Annals of Eugenics} {\bf
+  7}(2),~179--188.
+\newline\harvardurl{http://dx.doi.org/10.1111/j.1469-1809.1936.tb02137.x}
 
 \harvarditem{{\em Git}}{n.d.}{git}
 {\em Git}  \harvardyearleft n.d.\harvardyearright .
