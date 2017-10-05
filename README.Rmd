@@ -74,7 +74,7 @@ Git has been re-purposed by the data science community [@Ram2013;
 @git-for-humans; @ten-simple-rules-git]. We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and source code. Even those who identify more as statistician than data scientist generally have a similar mix of files that are the artifacts of a project.
 
 A lone ranger, working on a single computer, can benefit from adopting version 
-control. But not nearly enough to justify the pain of installation and workflow 
+control, But not nearly enough to justify the pain of installation and workflow 
 upheaval. There are much easier ways to get versioned back ups of files, if 
 that's all you're worried about.
 
